@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import cosmosImage2 from "../images/cosmos2.png";
@@ -17,9 +17,7 @@ function Cosmos() {
     cosmosImage6,
   ];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="project-details-container">

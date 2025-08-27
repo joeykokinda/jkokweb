@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import mlh1 from "../images/mlh1.png";
@@ -9,9 +9,7 @@ import mlh4 from "../images/mlh4.png";
 function LocalLens() {
   const images = [mlh3, mlh1, mlh2, mlh4];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="project-details-container">

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import trip from "../images/trip.jpg";
@@ -11,10 +11,6 @@ import trip6 from "../images/trip6.jpg";
 
 function Trip() {
   const images = [trip, trip6, trip1, trip2, trip3, trip4, trip5];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="project-details-container" data-project="trip">

@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import promptr from "../images/promptr.png";
 import promptr1 from "../images/promptr1.png";
 
 function Promptr() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="project-details-container" data-project="promptr">
       <Link to="/" className="back-button">

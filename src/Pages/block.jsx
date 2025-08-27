@@ -12,8 +12,6 @@ function Block() {
     const galleryRef = useRef(null);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-
         const handleGalleryScroll = () => {
             if (showSwipeHint) {
                 setShowSwipeHint(false);

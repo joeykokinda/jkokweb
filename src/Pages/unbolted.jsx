@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import unbolt from "../images/unbolt.png";
 // import unbolt1 from "../images/unbolt1.png";
@@ -9,15 +8,6 @@ import unbolt4 from "../images/unbolt4.png";
 
 function Unbolted() {
   const images = [unbolt, unbolt2, unbolt3, unbolt4];
-  const location = useLocation();
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-
-    return () => clearTimeout(timeoutId);
-  }, [location]);
 
   return (
     <div className="project-details-container">

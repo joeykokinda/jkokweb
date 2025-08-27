@@ -27,6 +27,7 @@ import {
 } from "./Pages/animationContext";
 import Navbar from "./Pages/navbar";
 import IntroAnimation from "./Pages/IntroAnimation";
+import ScrollRestoration from "./Pages/scrollToTop";
 import "./App.css";
 
 function MatrixBackground() {
@@ -130,6 +131,7 @@ function AppContent() {
         <>
           <MatrixBackground />
           <Navbar />
+          <ScrollRestoration />
           {/* <Langnav /> */}
           <Routes>
             <Route path="/" element={<HomePage />} />

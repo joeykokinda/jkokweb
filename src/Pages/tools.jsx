@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import toolImage1 from "../images/tool.png";
@@ -8,10 +8,6 @@ import toolImage4 from "../images/tool1.png";
 
 function ToolsWebsite() {
   const images = [toolImage1, toolImage2, toolImage3, toolImage4];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="project-details-container">

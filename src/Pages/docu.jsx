@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import docu1 from "../images/docu1.png";
 import docu2 from "../images/docu2.png";
@@ -9,15 +9,6 @@ import docu5 from "../images/docu5.png";
 
 function Docu() {
   const images = [docu2, docu3, docu4, docu5];
-  const location = useLocation();
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-
-    return () => clearTimeout(timeoutId);
-  }, [location]);
 
   return (
     <div className="project-details-container">

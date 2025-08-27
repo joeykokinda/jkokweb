@@ -191,11 +191,6 @@ function Projects() {
   );
 
   useEffect(() => {
-    const savedPosition = sessionStorage.getItem("projectsScrollPosition");
-    if (savedPosition) {
-      window.scrollTo(0, parseInt(savedPosition));
-      sessionStorage.removeItem("projectsScrollPosition");
-    }
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -217,11 +212,11 @@ function Projects() {
   }, [activeFilter, filterCategories, projectsList]);
 
   const handleProjectClick = (link) => {
-    sessionStorage.setItem(
-      "projectsScrollPosition",
-      window.pageYOffset.toString(),
-    );
-    window.scrollTo(0, 0);
+    // Save current scroll position for this specific project
+    const projectName = link.split('/projects/')[1];
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    sessionStorage.setItem(`projectScrollPosition_${projectName}`, scrollY.toString());
+    
     navigate(link);
   };
 

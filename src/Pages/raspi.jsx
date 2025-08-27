@@ -4,14 +4,12 @@ import raspi1 from "../images/raspi1.jpg";
 import raspi2 from "../images/raspi2.jpg";
 import raspi3 from "../images/raspi3.jpg";
 import raspi4 from "../images/raspi4.jpg";
-import { useEffect } from "react";
+
 
 function RaspberryPiGlasses() {
   const images = [raspi1, raspi2, raspi3, raspi4];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="project-details-container">

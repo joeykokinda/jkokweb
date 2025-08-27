@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import scout1 from "../images/scout1.jpg";
@@ -10,10 +10,6 @@ import scout6 from "../images/scout6.png";
 
 function Scout() {
   const images = [scout2, scout3, scout4, scout5, scout6];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="project-details-container">

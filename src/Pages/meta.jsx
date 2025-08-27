@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import meta1 from "../images/meta.png";
@@ -7,9 +7,7 @@ import meta3 from "../images/meta3.png";
 function Meta() {
   const images = [meta1, meta3];
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="project-details-container" data-project="meta">
