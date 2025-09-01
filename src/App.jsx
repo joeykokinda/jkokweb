@@ -26,7 +26,7 @@ import {
   useAnimationContext,
 } from "./Pages/animationContext";
 import Navbar from "./Pages/navbar";
-import IntroAnimation from "./Pages/IntroAnimation";
+// import IntroAnimation from "./Pages/IntroAnimation";
 import ScrollRestoration from "./Pages/scrollToTop";
 import "./App.css";
 
@@ -102,32 +102,32 @@ function MatrixBackground() {
 }
 
 function AppContent() {
-  const [showIntro, setShowIntro] = useState(() => {
-    // Check if this is the first visit
-    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-    return !hasSeenIntro;
-  });
+  // const [showIntro, setShowIntro] = useState(() => {
+  //   // Check if this is the first visit
+  //   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+  //   return !hasSeenIntro;
+  // });
   const location = useLocation();
 
-  useEffect(() => {
-    // Check both the stored value and current path
-    const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-    if (location.pathname === '/contactcard' || hasSeenIntro) {
-      setShowIntro(false);
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   // Check both the stored value and current path
+  //   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+  //   if (location.pathname === '/contactcard' || hasSeenIntro) {
+  //     setShowIntro(false);
+  //   }
+  // }, [location.pathname]);
 
-  const handleIntroComplete = () => {
-    setShowIntro(false);
-    // Save that user has seen the intro
-    localStorage.setItem('hasSeenIntro', 'true');
-  };
+  // const handleIntroComplete = () => {
+  //   setShowIntro(false);
+  //   // Save that user has seen the intro
+  //   localStorage.setItem('hasSeenIntro', 'true');
+  // };
 
   return (
     <div className="app">
-      {showIntro && location.pathname !== '/contactcard' ? (
+      {/* {showIntro && location.pathname !== '/contactcard' ? (
         <IntroAnimation onComplete={handleIntroComplete} />
-      ) : (
+      ) : ( */}
         <>
           <MatrixBackground />
           <Navbar />
@@ -156,7 +156,7 @@ function AppContent() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </>
-      )}
+      {/* )} */}
     </div>
   );
 }
