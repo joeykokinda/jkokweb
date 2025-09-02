@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Resume from "./Pages/resume";
 import Scout from "./Pages/scout";
@@ -107,7 +107,6 @@ function AppContent() {
   //   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
   //   return !hasSeenIntro;
   // });
-  const location = useLocation();
 
   // useEffect(() => {
   //   // Check both the stored value and current path
