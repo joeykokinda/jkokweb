@@ -23,7 +23,7 @@ ORG:Purdue University
 TITLE:AI Student & Developer
 EMAIL:jkokinda9@gmail.com
 TEL:+1${phoneNum}
-URL:https://jkokweb.vercel.app
+URL:https://jkok.dev
 NOTE:AI Student at Purdue University. Experience in AI-powered applications across web, mobile, and embedded systems. Passion for AI, computer vision, and robotics.
 END:VCARD`;
 
