@@ -1,154 +1,247 @@
 .contactpage-wrapper {
     min-height: 100vh;
-    background-color: black;
+    background-color: rgba(8, 8, 8, 0.404);
     color: #00ff00;
     font-family: "Terminus", monospace;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 10px;
     box-sizing: border-box;
 }
 
 .contactpage-container {
     width: 100%;
-    max-width: none;
-    background-color: rgba(0, 0, 0, 0.95);
-    border: 2px solid #00ff00;
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
-}
-
-.contactpage-back-button {
-    display: inline-block;
-    margin-bottom: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid #00ff00;
-    background: transparent;
-    color: #00ff00;
-    text-decoration: none;
-    font-family: "Terminus", monospace;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    touch-action: manipulation;
-    min-height: 44px;
+    max-width: 400px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.contactpage-back-button:hover,
-.contactpage-back-button:active {
-    background-color: #00ff00;
-    color: black;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+.contact-card {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.925);
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    animation: card-glow 0.8s ease-out;
 }
 
-.contactpage-title {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+@keyframes card-glow {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(0, 255, 0, 0);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    }
+}
+
+.contact-header {
+    padding: 25px 20px 15px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-profile-section {
+    margin-bottom: 15px;
+}
+
+.contact-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #00ff00;
+    object-fit: cover;
+}
+
+.contact-profile-info h1.contactpage-title {
+    font-size: 1.8rem;
+    margin: 0 0 8px 0;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-.contactpage-description {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+.contact-role {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
     color: #00ff00;
-    line-height: 1.4;
+    font-weight: bold;
+}
+
+.contact-university {
+    font-size: 0.95rem;
+    margin: 0;
+    color: rgba(0, 255, 0, 0.8);
+}
+
+.contact-about {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.contact-bio {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(0, 255, 0, 0.9);
+    margin: 0;
+    text-align: center;
 }
 
 .contactpage-details {
-    margin-bottom: 2rem;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .contactpage-item {
-    margin: 1.5rem 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    border: 1px solid rgba(0, 255, 0, 0.3);
-    border-radius: 6px;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
     background-color: rgba(0, 255, 0, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.phone-item {
+    background-color: rgba(0, 255, 0, 0.08);
+    border-color: rgba(0, 255, 0, 0.4);
 }
 
 .contactpage-icon {
     color: #00ff00;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+.phone-icon {
+    font-size: 1.8rem;
+}
+
+.email-icon {
+    font-size: 1.2rem;
 }
 
 .contactpage-info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
+    gap: 3px;
+}
+
+.phone-link {
+    font-size: 0.9rem !important;
+    color: #00ff00 !important;
+}
+
+.email-link {
+    font-size: 0.9rem !important;
+    color: #00ff00 !important;
 }
 
 .contactpage-label {
-    font-size: 0.9rem;
-    color: #ffffff;
-    font-weight: bold;
+    font-size: 0.8rem;
+    color: rgba(0, 255, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .contactpage-link {
-    color: #00ff00;
     text-decoration: none;
-    font-size: 1rem;
     transition: all 0.3s ease;
-    padding: 0.25rem;
+    padding: 2px 4px;
     border-radius: 4px;
 }
 
 .contactpage-link:hover,
 .contactpage-link:active {
-    color: #ffffff;
-    background-color: rgba(0, 255, 0, 0.2);
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.contact-actions {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.action-button {
+    padding: 15px 20px;
+    border: 1px solid #00ff00;
+    border-radius: 6px;
+    font-family: "Terminus", monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+}
+
+.action-button.primary {
+    background: #00ff00;
+    color: black;
+    font-weight: bold;
+}
+
+.action-button.primary:hover {
+    background: #00cc00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.action-button.secondary {
+    background: transparent;
+    color: #00ff00;
+}
+
+.action-button.secondary:hover {
+    background: rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.action-button:active {
+    transform: translateY(0);
 }
 
 .contactpage-social {
-    border-top: 1px solid rgba(0, 255, 0, 0.3);
-    padding-top: 1.5rem;
-}
-
-.contactpage-social-title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    padding: 20px;
 }
 
 .contactpage-social-links {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    gap: 20px;
 }
 
 .contactpage-social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    width: 50px;
+    height: 50px;
     border: 1px solid rgba(0, 255, 0, 0.5);
     background-color: rgba(0, 255, 0, 0.05);
     color: #00ff00;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    border-radius: 50%;
     transition: all 0.3s ease;
-    min-height: 44px;
-    touch-action: manipulation;
 }
 
-.contactpage-social-link:hover,
-.contactpage-social-link:active {
+.contactpage-social-link:hover {
     background-color: rgba(0, 255, 0, 0.2);
     border-color: #00ff00;
     color: #ffffff;
@@ -157,121 +250,182 @@
 }
 
 .contactpage-social-link svg {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
-/* iPhone specific optimizations */
+/* Mobile optimizations */
 @media screen and (max-width: 430px) {
     .contactpage-wrapper {
-        padding: 0.5rem;
+        padding: 5px;
     }
 
     .contactpage-container {
-        width: 100%;
-        padding: 1rem;
+        max-width: 100%;
     }
 
-    .contactpage-title {
-        font-size: 1.8rem;
+    .contact-header {
+        padding: 20px 15px 12px;
     }
 
-    .contactpage-description {
+    .contact-profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact-profile-info h1.contactpage-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-role {
+        font-size: 1rem;
+    }
+
+    .contact-university {
         font-size: 0.9rem;
+    }
+
+    .contact-about {
+        padding: 15px;
+    }
+
+    .contact-bio {
+        font-size: 0.85rem;
+    }
+
+    .contactpage-details {
+        padding: 15px;
+        gap: 12px;
     }
 
     .contactpage-item {
-        padding: 0.75rem;
+        padding: 12px;
+    }
+
+    .phone-link {
+        font-size: 0.85rem !important;
+    }
+
+    .email-link {
+        font-size: 0.85rem !important;
+    }
+
+    .contact-actions {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .action-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-height: 45px;
+    }
+
+    .contactpage-social {
+        padding: 15px;
     }
 
     .contactpage-social-links {
-        gap: 0.75rem;
+        gap: 15px;
     }
 
     .contactpage-social-link {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* iPhone SE and smaller screens */
-@media screen and (max-width: 375px) {
-    .contactpage-title {
-        font-size: 1.6rem;
+        width: 45px;
+        height: 45px;
     }
 
-    .contactpage-description {
-        font-size: 0.85rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .contactpage-container {
-        padding: 0.75rem;
-    }
-}
-
-/* Larger screens */
-@media screen and (min-width: 768px) {
-    .contactpage-wrapper {
-        padding: 2rem;
-    }
-
-    .contactpage-container {
-        padding: 2rem;
-    }
-
-    .contactpage-title {
-        font-size: 2.5rem;
-    }
-
-    .contactpage-description {
+    .contactpage-social-link svg {
         font-size: 1.1rem;
     }
 }
 
-/* Very large screens */
-@media screen and (min-width: 1200px) {
-    .contactpage-wrapper {
-        padding: 3rem;
+/* Very small screens */
+@media screen and (max-width: 320px) {
+    .contact-profile-img {
+        width: 70px;
+        height: 70px;
     }
 
+    .contact-profile-info h1.contactpage-title {
+        font-size: 1.3rem;
+    }
+
+    .phone-link {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Larger screens */
+@media screen and (min-width: 480px) {
     .contactpage-container {
-        padding: 3rem;
+        max-width: 420px;
     }
 
-    .contactpage-title {
-        font-size: 3rem;
+    .contact-actions {
+        flex-direction: row;
+        gap: 15px;
     }
 
-    .contactpage-description {
-        font-size: 1.2rem;
+    .action-button {
+        flex: 1;
     }
 }
 
 /* Landscape orientation on mobile */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     .contactpage-wrapper {
-        padding: 0.5rem;
+        padding: 5px;
+        align-items: flex-start;
+        padding-top: 10px;
     }
 
-    .contactpage-container {
-        padding: 1rem;
+    .contact-header {
+        padding: 15px 20px 10px;
+        flex-direction: row;
+        text-align: left;
+        gap: 15px;
     }
 
-    .contactpage-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+    .contact-profile-section {
+        margin-bottom: 0;
     }
 
-    .contactpage-description {
-        margin-bottom: 1rem;
+    .contact-profile-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-profile-info h1.contactpage-title {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .contact-role {
+        font-size: 0.9rem;
+    }
+
+    .contact-university {
+        font-size: 0.8rem;
+    }
+
+    .contact-about {
+        padding: 12px 20px;
+    }
+
+    .contact-bio {
+        font-size: 0.8rem;
+        text-align: left;
     }
 
     .contactpage-details {
-        margin-bottom: 1rem;
+        padding: 12px 20px;
     }
 
-    .contactpage-item {
-        margin: 0.75rem 0;
-        padding: 0.5rem;
+    .contact-actions {
+        padding: 12px 20px;
+        flex-direction: row;
+    }
+
+    .contactpage-social {
+        padding: 12px 20px;
     }
 }
