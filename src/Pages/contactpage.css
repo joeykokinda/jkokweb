@@ -5,15 +5,14 @@
     font-family: "Terminus", monospace;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 15px 10px;
+    align-items: center;
+    padding: 20px;
     box-sizing: border-box;
-    padding-top: 20px;
 }
 
 .contactpage-container {
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     display: flex;
     justify-content: center;
 }
@@ -169,19 +168,22 @@
 }
 
 .contact-actions {
-    padding: 25px 20px;
+    padding: clamp(20px, 5vw, 25px);
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: clamp(12px, 3vw, 15px);
     border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .action-button {
-    padding: 18px 20px;
+    padding: 18px 15px;
     border: 2px solid #00ff00;
     border-radius: 8px;
     font-family: "Terminus", monospace;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -189,10 +191,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 10px;
-    min-height: 56px;
+    min-height: clamp(52px, 12vw, 56px);
     touch-action: manipulation;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -265,12 +269,11 @@
 /* Mobile optimizations */
 @media screen and (max-width: 430px) {
     .contactpage-wrapper {
-        padding: 10px 8px;
-        padding-top: 15px;
+        padding: 15px;
     }
 
     .contactpage-container {
-        max-width: 100%;
+        max-width: 95%;
     }
 
     .contact-card {
@@ -309,18 +312,27 @@
     }
 
     .contact-actions {
-        padding: 20px 18px;
-        gap: 12px;
+        padding: clamp(18px, 4.5vw, 20px) clamp(15px, 4vw, 18px);
+        gap: clamp(10px, 2.8vw, 12px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .action-button {
-        padding: 16px 18px;
-        font-size: 1rem;
-        min-height: 52px;
+        padding: clamp(14px, 4vw, 16px) clamp(15px, 4vw, 18px);
+        font-size: clamp(0.9rem, 2.2vw, 1rem);
+        min-height: clamp(48px, 11vw, 52px);
         border-radius: 6px;
         width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
         font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     .contactpage-social {
@@ -344,6 +356,14 @@
 
 /* Very small screens */
 @media screen and (max-width: 320px) {
+    .contactpage-wrapper {
+        padding: 10px;
+    }
+    
+    .contactpage-container {
+        max-width: 98%;
+    }
+    
     .contact-profile-img {
         width: 70px;
         height: 70px;
@@ -361,14 +381,13 @@
 /* Tablet and larger screens */
 @media screen and (min-width: 480px) {
     .contactpage-wrapper {
-        padding: 20px 15px;
-        padding-top: 30px;
+        padding: 30px;
     }
 
     .contactpage-container {
-        max-width: 440px;
+        max-width: 450px;
     }
-
+    
     .contact-card {
         border-radius: 15px;
         box-shadow: 0 0 30px rgba(0, 255, 0, 0.25);
@@ -384,18 +403,26 @@
     }
 
     .contact-actions {
+        display: flex;
         flex-direction: column;
-        gap: 16px;
-        padding: 30px 25px;
+        align-items: center;
+        gap: clamp(14px, 3.5vw, 16px);
+        padding: clamp(25px, 6vw, 30px) clamp(20px, 5.5vw, 25px);
+        width: 100%;
     }
 
     .action-button {
         width: 100%;
-        padding: 20px 22px;
-        font-size: 1.15rem;
-        min-height: 58px;
+        max-width: 100%;
+        padding: clamp(18px, 4.5vw, 20px) clamp(20px, 5vw, 22px);
+        font-size: clamp(1.1rem, 2.8vw, 1.15rem);
+        min-height: clamp(54px, 12vw, 58px);
         box-sizing: border-box;
         font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     .contactpage-social-links {
@@ -411,6 +438,7 @@
         font-size: 1.4rem;
     }
 }
+
 
 /* Landscape orientation on mobile */
 @media screen and (max-height: 500px) and (orientation: landscape) {
@@ -464,7 +492,9 @@
 
     .contact-actions {
         padding: 12px 20px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .contactpage-social {
