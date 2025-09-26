@@ -2,6 +2,30 @@ import React from "react";
 import "./albert.css";
 
 function Albert() {
+  const generateVCard = () => {
+    // Obfuscated phone number to prevent bot scraping
+    const phoneNum = ['9', '1', '7', '7', '0', '3', '1', '9', '2', '8'].join('');
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Albert Wu
+N:Wu;Albert;;;
+ORG:Amazon
+TITLE:SDE Intern
+EMAIL:
+TEL:+1${phoneNum}
+URL:https://www.linkedin.com/in/ajxwu/
+NOTE:SDE Intern at Amazon. CS student at Purdue University with experience in software development and computer architecture.
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Albert_Wu.vcf';
+    link.click();
+    window.URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="albert-container">
       <div className="profile-card">
@@ -84,13 +108,19 @@ function Albert() {
 
 
         <div className="footer-actions">
+          <button 
+            onClick={generateVCard}
+            className="action-btn primary single-btn"
+          >
+            Add Contact (iPhone)
+          </button>
           <a 
             href="https://www.linkedin.com/in/ajxwu/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="action-btn primary single-btn"
+            className="action-btn secondary single-btn"
           >
-            Contact
+            LinkedIn
           </a>
         </div>
       </div>

@@ -35,24 +35,26 @@
 }
 
 .profile-header {
-  padding: 20px;
+  padding: 30px 20px 20px;
   border-bottom: 1px solid rgba(0, 255, 0, 0.3);
   display: flex;
-  gap: 15px;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .profile-image-container {
   position: relative;
-  flex-shrink: 0;
+  margin-bottom: 15px;
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  border: 2px solid #00ff00;
+  border: 3px solid #00ff00;
   object-fit: cover;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
 }
 
 .connection-badge {
@@ -69,31 +71,32 @@
 }
 
 .profile-info {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
 }
 
 .profile-name {
-  font-size: 1.4rem;
-  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
   color: #ffffff;
   font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .profile-title {
-  font-size: 0.95rem;
-  margin: 0 0 3px 0;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
   color: #00ff00;
+  font-weight: bold;
 }
 
 .profile-education {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   margin: 0 0 8px 0;
   color: rgba(0, 255, 0, 0.8);
 }
 
 .profile-location {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin: 0;
   color: rgba(0, 255, 0, 0.7);
 }
@@ -101,7 +104,7 @@
 .stats-row {
   display: flex;
   justify-content: space-around;
-  padding: 15px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid rgba(0, 255, 0, 0.3);
   background: rgba(0, 255, 0, 0.05);
 }
@@ -113,29 +116,30 @@
 
 .stat-number {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: #ffffff;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: rgba(0, 255, 0, 0.8);
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .experience-section,
 .skills-section,
 .languages-section,
 .activities-section {
-  padding: 15px 20px;
+  padding: 20px 20px;
   border-bottom: 1px solid rgba(0, 255, 0, 0.2);
 }
 
 .section-title {
-  font-size: 1rem;
-  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  margin: 0 0 15px 0;
   color: #ffffff;
   font-weight: bold;
 }
@@ -250,27 +254,38 @@
 }
 
 .footer-actions {
-  padding: 20px;
+  padding: 25px 20px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  flex-direction: column;
+}
+
+@media (min-width: 400px) {
+  .footer-actions {
+    flex-direction: row;
+    gap: 15px;
+  }
 }
 
 .action-btn {
   flex: 1;
-  padding: 12px;
-  border: 1px solid #00ff00;
+  padding: 16px 18px;
+  border: 2px solid #00ff00;
   background: transparent;
   color: #00ff00;
   font-family: "Terminus", monospace;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-height: 52px;
+  touch-action: manipulation;
 }
 
 .action-btn.primary {
@@ -289,12 +304,182 @@
 }
 
 .action-btn.single-btn {
-  max-width: 200px;
-  margin: 0 auto;
+  flex: 1;
+  margin: 0;
 }
 
 .action-btn:active {
   transform: scale(0.98);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 430px) {
+  .albert-container {
+    padding: 10px 8px;
+    padding-top: 15px;
+  }
+
+  .profile-card {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .profile-header {
+    padding: 25px 18px 18px;
+  }
+
+  .profile-img {
+    width: 90px;
+    height: 90px;
+    border-width: 2px;
+  }
+
+  .profile-name {
+    font-size: 1.6rem;
+  }
+
+  .profile-title {
+    font-size: 1rem;
+  }
+
+  .profile-education {
+    font-size: 0.9rem;
+  }
+
+  .profile-location {
+    font-size: 0.8rem;
+  }
+
+  .stats-row {
+    padding: 18px 18px;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .experience-section,
+  .skills-section,
+  .languages-section {
+    padding: 18px 18px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .experience-item {
+    margin-bottom: 10px;
+  }
+
+  .job-title {
+    font-size: 0.85rem;
+  }
+
+  .company {
+    font-size: 0.8rem;
+  }
+
+  .duration,
+  .location {
+    font-size: 0.7rem;
+  }
+
+  .skill-tag {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .footer-actions {
+    padding: 20px 18px;
+    gap: 10px;
+  }
+
+  .action-btn {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    min-height: 48px;
+    border-radius: 6px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-name {
+    font-size: 1.4rem;
+  }
+
+  .action-btn {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    min-height: 45px;
+  }
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 480px) {
+  .albert-container {
+    padding: 20px 15px;
+    padding-top: 30px;
+  }
+
+  .profile-card {
+    max-width: 440px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.25);
+  }
+
+  .profile-header {
+    padding: 35px 25px 25px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .profile-title {
+    font-size: 1.2rem;
+  }
+
+  .stats-row {
+    padding: 25px 25px;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .experience-section,
+  .skills-section,
+  .languages-section {
+    padding: 25px 25px;
+  }
+
+  .footer-actions {
+    padding: 30px 25px;
+    gap: 16px;
+  }
+
+  .action-btn {
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    min-height: 56px;
+  }
 }
 
 /* Mobile optimizations */

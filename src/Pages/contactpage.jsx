@@ -5,13 +5,16 @@ import {
     faGithub,
     faXTwitter,
     faLinkedin,
+    faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone, faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import profilePic from "../images/pfp.png";
 import "./contactpage.css";
 
 function ContactPageSimple() {
     const generateVCard = () => {
+        // Obfuscated phone number to prevent bot scraping
+        const phoneNum = ['6', '1', '0', '7', '0', '1', '9', '9', '9', '8'].join('');
         const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Joey Kokinda
@@ -19,7 +22,7 @@ N:Kokinda;Joey;;;
 ORG:Purdue University
 TITLE:AI Student & Developer
 EMAIL:jkokinda9@gmail.com
-TEL:+16107019998
+TEL:+1${phoneNum}
 URL:https://jkokweb.vercel.app
 NOTE:AI Student at Purdue University. Experience in AI-powered applications across web, mobile, and embedded systems. Passion for AI, computer vision, and robotics.
 END:VCARD`;
@@ -63,33 +66,11 @@ END:VCARD`;
                             className="action-button primary"
                         >
                             <FontAwesomeIcon icon={faDownload} />
-                            Add Contact
+                            Add Contact (iPhone)
                         </button>
                         <Link to="/" className="action-button secondary">
                             Learn More
                         </Link>
-                    </div>
-
-                    <div className="contactpage-details">
-                        <div className="contactpage-item phone-item">
-                            <FontAwesomeIcon icon={faPhone} className="contactpage-icon phone-icon" />
-                            <div className="contactpage-info">
-                                <a href="tel:+16107019998" className="contactpage-link phone-link">
-                                    610-701-9998
-                                </a>
-                                <span className="contactpage-label">Phone</span>
-                            </div>
-                        </div>
-
-                        <div className="contactpage-item email-item">
-                            <FontAwesomeIcon icon={faEnvelope} className="contactpage-icon email-icon" />
-                            <div className="contactpage-info">
-                                <a href="mailto:jkokinda9@gmail.com" className="contactpage-link email-link">
-                                    jkokinda9@gmail.com
-                                </a>
-                                <span className="contactpage-label">Email</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div className="contactpage-social">
@@ -120,6 +101,15 @@ END:VCARD`;
                                 aria-label="LinkedIn"
                             >
                                 <FontAwesomeIcon icon={faLinkedin} />
+                            </a>
+                            <a
+                                href="https://t.me/joe123459"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="contactpage-social-link"
+                                aria-label="Telegram"
+                            >
+                                <FontAwesomeIcon icon={faTelegram} />
                             </a>
                         </div>
                     </div>
