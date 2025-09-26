@@ -1,0 +1,362 @@
+.albert-container {
+  min-height: 100vh;
+  background-color: rgba(8, 8, 8, 0.404);
+  padding: 10px;
+  font-family: "Terminus", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.profile-card {
+  background-color: rgba(0, 0, 0, 0.925);
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  color: #00ff00;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  animation: card-glow 0.8s ease-out;
+}
+
+@keyframes card-glow {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(0, 255, 0, 0);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+  }
+}
+
+.profile-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.profile-image-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #00ff00;
+  object-fit: cover;
+}
+
+.connection-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #00ff00;
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-family: "Terminus", monospace;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  margin: 0 0 5px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.profile-title {
+  font-size: 0.95rem;
+  margin: 0 0 3px 0;
+  color: #00ff00;
+}
+
+.profile-education {
+  font-size: 0.85rem;
+  margin: 0 0 8px 0;
+  color: rgba(0, 255, 0, 0.8);
+}
+
+.profile-location {
+  font-size: 0.8rem;
+  margin: 0;
+  color: rgba(0, 255, 0, 0.7);
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: rgba(0, 255, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.experience-section,
+.skills-section,
+.languages-section,
+.activities-section {
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.section-title {
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.company-logo {
+  font-size: 1.2rem;
+  width: 30px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.job-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 0 2px 0;
+  color: #00ff00;
+}
+
+.company {
+  font-size: 0.85rem;
+  margin: 0 0 2px 0;
+  color: #ffffff;
+}
+
+.duration {
+  font-size: 0.75rem;
+  margin: 0 0 2px 0;
+  color: rgba(0, 255, 0, 0.7);
+}
+
+.location {
+  font-size: 0.75rem;
+  margin: 0;
+  color: rgba(0, 255, 0, 0.6);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tag {
+  background: rgba(0, 255, 0, 0.1);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  color: #00ff00;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.language-item:last-child {
+  margin-bottom: 0;
+}
+
+.language {
+  font-size: 0.85rem;
+  color: #00ff00;
+}
+
+.proficiency {
+  font-size: 0.75rem;
+  color: rgba(0, 255, 0, 0.7);
+  font-style: italic;
+}
+
+.activity-item {
+  margin-bottom: 10px;
+  padding: 8px;
+  background: rgba(0, 255, 0, 0.05);
+  border-radius: 4px;
+  border-left: 2px solid #00ff00;
+}
+
+.activity-item:last-child {
+  margin-bottom: 0;
+}
+
+.activity-text {
+  font-size: 0.8rem;
+  margin: 0 0 4px 0;
+  color: rgba(0, 255, 0, 0.9);
+  line-height: 1.3;
+}
+
+.activity-time {
+  font-size: 0.7rem;
+  color: rgba(0, 255, 0, 0.6);
+}
+
+.footer-actions {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #00ff00;
+  background: transparent;
+  color: #00ff00;
+  font-family: "Terminus", monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.action-btn.primary {
+  background: #00ff00;
+  color: black;
+}
+
+.action-btn.primary:hover {
+  background: #00cc00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.action-btn.secondary:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+.action-btn.single-btn {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.action-btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .albert-container {
+    padding: 5px;
+    padding-top: 10px;
+  }
+  
+  .profile-card {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .profile-header {
+    padding: 15px;
+  }
+  
+  .profile-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .profile-name {
+    font-size: 1.2rem;
+  }
+  
+  .stats-row {
+    padding: 12px 15px;
+  }
+  
+  .stat-number {
+    font-size: 1.1rem;
+  }
+  
+  .experience-section,
+  .skills-section,
+  .languages-section,
+  .activities-section {
+    padding: 12px 15px;
+  }
+  
+  .footer-actions {
+    padding: 15px;
+  }
+  
+  .action-btn {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -21,6 +21,7 @@ import AILounge from "./Pages/AILounge";
 import Trip from "./Pages/trip";
 import Promptr from "./Pages/promptr";
 import FreeMoney from "./Pages/FreeMoney";
+import Albert from "./Pages/Albert";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -153,6 +154,7 @@ function AppContent() {
             <Route path="/projects/promptr" element={<Promptr />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
+            <Route path="/albert" element={<Albert />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
