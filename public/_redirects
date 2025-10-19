@@ -1,0 +1,7 @@
+# Redirect default Netlify subdomain to primary domain
+https://jkokweb.netlify.app/* https://jkokinda.com/:splat 301!
+https://www.jkokinda.com/* https://jkokinda.com/:splat 301!
+
+# SPA fallback
+/*    /index.html   200
+
