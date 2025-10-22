@@ -40,6 +40,14 @@ function PolyTerm() {
           >
             Access via SSH ↗
           </button>
+          <a
+            href="https://github.com/joeykokinda/polyterm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="live-link github-link"
+          >
+            GitHub ↗
+          </a>
         </div>
       </div>
 
@@ -182,10 +190,13 @@ function PolyTerm() {
           <section className="project-section">
             <h2>Overview</h2>
             <p>
-              PolyTerm is a terminal-based dashboard for PolyMarket, a decentralized prediction market platform. The tool provides real-time market data and insights directly in the terminal, streamlining decision-making for traders who need fast access to market information.
+              PolyTerm is a terminal-based dashboard for PolyMarket, a decentralized prediction market platform. Built with Go and Bubbletea, the tool provides real-time market data and insights directly in the terminal, streamlining decision-making for traders who need fast access to market information.
             </p>
             <p>
               Built for traders who prefer working in the terminal, PolyTerm delivers critical market data without the overhead of navigating through web interfaces.
+            </p>
+            <p>
+              <strong>Open Source:</strong> Due to the nature of SSH access, this project is fully open source on <a href="https://github.com/joeykokinda/polyterm" target="_blank" rel="noopener noreferrer" style={{ color: "#00ff00", textDecoration: "underline" }}>GitHub</a>. You can review the entire codebase before connecting—transparency is important when SSHing into any application.
             </p>
           </section>
 
@@ -214,16 +225,25 @@ function PolyTerm() {
             <h2>Technical Implementation</h2>
             <ul>
               <li>
+                <strong>Built with Go:</strong> High-performance backend using Go for speed and efficiency
+              </li>
+              <li>
+                <strong>Bubbletea TUI Framework:</strong> Beautiful terminal UI with Lipgloss styling and Bubbles components
+              </li>
+              <li>
                 <strong>CLI-Focused Design:</strong> Built for experienced traders who prefer terminal environments
               </li>
               <li>
-                <strong>PolyMarket API Integration:</strong> Direct integration with PolyMarket's public API for secure data retrieval
+                <strong>PolyMarket API Integration:</strong> Direct integration with PolyMarket's Gamma API for secure data retrieval
               </li>
               <li>
                 <strong>Performance Optimized:</strong> Ultra-fast, responsive interface with no delays or lag
               </li>
               <li>
-                <strong>Real-Time Updates:</strong> Continuous data refresh to keep traders informed of market changes
+                <strong>Real-Time Updates:</strong> Auto-refresh every 30 seconds to keep traders informed of market changes
+              </li>
+              <li>
+                <strong>Keyboard Navigation:</strong> Full vim-style keyboard controls for efficient navigation
               </li>
             </ul>
           </section>
