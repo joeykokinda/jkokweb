@@ -36,7 +36,6 @@ function PolyTerm() {
           <button
             onClick={() => setShowPopup(true)}
             className="live-link"
-            style={{ cursor: "pointer" }}
           >
             Access via SSH ↗
           </button>

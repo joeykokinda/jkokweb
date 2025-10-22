@@ -107,6 +107,13 @@
   transition: all 0.3s ease;
 }
 
+button.live-link {
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
 .live-link:hover {
   background: #00ff00;
   color: black;

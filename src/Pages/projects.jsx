@@ -471,15 +471,6 @@ function Projects() {
                           setShowSSHPopup(true);
                         }}
                         className="status-dot live"
-                        style={{ 
-                          cursor: "pointer",
-                          background: "none",
-                          border: "none",
-                          padding: 0,
-                          font: "inherit",
-                          color: "inherit",
-                          textDecoration: "none"
-                        }}
                       >
                         Live ↗
                       </button>
