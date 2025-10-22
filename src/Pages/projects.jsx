@@ -15,6 +15,7 @@ import tripImage from "../images/trip.jpg";
 import promptr1 from "../images/promptr1.png";
 import trunorthImage from "../images/TruNorth/Screenshot 2025-10-22 at 14-38-20 HVAC Contractor Chester County PA - Heating & Air Conditioning Tru North Heating and Air Inc.png";
 import exoformImage from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Exoform - Digitally Crafted 3D Printed Sculptures.png";
+import polytermImage from "../images/polyterm/2025-10-22T15:01:20,845467989-04:00.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -23,14 +24,23 @@ function Projects() {
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showMoreFilters, setShowMoreFilters] = useState(false);
+  const [showSSHPopup, setShowSSHPopup] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const sshCommand = "ssh polyterm@polyterm.app";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(sshCommand);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const filterCategories = useMemo(
     () => ({
       all: [],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm"],
       hackathon: ["unbolted", "locallens", "cosmos", "trip"],
-      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform"],
+      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform", "polyterm"],
       inactive: ["unbolted", "raspi", "bike", "locallens"],
       oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip"],
     }),
@@ -39,6 +49,17 @@ function Projects() {
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "polyterm",
+        title: "PolyTerm - Terminal Dashboard for PolyMarket",
+        image: polytermImage,
+        status: "live",
+        year: "2025",
+        description:
+          "Terminal-based dashboard for PolyMarket that delivers real-time prediction market data directly in the terminal. Features customizable views, live market data via PolyMarket API, and a distraction-free interface built for traders who need fast access to market insights.",
+        link: "/projects/polyterm",
+        tags: ["CLI", "API Integration", "Real-Time Data", "Trading Tools"],
+      },
       {
         id: "exoform",
         title: "Exoform - 3D Printing Shop",
@@ -263,6 +284,102 @@ function Projects() {
 
   return (
     <>
+      {showSSHPopup && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+          onClick={() => setShowSSHPopup(false)}
+        >
+          <div
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.95)",
+              padding: "30px",
+              borderRadius: "8px",
+              maxWidth: "600px",
+              width: "90%",
+              border: "1px solid #fafafa",
+              boxShadow: "0 0 20px rgba(0, 255, 0, 0.1)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 style={{ color: "#ffffff", marginBottom: "20px", fontWeight: "normal", textShadow: "0 0 10px rgba(255, 255, 255, 0.2)" }}>
+              Access PolyTerm via SSH
+            </h2>
+            <p style={{ color: "#00ff00", marginBottom: "15px", fontFamily: "Courier New, monospace" }}>
+              To access the live PolyTerm dashboard:
+            </p>
+            <div
+              style={{
+                backgroundColor: "#000",
+                padding: "15px",
+                borderRadius: "4px",
+                fontFamily: "Courier New, monospace",
+                color: "#00ff00",
+                marginBottom: "10px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                border: "1px solid #00ff00",
+              }}
+            >
+              <span>{sshCommand}</span>
+              <button
+                onClick={copyToClipboard}
+                style={{
+                  padding: "5px 10px",
+                  backgroundColor: copied ? "#00ff00" : "transparent",
+                  color: copied ? "#000" : "#00ff00",
+                  border: copied ? "none" : "1px solid #00ff00",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                  fontFamily: "Courier New, monospace",
+                  fontSize: "14px",
+                  transition: "all 0.3s ease",
+                }}
+              >
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+            <p style={{ color: "#00ff00", fontSize: "14px", marginTop: "20px", fontFamily: "Courier New, monospace" }}>
+              if you don't know how to do this, gg 💀
+            </p>
+            <button
+              onClick={() => setShowSSHPopup(false)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                backgroundColor: "transparent",
+                color: "#00ff00",
+                border: "1px solid #00ff00",
+                borderRadius: "4px",
+                cursor: "pointer",
+                fontFamily: "Courier New, monospace",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.backgroundColor = "#00ff00";
+                e.target.style.color = "#000";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.backgroundColor = "transparent";
+                e.target.style.color = "#00ff00";
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <div className="projects-terminal">
         <div className="terminal-header">
           <div className="terminal-title">C:\Users\Projects></div>
@@ -347,14 +464,35 @@ function Projects() {
                 </div>
                 <div className="project-status">
                   {project.status === "live" && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="status-dot live"
-                    >
-                      Live ↗
-                    </a>
+                    project.id === "polyterm" ? (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowSSHPopup(true);
+                        }}
+                        className="status-dot live"
+                        style={{ 
+                          cursor: "pointer",
+                          background: "none",
+                          border: "none",
+                          padding: 0,
+                          font: "inherit",
+                          color: "inherit",
+                          textDecoration: "none"
+                        }}
+                      >
+                        Live ↗
+                      </button>
+                    ) : (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="status-dot live"
+                      >
+                        Live ↗
+                      </a>
+                    )
                   )}
                   {project.status === "inactive" && (
                     <span className="status-dot inactive">Inactive</span>
