@@ -13,6 +13,7 @@ import cosmosImage from "../images/cosmosLogo.png";
 import blockImage from "../images/block1.png";
 import tripImage from "../images/trip.jpg";
 import promptr1 from "../images/promptr1.png";
+import trunorthImage from "../images/TruNorth/Screenshot 2025-10-22 at 14-38-20 HVAC Contractor Chester County PA - Heating & Air Conditioning Tru North Heating and Air Inc.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -26,9 +27,9 @@ function Projects() {
     () => ({
       all: [],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth"],
       hackathon: ["unbolted", "locallens", "cosmos", "trip"],
-      active: ["promptr", "docu", "scout", "tools", "cosmos", "block"],
+      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth"],
       inactive: ["unbolted", "raspi", "bike", "locallens"],
       oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip"],
     }),
@@ -37,6 +38,18 @@ function Projects() {
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "trunorth",
+        title: "TruNorth HVAC - Website Development",
+        image: trunorthImage,
+        status: "live",
+        year: "2025",
+        liveUrl: "https://trunorthhvac.com",
+        description:
+          "A unique HVAC company website that breaks away from traditional corporate aesthetics. Built with React and Tailwind CSS, the site emphasizes community involvement, real people, and sustainability while featuring interactive product pages and a hidden secret deals section for loyal customers.",
+        link: "/projects/trunorth",
+        tags: ["React", "Tailwind CSS", "Web Design", "SEO"],
+      },
       {
         id: "promptr",
         title: "Promptr - AI Prompt Management",
