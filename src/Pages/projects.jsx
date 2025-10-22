@@ -14,6 +14,7 @@ import blockImage from "../images/block1.png";
 import tripImage from "../images/trip.jpg";
 import promptr1 from "../images/promptr1.png";
 import trunorthImage from "../images/TruNorth/Screenshot 2025-10-22 at 14-38-20 HVAC Contractor Chester County PA - Heating & Air Conditioning Tru North Heating and Air Inc.png";
+import exoformImage from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Exoform - Digitally Crafted 3D Printed Sculptures.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -27,9 +28,9 @@ function Projects() {
     () => ({
       all: [],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform"],
       hackathon: ["unbolted", "locallens", "cosmos", "trip"],
-      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth"],
+      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform"],
       inactive: ["unbolted", "raspi", "bike", "locallens"],
       oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip"],
     }),
@@ -38,6 +39,18 @@ function Projects() {
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "exoform",
+        title: "Exoform - 3D Printing Shop",
+        image: exoformImage,
+        status: "live",
+        year: "2025",
+        liveUrl: "https://exoform.shop",
+        description:
+          "Personal e-commerce platform for selling 3D printed items with a clean, straightforward approach. Built with Next.js and Tailwind CSS, featuring a 360-degree rotating image carousel, Stripe payment integration, and custom API routes for product and order management.",
+        link: "/projects/exoform",
+        tags: ["Next.js", "Tailwind CSS", "Stripe", "E-commerce"],
+      },
       {
         id: "trunorth",
         title: "TruNorth HVAC - Website Development",

@@ -22,6 +22,7 @@ import Trip from "./Pages/trip";
 import Promptr from "./Pages/promptr";
 import FreeMoney from "./Pages/FreeMoney";
 import TruNorth from "./Pages/trunorth";
+import Exoform from "./Pages/exoform";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -153,6 +154,7 @@ function AppContent() {
             <Route path="/projects/block" element={<Block />} />
             <Route path="/projects/promptr" element={<Promptr />} />
             <Route path="/projects/trunorth" element={<TruNorth />} />
+            <Route path="/projects/exoform" element={<Exoform />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
             <Route path="/admin" element={<Admin />} />
