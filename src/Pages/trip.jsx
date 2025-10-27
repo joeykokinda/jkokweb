@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
 import trip from "../images/trip.jpg";
 import trip1 from "../images/trip1.jpg";
@@ -14,6 +15,12 @@ function Trip() {
 
   return (
     <div className="project-details-container" data-project="trip">
+      <Helmet>
+        <title>Trippian Project - Joey Kokinda</title>
+        <meta name="description" content="Trippian is an AI-powered travel assistant built at HackHarvard 2025. A project by Joey Kokinda." />
+        <link rel="canonical" href="https://jkok.dev/projects/trip" />
+        <meta name="robots" content="index, follow, noarchive" />
+      </Helmet>
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>

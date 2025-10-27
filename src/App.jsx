@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./Pages/HomePage";
 import Resume from "./Pages/resume";
 import Scout from "./Pages/scout";
@@ -170,11 +171,13 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AnimationProvider>
-        <AppContent />
-      </AnimationProvider>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <AnimationProvider>
+          <AppContent />
+        </AnimationProvider>
+      </Router>
+    </HelmetProvider>
   );
 }
 

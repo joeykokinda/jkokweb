@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import profilePic from "../images/pfp.png";
 import { useAnimationContext } from "./animationContext";
 import Experiences from "./experiences";
@@ -22,6 +23,14 @@ function HomePage() {
 
   return (
     <div className="home-page">
+      <Helmet>
+        <title>Joey Kokinda - AI Developer & Student at Purdue University</title>
+        <meta name="description" content="Joey Kokinda is an AI student at Purdue University specializing in computer vision, blockchain development, and full-stack applications. View my portfolio of projects including Scout, Docu, PolyTerm, and more." />
+        <link rel="canonical" href="https://jkok.dev/" />
+        <meta property="og:url" content="https://jkok.dev/" />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+      </Helmet>
       <div
         className={`animated-sections ${isAnimationDisabled ? "animations-disabled" : ""
           }`}

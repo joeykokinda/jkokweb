@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+cimport React, { useState, useEffect, useCallback } from "react";
 import "./projects.css";
 
 function Carousel({ projects, title }) {
