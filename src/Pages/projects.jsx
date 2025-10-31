@@ -16,6 +16,7 @@ import promptr1 from "../images/promptr1.png";
 import trunorthImage from "../images/TruNorth/Screenshot 2025-10-22 at 14-38-20 HVAC Contractor Chester County PA - Heating & Air Conditioning Tru North Heating and Air Inc.png";
 import exoformImage from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Exoform - Digitally Crafted 3D Printed Sculptures.png";
 import polytermImage from "../images/polyterm/2025-10-22T15:01:20,845467989-04:00.png";
+import youvestImage from "../images/YouVest/youvest1.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -38,17 +39,31 @@ function Projects() {
     () => ({
       all: [],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm"],
-      hackathon: ["unbolted", "locallens", "cosmos", "trip"],
-      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform", "polyterm"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest"],
+      web3: ["youvest", "cosmos", "polyterm"],
+      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest"],
+      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest"],
       inactive: ["unbolted", "raspi", "bike", "locallens"],
-      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip"],
+      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest"],
     }),
     [],
   );
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "youvest",
+        title: "YouVest - Decentralized Creator Investment Platform",
+        image: youvestImage,
+        status: "live",
+        year: "2025",
+        liveUrl: "https://www.youvest.lol/",
+        description:
+          "Decentralized platform built on Solana enabling fans to invest in content creators via blockchain. Built solo in one week for Colosseum's Cypherpunk Hackathon 2025. Features creator tokenization, bonding curve pricing, and instant liquidity using Rust/Anchor smart contracts.",
+        link: "/projects/youvest",
+        tags: ["Solana", "Smart Contracts", "Next.js", "Blockchain", "DeFi"],
+        hackathon: true,
+      },
       {
         id: "polyterm",
         title: "PolyTerm - Terminal Dashboard for PolyMarket",
@@ -404,6 +419,12 @@ function Projects() {
               onClick={() => setActiveFilter("software")}
             >
               Software
+            </button>
+            <button
+              className={`filter-btn ${activeFilter === "web3" ? "active" : ""}`}
+              onClick={() => setActiveFilter("web3")}
+            >
+              Web3
             </button>
             <button
               className={`filter-btn ${activeFilter === "hackathon" ? "active" : ""}`}
