@@ -17,6 +17,7 @@ import trunorthImage from "../images/TruNorth/Screenshot 2025-10-22 at 14-38-20 
 import exoformImage from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Exoform - Digitally Crafted 3D Printed Sculptures.png";
 import polytermImage from "../images/polyterm/2025-10-22T15:01:20,845467989-04:00.png";
 import youvestImage from "../images/YouVest/youvest1.png";
+import staklabsImage from "../images/Staklabs/2025-11-17T13:14:09,510007741-05:00.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -38,12 +39,13 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
+      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs"],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs"],
       web3: ["youvest", "cosmos", "polyterm"],
       hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest"],
-      active: ["promptr", "docu", "scout", "tools", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest"],
-      inactive: ["unbolted", "raspi", "bike", "locallens"],
+      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs"],
+      inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
       oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest"],
     }),
     [],
@@ -98,6 +100,18 @@ function Projects() {
           "A unique HVAC company website that breaks away from traditional corporate aesthetics. Built with React and Tailwind CSS, the site emphasizes community involvement, real people, and sustainability while featuring interactive product pages and a hidden secret deals section for loyal customers.",
         link: "/projects/trunorth",
         tags: ["React", "Tailwind CSS", "Web Design", "SEO"],
+      },
+      {
+        id: "staklabs",
+        title: "StakLabs - Student-Run Web Development Company",
+        image: staklabsImage,
+        status: "live",
+        year: "2025",
+        liveUrl: "https://staklabs.ai/",
+        description:
+          "Student-run web development company from Downingtown STEM Academy. Built alongside my brother, we delivered professional web development, mobile apps, and SEO services to real clients. Featured project: TruNorth HVAC complete website redesign with 3D elements and local SEO.",
+        link: "/projects/staklabs",
+        tags: ["React", "Next.js", "Tailwind CSS", "Web Design", "SEO"],
       },
       {
         id: "promptr",
@@ -204,9 +218,9 @@ function Projects() {
         id: "tools",
         title: "Tools - Website With Useful Tools",
         image: toolsImage,
-        status: "live",
+        status: "completed",
         year: "2024",
-        liveUrl: "https://kokinda.dev/",
+        completionDate: "2024",
         description:
           "This website consolidates various essential tools for developers (me), such things as allowing users to access a QR code generator, password generator, unit converter, and more without searching for individual tools every time.",
         link: "/projects/tools",
@@ -408,6 +422,12 @@ function Projects() {
         <div className="terminal-content">
           <div className="project-filters">
             <span className="filter-label">Sort by: </span>
+            <button
+              className={`filter-btn ${activeFilter === "website" ? "active" : ""}`}
+              onClick={() => setActiveFilter("website")}
+            >
+              Website
+            </button>
             <button
               className={`filter-btn ${activeFilter === "hardware" ? "active" : ""}`}
               onClick={() => setActiveFilter("hardware")}

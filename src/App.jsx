@@ -26,6 +26,7 @@ import TruNorth from "./Pages/trunorth";
 import Exoform from "./Pages/exoform";
 import PolyTerm from "./Pages/polyterm";
 import YouVest from "./Pages/youvest";
+import StakLabs from "./Pages/staklabs";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -160,6 +161,7 @@ function AppContent() {
             <Route path="/projects/exoform" element={<Exoform />} />
             <Route path="/projects/polyterm" element={<PolyTerm />} />
             <Route path="/projects/youvest" element={<YouVest />} />
+            <Route path="/projects/staklabs" element={<StakLabs />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
             <Route path="/admin" element={<Admin />} />
