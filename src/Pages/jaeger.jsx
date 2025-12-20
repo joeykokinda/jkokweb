@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
@@ -7,6 +7,8 @@ import jaeger2 from "../images/Jaeger/20251220_013743.png";
 import jaeger3 from "../images/Jaeger/20251220_013932.png";
 
 function Jaeger() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+
   const mediaItems = [
     { type: "image", src: jaeger3, alt: "Jaeger Chrome Extension 3" },
     {
@@ -19,8 +21,25 @@ function Jaeger() {
   ];
 
   return (
-    <div className="project-details-container">
-      <Helmet>
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
+        <Helmet>
         <title>Jaeger - Polymarket Browser Extension | Joey Kokinda</title>
         <meta
           name="description"
@@ -66,7 +85,9 @@ function Jaeger() {
                 style={{
                   objectFit: "contain",
                   background: "rgba(0, 0, 0, 0.8)",
+                  cursor: "pointer",
                 }}
+                onClick={() => setLightboxImage(item.src)}
               />
             ) : (
               <div
@@ -201,7 +222,8 @@ function Jaeger() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

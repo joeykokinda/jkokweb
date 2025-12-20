@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import meta1 from "../images/meta.png";
 import meta3 from "../images/meta3.png";
 
 function Meta() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [meta1, meta3];
 
-
-
   return (
-    <div className="project-details-container" data-project="meta">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container" data-project="meta">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -44,7 +52,7 @@ function Meta() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Meta Project ${idx + 1}`} />
+            <img src={img} alt={`Meta Project ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -92,7 +100,8 @@ function Meta() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

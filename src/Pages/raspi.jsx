@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import raspi1 from "../images/raspi1.jpg";
@@ -5,14 +6,21 @@ import raspi2 from "../images/raspi2.jpg";
 import raspi3 from "../images/raspi3.jpg";
 import raspi4 from "../images/raspi4.jpg";
 
-
 function RaspberryPiGlasses() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [raspi1, raspi2, raspi3, raspi4];
 
-
-
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -24,7 +32,7 @@ function RaspberryPiGlasses() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Raspberry Pi Glasses ${idx + 1}`} />
+            <img src={img} alt={`Raspberry Pi Glasses ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -70,7 +78,8 @@ function RaspberryPiGlasses() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

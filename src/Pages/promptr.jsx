@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import promptr from "../images/promptr.png";
 import promptr1 from "../images/promptr1.png";
 
 function Promptr() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+  
   return (
-    <div className="project-details-container" data-project="promptr">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container" data-project="promptr">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -40,7 +51,7 @@ function Promptr() {
       <div className="app-gallery">
         {[promptr, promptr1].map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Promptr Screenshot ${idx + 1}`} />
+            <img src={img} alt={`Promptr Screenshot ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -85,7 +96,8 @@ function Promptr() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

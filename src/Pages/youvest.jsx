@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
@@ -8,6 +8,8 @@ import youvest3 from "../images/YouVest/youvest3.png";
 import youvest4 from "../images/YouVest/youvest4.png";
 
 function YouVest() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+  
   const images = [
     youvest1,
     youvest2,
@@ -16,7 +18,24 @@ function YouVest() {
   ];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Helmet>
         <title>YouVest Project - Joey Kokinda</title>
         <meta name="description" content="YouVest is a decentralized creator investment platform built on Solana. Built for Colosseum Cypherpunk Hackathon 2025 by Joey Kokinda." />
@@ -58,7 +77,9 @@ function YouVest() {
               style={{
                 objectFit: "contain",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -208,7 +229,8 @@ function YouVest() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

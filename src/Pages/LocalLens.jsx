@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import mlh1 from "../images/mlh1.png";
@@ -7,12 +7,20 @@ import mlh3 from "../images/mlh3.png";
 import mlh4 from "../images/mlh4.png";
 
 function LocalLens() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [mlh3, mlh1, mlh2, mlh4];
 
-
-
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -49,7 +57,9 @@ function LocalLens() {
                 objectFit: "contain",
                 padding: "20px",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -140,7 +150,8 @@ function LocalLens() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

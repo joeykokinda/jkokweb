@@ -9,6 +9,7 @@ import polyterm4 from "../images/polyterm/2025-10-22T15:02:40,700739192-04:00.pn
 function PolyTerm() {
   const [showPopup, setShowPopup] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
   const sshCommand = "ssh polyterm@polyterm.app";
 
   const images = [
@@ -25,7 +26,24 @@ function PolyTerm() {
   };
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -156,7 +174,9 @@ function PolyTerm() {
               style={{
                 objectFit: "contain",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -279,7 +299,8 @@ function PolyTerm() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

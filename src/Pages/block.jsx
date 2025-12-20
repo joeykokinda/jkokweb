@@ -7,6 +7,7 @@ import block3 from "../images/block3.png";
 import block4 from "../images/block4.png";
 
 function Block() {
+    const [lightboxImage, setLightboxImage] = useState(null);
     const images = [block1, block2, block3, block4];
     const [showSwipeHint, setShowSwipeHint] = useState(true);
     const galleryRef = useRef(null);
@@ -41,7 +42,16 @@ function Block() {
     }, [showSwipeHint]);
 
     return (
-        <div className="project-details-container">
+        <>
+            {lightboxImage && (
+                <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+                    <div className="lightbox-content">
+                        <img src={lightboxImage} alt="Full size" />
+                        <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+                    </div>
+                </div>
+            )}
+            <div className="project-details-container">
             <Link to="/" className="back-button">
                 ← Back to Projects
             </Link>
@@ -75,7 +85,7 @@ function Block() {
             <div className={`app-gallery ${showSwipeHint ? 'show-hint' : ''}`} ref={galleryRef}>
                 {images.map((img, idx) => (
                     <div key={idx} className="gallery-item">
-                        <img src={img} alt={`Boiler Blockchain ${idx + 1}`} />
+                        <img src={img} alt={`Boiler Blockchain ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
                     </div>
                 ))}
             </div>
@@ -121,7 +131,8 @@ function Block() {
                     </section>
                 </div>
             </div>
-        </div>
+            </div>
+        </>
     );
 }
 

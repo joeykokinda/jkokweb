@@ -1,16 +1,26 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import unbolt from "../images/unbolt.png";
-// import unbolt1 from "../images/unbolt1.png";
 import unbolt2 from "../images/unbolt2.png";
 import unbolt3 from "../images/unbolt3.png";
 import unbolt4 from "../images/unbolt4.png";
 
 function Unbolted() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [unbolt, unbolt2, unbolt3, unbolt4];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -40,7 +50,7 @@ function Unbolted() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Unbolted ${idx + 1}`} />
+            <img src={img} alt={`Unbolted ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -97,7 +107,8 @@ function Unbolted() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 export default Unbolted;

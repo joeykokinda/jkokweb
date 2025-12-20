@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import cosmosImage2 from "../images/cosmos2.png";
@@ -8,7 +8,7 @@ import cosmosImage6 from "../images/cosmos6.png";
 import cosmosImage7 from "../images/cosmos7.png";
 
 function Cosmos() {
-  // Update images array to include cosmosLogo as first image
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [
     cosmosImage7,
     cosmosImage2,
@@ -17,10 +17,17 @@ function Cosmos() {
     cosmosImage6,
   ];
 
-
-
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -63,9 +70,11 @@ function Cosmos() {
               alt={`CosmosPool Platform ${idx + 1}`}
               style={{
                 objectFit: "contain",
-                padding: "20px 40px 20px 20px" /* Matching Meta styling */,
+                padding: "20px 40px 20px 20px",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -241,7 +250,8 @@ function Cosmos() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
@@ -7,6 +7,8 @@ import staklabs2 from "../images/Staklabs/2025-11-17T13:14:16,526100987-05:00.pn
 import staklabs3 from "../images/Staklabs/2025-11-17T13:14:38,746980953-05:00.png";
 
 function StakLabs() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+  
   const images = [
     staklabs1,
     staklabs2,
@@ -14,7 +16,24 @@ function StakLabs() {
   ];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Helmet>
         <title>StakLabs Project - Joey Kokinda</title>
         <meta name="description" content="StakLabs is a student-run web development company from Downingtown STEM Academy. A project by Joey Kokinda." />
@@ -48,7 +67,9 @@ function StakLabs() {
               style={{
                 objectFit: "contain",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -102,7 +123,8 @@ function StakLabs() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

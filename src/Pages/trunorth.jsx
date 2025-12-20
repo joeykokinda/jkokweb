@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import trunorth1 from "../images/TruNorth/Screenshot 2025-10-22 at 14-37-51 HVAC Contractor Chester County PA - Heating & Air Conditioning Tru North Heating and Air Inc.png";
@@ -7,6 +7,8 @@ import trunorth3 from "../images/TruNorth/Screenshot 2025-10-22 at 14-36-44 Heat
 import trunorth4 from "../images/TruNorth/Screenshot 2025-10-22 at 14-37-33 Get a Free HVAC Proposal Tru North HVAC Estimate Tru North Heating and Air Inc.png";
 
 function TruNorth() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+  
   const images = [
     trunorth2,
     trunorth1,
@@ -15,7 +17,24 @@ function TruNorth() {
   ];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -43,7 +62,9 @@ function TruNorth() {
               style={{
                 objectFit: "contain",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -127,7 +148,8 @@ function TruNorth() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

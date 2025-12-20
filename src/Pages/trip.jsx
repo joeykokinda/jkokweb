@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
@@ -11,10 +11,20 @@ import trip5 from "../images/trip5.jpg";
 import trip6 from "../images/trip6.jpg";
 
 function Trip() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [trip, trip6, trip1, trip2, trip3, trip4, trip5];
 
   return (
-    <div className="project-details-container" data-project="trip">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container" data-project="trip">
       <Helmet>
         <title>Trippian Project - Joey Kokinda</title>
         <meta name="description" content="Trippian is an AI-powered travel assistant built at HackHarvard 2025. A project by Joey Kokinda." />
@@ -54,7 +64,7 @@ function Trip() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Trippian Screenshot ${idx + 1}`} />
+            <img src={img} alt={`Trippian Screenshot ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -120,7 +130,8 @@ function Trip() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

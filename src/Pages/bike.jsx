@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import bike from "../images/bike.jpg";
@@ -9,10 +9,20 @@ import bike4 from "../images/bike4.jpg";
 import bike5 from "../images/bike5.jpg";
 
 function Bike() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [bike5, bike1, bike2, bike3, bike4, bike];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -24,7 +34,7 @@ function Bike() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item">
-            <img src={img} alt={`Bike Project ${idx + 1}`} />
+            <img src={img} alt={`Bike Project ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -81,7 +91,8 @@ function Bike() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

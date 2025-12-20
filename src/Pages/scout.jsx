@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import scout1 from "../images/scout1.jpg";
@@ -9,10 +9,20 @@ import scout5 from "../images/scout5.png";
 import scout6 from "../images/scout6.png";
 
 function Scout() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [scout2, scout3, scout4, scout5, scout6];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -47,7 +57,7 @@ function Scout() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item mobile-screenshot">
-            <img src={img} alt={`Scout App ${idx + 1}`} />
+            <img src={img} alt={`Scout App ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -100,7 +110,8 @@ function Scout() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

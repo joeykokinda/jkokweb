@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import docu1 from "../images/docu1.png";
@@ -8,10 +8,20 @@ import docu4 from "../images/docu4.png";
 import docu5 from "../images/docu5.png";
 
 function Docu() {
+  const [lightboxImage, setLightboxImage] = useState(null);
   const images = [docu2, docu3, docu4, docu5];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -46,7 +56,7 @@ function Docu() {
       <div className="app-gallery">
         {images.map((img, idx) => (
           <div key={idx} className="gallery-item mobile-screenshot">
-            <img src={img} alt={`Docu App ${idx + 1}`} />
+            <img src={img} alt={`Docu App ${idx + 1}`} style={{ cursor: "pointer" }} onClick={() => setLightboxImage(img)} />
           </div>
         ))}
       </div>
@@ -81,7 +91,8 @@ function Docu() {
           </ul>
         </p>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

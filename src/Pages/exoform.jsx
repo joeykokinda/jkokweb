@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./projectDetails.css";
 import exoform1 from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Exoform - Digitally Crafted 3D Printed Sculptures.png";
@@ -7,6 +7,8 @@ import exoform3 from "../images/Exoform/Screenshot 2025-10-22 at 14-49-52 All Pr
 import exoform4 from "../images/Exoform/Screenshot 2025-10-22 at 14-50-09 The Scar - $89.00 Exoform.png";
 
 function Exoform() {
+  const [lightboxImage, setLightboxImage] = useState(null);
+  
   const images = [
     exoform1,
     exoform4,
@@ -15,7 +17,24 @@ function Exoform() {
   ];
 
   return (
-    <div className="project-details-container">
+    <>
+      {lightboxImage && (
+        <div
+          className="lightbox-overlay"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div className="lightbox-content">
+            <img src={lightboxImage} alt="Full size" />
+            <button
+              className="lightbox-close"
+              onClick={() => setLightboxImage(null)}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="project-details-container">
       <Link to="/" className="back-button">
         ← Back to Projects
       </Link>
@@ -43,7 +62,9 @@ function Exoform() {
               style={{
                 objectFit: "contain",
                 background: "rgba(0, 0, 0, 0.8)",
+                cursor: "pointer",
               }}
+              onClick={() => setLightboxImage(img)}
             />
           </div>
         ))}
@@ -138,7 +159,8 @@ function Exoform() {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
