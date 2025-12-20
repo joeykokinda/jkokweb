@@ -18,6 +18,7 @@ import exoformImage from "../images/Exoform/Screenshot 2025-10-22 at 14-49-22 Ex
 import polytermImage from "../images/polyterm/2025-10-22T15:01:20,845467989-04:00.png";
 import youvestImage from "../images/YouVest/youvest1.png";
 import staklabsImage from "../images/Staklabs/2025-11-17T13:14:09,510007741-05:00.png";
+import jaegerImage from "../images/Jaeger/jaeger1.jpg";
 
 function Projects() {
   const navigate = useNavigate();
@@ -41,18 +42,29 @@ function Projects() {
       all: [],
       website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs"],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs"],
-      web3: ["youvest", "cosmos", "polyterm"],
-      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger"],
+      web3: ["youvest", "cosmos", "polyterm", "jaeger"],
+      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger"],
       active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
-      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest"],
+      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger"],
     }),
     [],
   );
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "jaeger",
+        title: "Jaeger - Polymarket Browser Extension",
+        image: jaegerImage,
+        year: "2025",
+        description:
+          "Chrome extension that automatically discovers relevant Polymarket prediction markets for any webpage you visit. Features keyword matching, market insights, Base smart account integration, and a premium black and gold UI. Built for Midwest Blockchain Conference Hackathon 2025.",
+        link: "/projects/jaeger",
+        tags: ["Chrome Extension", "React", "Polymarket", "Base", "Web3"],
+        hackathon: true,
+      },
       {
         id: "youvest",
         title: "YouVest - Decentralized Creator Investment Platform",
