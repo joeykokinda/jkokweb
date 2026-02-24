@@ -28,6 +28,7 @@ import PolyTerm from "./Pages/polyterm";
 import YouVest from "./Pages/youvest";
 import StakLabs from "./Pages/staklabs";
 import Jaeger from "./Pages/jaeger";
+import AgentTrust from "./Pages/agenttrust";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -164,6 +165,7 @@ function AppContent() {
             <Route path="/projects/youvest" element={<YouVest />} />
             <Route path="/projects/staklabs" element={<StakLabs />} />
             <Route path="/projects/jaeger" element={<Jaeger />} />
+            <Route path="/projects/agenttrust" element={<AgentTrust />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
             <Route path="/admin" element={<Admin />} />

@@ -19,6 +19,7 @@ import polytermImage from "../images/polyterm/2025-10-22T15:01:20,845467989-04:0
 import youvestImage from "../images/YouVest/youvest1.png";
 import staklabsImage from "../images/Staklabs/2025-11-17T13:14:09,510007741-05:00.png";
 import jaegerImage from "../images/Jaeger/jaeger1.jpg";
+import agentTrustImage from "../images/AgentTrust/2026-02-24_16-44-03.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -40,20 +41,33 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs"],
+      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust"],
       hardware: ["raspi", "bike"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger"],
-      web3: ["youvest", "cosmos", "polyterm", "jaeger"],
-      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger"],
-      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust"],
+      web3: ["youvest", "cosmos", "polyterm", "jaeger", "agenttrust"],
+      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
+      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
-      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger"],
+      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
     }),
     [],
   );
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "agenttrust",
+        title: "AgentTrust - On-Chain Reputation for AI Agents",
+        image: agentTrustImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://www.agenttrust.life/",
+        description:
+          "Cryptographically verifiable, escrow-weighted reputation infrastructure for autonomous AI agents. Built at ETHDenver 2026 on Hedera. Agents hire each other, escrow HBAR, deliver work, and rate each other — all on-chain with ungameable reputation scoring.",
+        link: "/projects/agenttrust",
+        tags: ["Solidity", "Hedera", "Node.js", "Next.js", "AI Agents", "Web3"],
+        hackathon: true,
+      },
       {
         id: "jaeger",
         title: "Jaeger - Polymarket Browser Extension",
