@@ -108,7 +108,7 @@ function Veridex() {
                 Veridex is the trust layer for AI agent commerce. AI agents can read your files, run shell commands, move money, and call external APIs — continuously, without oversight. Veridex checks every action before it runs and writes the outcome to Hedera HCS. Trust score is replayable by anyone.
               </p>
               <p>
-                Veridex absorbs and extends the work from <Link to="/projects/agenttrust" className="inline-link">AgentTrust (ETHDenver 2026)</Link> — adding pre-execution gating, HCS attestation, operator policies, and a full operator dashboard on top of the on-chain reputation primitives.
+                Extends the work from <Link to="/projects/agenttrust" className="inline-link">AgentTrust (ETHDenver 2026)</Link> — adding pre-execution gating, HCS attestation, operator policies, and a full operator dashboard.
               </p>
               <p>
                 <strong>Live stats:</strong> 17 agents monitored · 3,900+ actions logged · 28 blocked
@@ -118,127 +118,15 @@ function Veridex() {
             <section className="project-section">
               <h2>The Problem</h2>
               <p>
-                Autonomous agents search the web, run shell commands, move money, accept jobs, and call external services — continuously, with your credentials. Their behavior is invisible: no tamper-proof record, no pre-execution gate, no portable reputation, no verifiable recovery after failure.
-              </p>
-              <p>
-                Without a trust layer, you can't prove whether an action matched what was intended, whether dangerous behavior was actually stopped, whether funds were split correctly, or whether the audit trail is real or fabricated.
+                Autonomous agents run continuously with your credentials and their behavior is invisible — no tamper-proof record, no pre-execution gate, no portable reputation. Without a trust layer, you can't prove whether dangerous behavior was actually stopped or whether the audit trail is real.
               </p>
             </section>
 
             <section className="project-section">
               <h2>How It Works</h2>
-
-              <h3>01 — Pre-Execution Gate</h3>
               <p>
-                Every action is checked synchronously before it runs. Returns <code>allowed: true</code> or <code>allowed: false</code>. The agent cannot proceed without a verdict. Evaluation runs in under 10ms in-process: quarantine check → hardcoded blocking rules → operator policies → loop detection → allow.
+                Every action is intercepted before it runs. Veridex evaluates it synchronously — quarantine check, hardcoded blocking rules, operator policies, loop detection — and returns allowed or blocked in under 10ms. It blocks credential harvesting (<code>cat /etc/passwd</code>), remote code execution (<code>curl | bash</code>), private key and API key exposure, recursive deletes, repeated loop actions, and anything matching operator-configured rules like domain blacklists, command blacklists, HBAR spend caps, or regex guards on output. The outcome is written to Hedera HCS: encrypted, tamper-proof, verifiable forever. Each agent has a trust score replayable from the chain by anyone.
               </p>
-
-              <h3>02 — Hedera HCS Attestation</h3>
-              <p>
-                Outcome written to Hedera HCS — AES-256-GCM encrypted, 3–5 second finality, tamper-proof, verifiable on HashScan forever. Each agent gets a dedicated HCS topic at registration. The ciphertext proves the sequence of events without leaking operational details.
-              </p>
-
-              <h3>03 — Replayable Trust Score</h3>
-              <p>
-                Every agent starts at 1000. Blocked actions deduct points based on severity: −50 for credential harvest or RCE, −15 for destructive commands, −10 for operator policy violations. The score in the leaderboard is a cache — the proof is on Hedera, replayable by anyone.
-              </p>
-
-              <h3>04 — Operator Policies</h3>
-              <p>
-                Per-agent blocking rules set from the dashboard — no redeploy required. Supported types: domain blacklists, command blacklists, HBAR spend caps, file path blocks, and regex output guards (catches leaked API keys in responses).
-              </p>
-            </section>
-
-            <section className="project-section">
-              <h2>What Gets Blocked</h2>
-              <div style={{ overflowX: "auto" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", fontFamily: "Courier New, monospace" }}>
-                  <thead>
-                    <tr style={{ borderBottom: "1px solid rgba(0,255,0,0.3)" }}>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Pattern</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Category</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Score</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["cat /etc/passwd, /etc/shadow", "Credential harvest", "−50"],
-                      ["curl | bash, wget | sh", "Remote code execution", "−50"],
-                      ["-----BEGIN PRIVATE KEY, 0x+64hex", "Private key exposure", "−50"],
-                      ["sk_live_*, AKIA*, Bearer ...", "API key in params", "−50"],
-                      ["rm -rf", "Recursive delete", "−15"],
-                      ["Custom domain blacklists", "Operator policy", "−10"],
-                      ["Custom command blacklists", "Operator policy", "−10"],
-                      ["HBAR spend over cap", "Operator policy", "−10"],
-                      ["20+ identical actions / 60s", "Loop detection", "−10"],
-                    ].map(([pattern, category, score], i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                        <td style={{ padding: "8px", fontSize: "11px" }}>{pattern}</td>
-                        <td style={{ padding: "8px" }}>{category}</td>
-                        <td style={{ padding: "8px", color: "#ff4444" }}>{score}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <section className="project-section">
-              <h2>Unlogged Execution Detection</h2>
-              <p>
-                A rogue or prompt-injected agent might skip the pre-execution gate entirely. Veridex detects this at the post-execute step — if <code>/v2/post-execute</code> is called without a matching pre-check log, the bypass is flagged as an <code>unlogged_execution</code> entry written to HCS. The absence of a gate entry is itself on-chain evidence of tampering. HCS is append-only — you cannot retroactively insert a pre-check.
-              </p>
-            </section>
-
-            <section className="project-section">
-              <h2>Operator Features</h2>
-              <ul>
-                <li><strong>MetaMask wallet claim</strong> — link your wallet to an agent via <code>personal_sign</code>, verified server-side with <code>ecrecover</code></li>
-                <li><strong>ERC-7715 delegations</strong> — sign a scoped permission grant defining exactly which actions the agent is authorized to perform</li>
-                <li><strong>Secrets vault</strong> — AES-256-GCM encrypted credentials store; agents receive 60-second capability tokens, never raw secrets</li>
-                <li><strong>Telegram kill-switch</strong> — <code>/block &lt;agentId&gt;</code> quarantines an agent in seconds from your phone via @veridex_manager_bot</li>
-                <li><strong>Webhook alerts</strong> — HTTP callbacks on every block or high-risk action</li>
-                <li><strong>ERC-8183 job lifecycle</strong> — on-chain job market: Posted → Funded → Submitted → Completed, earnings split on-chain</li>
-              </ul>
-            </section>
-
-            <section className="project-section">
-              <h2>One-Line Install (OpenClaw)</h2>
-              <pre style={{ background: "rgba(0,0,0,0.6)", padding: "12px", borderRadius: "4px", overflowX: "auto", fontSize: "13px", color: "#00ff00", border: "1px solid rgba(0,255,0,0.2)" }}>
-{`{ "skills": ["https://veridex.sbs/skill.md"] }`}
-              </pre>
-              <p>
-                Add that to <code>openclaw.config.json</code>. Every action is now checked before execution, written to Hedera HCS, and scored on the leaderboard. No wallet setup. No pre-registration. First call auto-provisions the agent.
-              </p>
-            </section>
-
-            <section className="project-section">
-              <h2>Why Hedera</h2>
-              <p>
-                Per-action attestation only works at this cost. Logging every agent action is only viable on Hedera:
-              </p>
-              <div style={{ overflowX: "auto" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", fontFamily: "Courier New, monospace" }}>
-                  <thead>
-                    <tr style={{ borderBottom: "1px solid rgba(0,255,0,0.3)" }}>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Network</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>100 actions/day</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[
-                      ["Ethereum", "$300–$5,000"],
-                      ["Solana", "~$2.50"],
-                      ["Hedera HCS", "$0.08"],
-                    ].map(([network, cost], i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-                        <td style={{ padding: "8px" }}>{network}</td>
-                        <td style={{ padding: "8px", color: i === 2 ? "#00ff00" : "inherit" }}>{cost}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
             </section>
 
             <section className="project-section">
@@ -293,40 +181,6 @@ function Veridex() {
               </div>
             </section>
 
-            <section className="project-section">
-              <h2>Tech Stack</h2>
-              <ul>
-                <li><strong>Blockchain:</strong> Hedera HCS + EVM testnet, Celo Sepolia, Hashio RPC, HashScan</li>
-                <li><strong>Smart Contracts:</strong> Solidity 0.8.20, Hardhat</li>
-                <li><strong>Backend:</strong> Node.js, Express, better-sqlite3 (orchestrator on Railway)</li>
-                <li><strong>Frontend:</strong> Next.js 14 (App Router), TypeScript, Tailwind CSS (on Vercel)</li>
-                <li><strong>Wallet:</strong> MetaMask, ERC-7715 delegations, ERC-8183 job lifecycle</li>
-                <li><strong>Messaging:</strong> Telegram bot (kill-switch + alerts)</li>
-                <li><strong>Encryption:</strong> AES-256-GCM (per-agent keys for HCS + vault)</li>
-              </ul>
-            </section>
-
-            <section className="project-section">
-              <h2>Architecture</h2>
-              <pre style={{ background: "rgba(0,0,0,0.6)", padding: "12px", borderRadius: "4px", overflowX: "auto", fontSize: "12px", color: "#00ff00", border: "1px solid rgba(0,255,0,0.2)" }}>
-{`OpenClaw Agent
-    │
-    ├─ POST /api/log (phase: "before")
-    │       │
-    │       ├─ blocking.js: quarantine? → hardcoded rules? → policies? → loop?
-    │       ├─ hcs-logger.js: encrypt + submit to HCS topic (async)
-    │       ├─ telegram.js:   alert if blocked or high-risk (async)
-    │       └─ → { allowed: true/false, logId, riskLevel }
-    │
-    ├─ [executes or aborts based on allowed]
-    │
-    └─ POST /v2/post-execute (phase: "after")
-            │
-            ├─ check: does a matching phase:"before" log exist for this logId?
-            ├─ NO → flag unlogged_execution → alert + webhook + HCS entry written
-            └─ YES → log result linked to logId → HCS entry updated`}
-              </pre>
-            </section>
           </div>
         </div>
       </div>

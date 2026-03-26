@@ -71,7 +71,7 @@ function Projects() {
       },
       {
         id: "pyras",
-        title: "Pyras - Blockchain Infrastructure Platform",
+        title: "Blockchain Infra",
         image: pyrasImage,
         year: "2026",
         status: "live",

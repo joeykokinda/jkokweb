@@ -32,7 +32,7 @@ function Pyras() {
       )}
       <div className="project-details-container">
         <Helmet>
-          <title>Pyras - Blockchain Infrastructure Platform | Joey Kokinda</title>
+          <title>Blockchain Infra | Joey Kokinda</title>
           <meta
             name="description"
             content="Pyras is a production-grade Ethereum infrastructure platform serving decentralized applications and blockchain developers. Features full archive node, Pocket Network relay mining, and Igniter staking platform."
@@ -46,7 +46,7 @@ function Pyras() {
         </Link>
 
         <div className="project-header">
-          <h1>Pyras - Blockchain Infrastructure Platform</h1>
+          <h1>Blockchain Infra</h1>
           <div className="header-links">
             <a
               href="https://pyras.org/dashboard"
@@ -167,15 +167,6 @@ function Pyras() {
                 <li><strong>Blocks Synced:</strong> 24,900,000+ (full mainnet history)</li>
                 <li><strong>Containers Running:</strong> 35 across 4 Docker networks</li>
                 <li><strong>Peer Count:</strong> 70 active Ethereum peers</li>
-              </ul>
-            </section>
-
-            <section className="project-section">
-              <h2>Roadmap</h2>
-              <ul>
-                <li><strong>Q1 2026:</strong> Stabilization — Grafana dashboards, automated health checks, alerting (in progress)</li>
-                <li><strong>Q2 2026:</strong> Multi-chain RPC support — architecture supports future expansion to Arbitrum, Base, Polygon</li>
-                <li><strong>Q3 2026:</strong> Developer tooling — testnet faucet, contract verification, gas price oracle</li>
               </ul>
             </section>
 
