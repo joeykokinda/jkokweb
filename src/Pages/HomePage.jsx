@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import profilePic from "../images/pfp.png";
+import profilePic from "../images/lainpfp.jpg";
 import { useAnimationContext } from "./animationContext";
 import Experiences from "./experiences";
 import Projects from "./projects";
