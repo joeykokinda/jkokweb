@@ -167,7 +167,6 @@ function Pyras() {
                 <li><strong>Blocks Synced:</strong> 24,900,000+ (full mainnet history)</li>
                 <li><strong>Containers Running:</strong> 35 across 4 Docker networks</li>
                 <li><strong>Peer Count:</strong> 70 active Ethereum peers</li>
-                <li><strong>Revenue:</strong> POKT token rewards from relay mining</li>
               </ul>
             </section>
 
@@ -175,9 +174,8 @@ function Pyras() {
               <h2>Roadmap</h2>
               <ul>
                 <li><strong>Q1 2026:</strong> Stabilization — Grafana dashboards, automated health checks, alerting (in progress)</li>
-                <li><strong>Q2 2026:</strong> Multi-chain support — Arbitrum, Base, Polygon nodes</li>
+                <li><strong>Q2 2026:</strong> Multi-chain RPC support — architecture supports future expansion to Arbitrum, Base, Polygon</li>
                 <li><strong>Q3 2026:</strong> Developer tooling — testnet faucet, contract verification, gas price oracle</li>
-                <li><strong>Q4 2026:</strong> White-label infrastructure for other organizations</li>
               </ul>
             </section>
 
