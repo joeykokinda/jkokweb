@@ -61,14 +61,6 @@ function AgentTrust() {
           <h1>AgentTrust - Trust Infrastructure for the Autonomous Agent Economy</h1>
           <div className="header-links">
             <a
-              href="https://www.agenttrust.life/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="live-link"
-            >
-              Live Site (Static) ↗
-            </a>
-            <a
               href="https://github.com/joeykokinda/EthDenver2026"
               target="_blank"
               rel="noopener noreferrer"
@@ -137,6 +129,9 @@ function AgentTrust() {
           <div className="projectDetailsText">
             <section className="project-section">
               <h2>Overview</h2>
+              <p style={{ padding: "10px 14px", border: "1px solid rgba(0,255,0,0.3)", borderRadius: "4px", background: "rgba(0,255,0,0.05)", marginBottom: "16px" }}>
+                <strong>Note:</strong> AgentTrust has been merged into <Link to="/projects/veridex" className="inline-link">Veridex</Link> — the full trust layer for AI agent commerce, with pre-execution gating, HCS attestation, operator policies, and more.
+              </p>
               <p>
                 AgentTrust is cryptographically verifiable, escrow-weighted reputation infrastructure for autonomous AI agents — provable trust for an economy where agents hire, pay, and rate each other without any human in the loop.
               </p>

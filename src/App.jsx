@@ -30,6 +30,7 @@ import StakLabs from "./Pages/staklabs";
 import Jaeger from "./Pages/jaeger";
 import AgentTrust from "./Pages/agenttrust";
 import Pyras from "./Pages/pyras";
+import Veridex from "./Pages/veridex";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -168,6 +169,7 @@ function AppContent() {
             <Route path="/projects/jaeger" element={<Jaeger />} />
             <Route path="/projects/agenttrust" element={<AgentTrust />} />
             <Route path="/projects/pyras" element={<Pyras />} />
+            <Route path="/projects/veridex" element={<Veridex />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
             <Route path="/admin" element={<Admin />} />

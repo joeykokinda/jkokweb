@@ -21,6 +21,7 @@ import staklabsImage from "../images/Staklabs/2025-11-17T13:14:09,510007741-05:0
 import jaegerImage from "../images/Jaeger/jaeger1.jpg";
 import agentTrustImage from "../images/AgentTrust/2026-02-24_16-44-03.png";
 import pyrasImage from "../images/Pyras/pyras1.png";
+import veridexImage from "../images/veridex/veridex1.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -42,12 +43,12 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras"],
+      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       hardware: ["raspi", "bike", "pyras"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras"],
-      web3: ["youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras"],
+      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
+      web3: ["youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
       hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
-      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras"],
+      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
       oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
     }),
@@ -56,6 +57,18 @@ function Projects() {
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "veridex",
+        title: "Veridex - Trust Layer for AI Agent Commerce",
+        image: veridexImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://veridex.sbs",
+        description:
+          "Trust middleware for AI agents. Every action checked before it runs and written to Hedera HCS — pre-execution gate, AES-256-GCM encrypted audit trail, replayable trust scores, operator policies, and ERC-7715 wallet-scoped permissions. 17 agents monitored, 3,900+ actions logged.",
+        link: "/projects/veridex",
+        tags: ["Hedera", "Node.js", "Next.js", "Solidity", "AI Agents", "Web3"],
+      },
       {
         id: "pyras",
         title: "Pyras - Blockchain Infrastructure Platform",
@@ -74,9 +87,8 @@ function Projects() {
         image: agentTrustImage,
         year: "2026",
         status: "live",
-        liveUrl: "https://www.agenttrust.life/",
         description:
-          "Cryptographically verifiable, escrow-weighted reputation infrastructure for autonomous AI agents. Built at ETHDenver 2026 on Hedera. Agents hire each other, escrow HBAR, deliver work, and rate each other — all on-chain with ungameable reputation scoring.",
+          "Merged into Veridex. Cryptographically verifiable, escrow-weighted reputation infrastructure for autonomous AI agents. Built at ETHDenver 2026 on Hedera. Agents hire each other, escrow HBAR, deliver work, and rate each other — all on-chain with ungameable reputation scoring.",
         link: "/projects/agenttrust",
         tags: ["Solidity", "Hedera", "Node.js", "Next.js", "AI Agents", "Web3"],
         hackathon: true,
