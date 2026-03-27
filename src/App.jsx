@@ -31,6 +31,8 @@ import Jaeger from "./Pages/jaeger";
 import AgentTrust from "./Pages/agenttrust";
 import Pyras from "./Pages/pyras";
 import Veridex from "./Pages/veridex";
+import BlogIndex from "./Pages/Blog/BlogIndex";
+import BlogPost from "./Pages/Blog/BlogPost";
 // import Langnav from "./Pages/langnav";
 import {
   AnimationProvider,
@@ -170,6 +172,8 @@ function AppContent() {
             <Route path="/projects/agenttrust" element={<AgentTrust />} />
             <Route path="/projects/pyras" element={<Pyras />} />
             <Route path="/projects/veridex" element={<Veridex />} />
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/ai" element={<AILounge />} />
             <Route path="/freemoney" element={<FreeMoney />} />
             <Route path="/admin" element={<Admin />} />

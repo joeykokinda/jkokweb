@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+.bp-page {
+  min-height: 100vh;
+  background: #111;
+  font-family: "Space Grotesk", -apple-system, sans-serif;
+  position: relative;
+  color: #fff;
+}
+
+/* ── Nav ── */
+.bp-nav {
+  position: relative;
+  z-index: 10;
+  padding: 24px 40px;
+}
+
+.bp-nav-link {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.bp-nav-link:hover { color: #fff; }
+
+/* ── Main ── */
+.bp-main {
+  position: relative;
+  z-index: 10;
+  padding: 40px 40px 96px;
+}
+
+.bp-article {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Date ── */
+.bp-date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #22c55e;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* ── Title ── */
+.bp-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 48px 0;
+}
+
+/* ── Content ── */
+.bp-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.bp-content p {
+  margin: 0 0 24px 0;
+  color: #fff;
+}
+
+/* Code block — Claude-style */
+.bp-content .code-block {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 0 0 24px 0;
+  font-family: "SF Mono", "Fira Code", Menlo, monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #e6edf3;
+}
+
+.bp-content .code-block.output {
+  background: #050d05;
+  border-color: #1a2e1a;
+}
+
+.bp-content .code-block code {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+/* Inline code */
+.bp-content code {
+  font-family: "SF Mono", "Fira Code", Menlo, monospace;
+  font-size: 0.85em;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .bp-main { padding: 28px 24px 72px; }
+  .bp-nav  { padding: 20px 24px; }
+  .bp-title { font-size: 1.5rem; }
+}
