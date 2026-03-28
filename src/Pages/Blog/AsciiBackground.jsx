@@ -28,10 +28,10 @@ function AsciiBackground() {
     };
 
     const draw = () => {
-      ctx.fillStyle = "#111";
+      ctx.fillStyle = "#080808";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${FONT_SIZE}px "Courier New", monospace`;
-      ctx.fillStyle = "rgba(255,255,255,0.07)";
+      ctx.fillStyle = "rgba(255,255,255,0.03)";
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
           ctx.fillText(grid[r][c], c * COL_W, (r + 1) * FONT_SIZE);
