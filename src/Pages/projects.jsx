@@ -73,6 +73,18 @@ function Projects() {
         tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Python", "AI"],
       },
       {
+        id: "omenswap",
+        title: "OmenSwap - Non-Custodial Swaps for Agents and Humans",
+        image: omenswapImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://omenswap.com",
+        description:
+          "Non-custodial crypto swaps for AI agents and humans. No accounts, no KYC, no custody — send from your own wallet to a one-time CREATE2 deposit address and OmenSwap pays out your destination on-chain. One Go backend behind five interfaces: web app, no-JS mirror, SSH TUI, a native MCP server for agents, and a plain HTTP API. Swaps ETH, BTC, XMR, USDC, USDT, SOL and Polygon.",
+        link: "/projects/omenswap",
+        tags: ["Go", "React", "Foundry", "MCP", "AI Agents", "Web3"],
+      },
+      {
         id: "ward",
         title: "WARD - Autonomous On-Chain Repair Settlement",
         image: wardImage,
@@ -84,18 +96,6 @@ function Projects() {
         link: "/projects/ward",
         tags: ["ERC-8183", "Arc", "Chainlink CRE", "ENS", "Solidity", "Web3"],
         hackathon: true,
-      },
-      {
-        id: "omenswap",
-        title: "OmenSwap - Non-Custodial Swaps for Agents and Humans",
-        image: omenswapImage,
-        year: "2026",
-        status: "live",
-        liveUrl: "https://omenswap.com",
-        description:
-          "Non-custodial crypto swaps for AI agents and humans. No accounts, no KYC, no custody — send from your own wallet to a one-time CREATE2 deposit address and OmenSwap pays out your destination on-chain. One Go backend behind five interfaces: web app, no-JS mirror, SSH TUI, a native MCP server for agents, and a plain HTTP API. Swaps ETH, BTC, XMR, USDC, USDT, SOL and Polygon.",
-        link: "/projects/omenswap",
-        tags: ["Go", "React", "Foundry", "MCP", "AI Agents", "Web3"],
       },
       {
         id: "veridex",
