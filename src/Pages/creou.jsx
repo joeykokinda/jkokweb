@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
 import creou1 from "../images/Creou/landing.png";
-import creou2 from "../images/Creou/style-editorial.jpg";
-import creou3 from "../images/Creou/style-diary.jpg";
-import creou4 from "../images/Creou/style-neon.jpg";
-import creou5 from "../images/Creou/style-magazine.jpg";
+import creou2 from "../images/Creou/cloner.png";
+import creou3 from "../images/Creou/studio.png";
+import creou4 from "../images/Creou/editor.png";
+import creou5 from "../images/Creou/editor2.png";
 
 function Creou() {
   const [lightboxImage, setLightboxImage] = useState(null);

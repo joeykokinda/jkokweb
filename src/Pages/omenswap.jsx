@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
-import omenswapOg from "../images/OmenSwap/og.png";
 import omenswapHome from "../images/OmenSwap/home.png";
-import omenswapDocs from "../images/OmenSwap/docs.png";
 import omenswapTerminal from "../images/OmenSwap/terminal.png";
-import omenswapLogo from "../images/OmenSwap/logo.png";
+import omenswapDocs from "../images/OmenSwap/docs.png";
+import omenswapPools from "../images/OmenSwap/pools.png";
+import omenswapOg from "../images/OmenSwap/og.png";
 
 function Omenswap() {
   const [lightboxImage, setLightboxImage] = useState(null);
 
   const images = [
-    omenswapOg,
     omenswapHome,
-    omenswapDocs,
     omenswapTerminal,
-    omenswapLogo,
+    omenswapDocs,
+    omenswapPools,
+    omenswapOg,
   ];
 
   return (
