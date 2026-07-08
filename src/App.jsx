@@ -31,6 +31,9 @@ import Jaeger from "./Pages/jaeger";
 import AgentTrust from "./Pages/agenttrust";
 import Pyras from "./Pages/pyras";
 import Veridex from "./Pages/veridex";
+import Creou from "./Pages/creou";
+import Ward from "./Pages/ward";
+import Omenswap from "./Pages/omenswap";
 import BlogIndex from "./Pages/Blog/BlogIndex";
 import BlogPost from "./Pages/Blog/BlogPost";
 // import Langnav from "./Pages/langnav";
@@ -172,6 +175,9 @@ function AppContent() {
             <Route path="/projects/agenttrust" element={<AgentTrust />} />
             <Route path="/projects/pyras" element={<Pyras />} />
             <Route path="/projects/veridex" element={<Veridex />} />
+            <Route path="/projects/creou" element={<Creou />} />
+            <Route path="/projects/ward" element={<Ward />} />
+            <Route path="/projects/omenswap" element={<Omenswap />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/ai" element={<AILounge />} />

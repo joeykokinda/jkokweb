@@ -22,6 +22,9 @@ import jaegerImage from "../images/Jaeger/jaeger1.jpg";
 import agentTrustImage from "../images/AgentTrust/2026-02-24_16-44-03.png";
 import pyrasImage from "../images/Pyras/pyras1.png";
 import veridexImage from "../images/veridex/veridex1.png";
+import creouImage from "../images/Creou/landing.png";
+import wardImage from "../images/Ward/00-intro.png";
+import omenswapImage from "../images/OmenSwap/og.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -43,20 +46,57 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
+      website: ["creou", "ward", "omenswap", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       hardware: ["raspi", "bike", "pyras"],
-      software: ["promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
-      web3: ["youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
-      hackathon: ["unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
-      active: ["promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
+      software: ["creou", "ward", "omenswap", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
+      web3: ["ward", "omenswap", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
+      hackathon: ["ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
+      active: ["creou", "ward", "omenswap", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
-      oneTime: ["meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
+      oneTime: ["ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
     }),
     [],
   );
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "creou",
+        title: "Creou - AI UGC Platform for Creators",
+        image: creouImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://creou.vercel.app",
+        description:
+          "AI UGC platform for faceless creators. Pick a niche and Creou turns out native, TikTok-style slideshow posts your audience actually saves — no camera, no face, no shoot. Generate style-locked slideshow decks, clone viral formats into editable blueprints, schedule posts, and track save rate. One Next.js app on Supabase with a self-hosted Python generation worker running Claude, GPT-Image-2, and Gemini.",
+        link: "/projects/creou",
+        tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Python", "AI"],
+      },
+      {
+        id: "ward",
+        title: "WARD - Autonomous On-Chain Repair Settlement",
+        image: wardImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://web-nine-ashen-75.vercel.app",
+        description:
+          "Rails for an autonomous system to hire and pay a verified human for physically-verifiable work, settled on-chain. A home agent fixes what it can in software; when the fault is physical it hires a worker via ENS and releases USDC the moment a Chainlink CRE workflow attests the repair. A working implementation of ERC-8183, running end-to-end on Arc testnet.",
+        link: "/projects/ward",
+        tags: ["ERC-8183", "Arc", "Chainlink CRE", "ENS", "Solidity", "Web3"],
+        hackathon: true,
+      },
+      {
+        id: "omenswap",
+        title: "OmenSwap - Non-Custodial Swaps for Agents and Humans",
+        image: omenswapImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://omenswap.com",
+        description:
+          "Non-custodial crypto swaps for AI agents and humans. No accounts, no KYC, no custody — send from your own wallet to a one-time CREATE2 deposit address and OmenSwap pays out your destination on-chain. One Go backend behind five interfaces: web app, no-JS mirror, SSH TUI, a native MCP server for agents, and a plain HTTP API. Swaps ETH, BTC, XMR, USDC, USDT, SOL and Polygon.",
+        link: "/projects/omenswap",
+        tags: ["Go", "React", "Foundry", "MCP", "AI Agents", "Web3"],
+      },
       {
         id: "veridex",
         title: "Veridex - Trust Layer for AI Agent Commerce",
