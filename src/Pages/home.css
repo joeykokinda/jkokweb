@@ -62,6 +62,36 @@
   line-height: 1.35;
 }
 
+/* Recent experience block */
+.home-recent {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.home-recent-body {
+  flex: 1;
+}
+
+.home-recent-role {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  font-size: clamp(0.92rem, 3.6vw, 1.02rem);
+  font-weight: 600;
+}
+
+.home-recent-dates {
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.home-recent-desc {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(0.84rem, 3.3vw, 0.94rem);
+  line-height: 1.55;
+}
+
 /* Text link rows */
 .home-links {
   display: flex;

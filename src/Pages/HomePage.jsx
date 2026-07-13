@@ -89,6 +89,30 @@ function HomePage() {
 
         <hr className="home-divider" />
 
+        <div className="home-recent">
+          <span className="home-links-label">RECENT</span>
+          <div className="home-recent-body">
+            <p className="home-recent-role">
+              AI Pipeline Intern &middot;{" "}
+              <a
+                href="https://10x.so"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link"
+              >
+                10x
+              </a>{" "}
+              <span className="home-recent-dates">(May&ndash;Jul 2026)</span>
+            </p>
+            <p className="home-recent-desc">
+              Built an AI pipeline generating slideshow &amp; video content across
+              many personas to promote the company&apos;s app at scale.
+            </p>
+          </div>
+        </div>
+
+        <hr className="home-divider" />
+
         <div className="home-links">
           <span className="home-links-label">PAGES</span>
           <LinkRow items={pageLinks} />

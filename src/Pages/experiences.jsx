@@ -6,6 +6,30 @@ function Experiences() {
   return (
     <div className="experienceBox">
       <div className="experienceContent">
+        <h3>
+          <a
+            href="https://10x.so"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+          >
+            10x
+          </a>{" "}
+          (AI Growth)
+        </h3>
+        <span className="experience-role">
+          AI Pipeline Intern | May 2026 – Jul 2026
+        </span>
+        <ul className="experience-list">
+          <li>Built an AI content pipeline to promote the company's app at scale, generating native slideshow and short-form video posts automatically across a large number of accounts</li>
+          <li>Engineered bulk multi-account production with a consistent persona and avatar per account, each tailored to its niche</li>
+          <li>Automated the full create-to-publish flow so campaigns could scale without manual content work</li>
+        </ul>
+      </div>
+
+      <div className="experience-divider"></div>
+
+      <div className="experienceContent">
         <h3>Turtosa (Enterprise LLM Portal)</h3>
         <span className="experience-role">
           Co-Founder | July 2025 – Present
