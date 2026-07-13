@@ -135,6 +135,10 @@ function HomePage() {
           >
             turtosa.com
           </a>
+          ,{" "}
+          <Link to="/projects" className="text-link">
+            projects
+          </Link>
           ). Most recently I placed 3rd in the AI agent bounty at the Hello Apex
           Hedera hackathon with{" "}
           <Link to="/projects/veridex" className="text-link">
