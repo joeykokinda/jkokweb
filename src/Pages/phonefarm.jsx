@@ -127,14 +127,37 @@ function PhoneFarm() {
             </section>
 
             <section className="project-section">
-              <h2>Remote Access</h2>
+              <h2>Always-On Host: Raspberry Pi</h2>
+              <p>
+                The whole farm is driven by a Raspberry Pi that sits on the same
+                wifi as the phones and stays powered 24/7, so the dashboard is
+                always up without tying up my main machine. The Pi runs the Node
+                server as a service, keeps the ADB connections alive, restarts
+                stalled tiles on its own, and fires the scheduled macros
+                server-side — so campaigns keep running even with every laptop
+                closed. It is basically a headless appliance: plug it in once and
+                the farm is online for good.
+              </p>
+            </section>
+
+            <section className="project-section">
+              <h2>Remote Access: Tailscale Mesh</h2>
               <p>
                 ADB has no auth or encryption, so the phones and their ADB ports
-                stay on the LAN only. The dashboard runs on an always-on Linux box
-                on the phones' wifi and is reached over Tailscale (WireGuard) —
-                nothing is exposed to the public internet. Since WebCodecs needs a
-                secure context, TLS is terminated over the tailnet so the decoder
-                works from anywhere.
+                stay on the LAN only. Instead of exposing anything to the public
+                internet, the Raspberry Pi and all my other machines join one
+                Tailscale (WireGuard) tailnet — a private mesh where every node
+                can reach every other node directly. From my main computer, my
+                laptop, or my phone anywhere in the world, I hit the Pi over its
+                tailnet address and the dashboard behaves exactly as if I were
+                sitting on the same wifi.
+              </p>
+              <p>
+                Because WebCodecs needs a secure context, TLS is terminated over
+                the tailnet (Tailscale serve), so the in-browser H.264 decoder
+                works from anywhere with a valid certificate and zero port
+                forwarding. The phones never leave the LAN; only the Pi is
+                reachable, and only to my own devices on the mesh.
               </p>
             </section>
 

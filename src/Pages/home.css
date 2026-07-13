@@ -47,6 +47,11 @@
   font-size: clamp(0.85rem, 3.5vw, 1rem);
 }
 
+.home-setup-link {
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
 .home-divider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.55);

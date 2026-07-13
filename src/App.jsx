@@ -36,6 +36,7 @@ import Creou from "./Pages/creou";
 import Ward from "./Pages/ward";
 import Omenswap from "./Pages/omenswap";
 import PhoneFarm from "./Pages/phonefarm";
+import CurrentSetup from "./Pages/CurrentSetup";
 import BlogIndex from "./Pages/Blog/BlogIndex";
 import BlogPost from "./Pages/Blog/BlogPost";
 // import Langnav from "./Pages/langnav";
@@ -74,6 +75,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/experience" element={<ExperienceEducation />} />
+            <Route path="/setup" element={<CurrentSetup />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contactcard" element={<ContactPageSimple />} />

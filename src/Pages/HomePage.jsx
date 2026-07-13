@@ -75,6 +75,11 @@ function HomePage() {
                 purdue university
               </a>
             </p>
+            <p className="home-sub home-setup-link">
+              <Link to="/setup" className="text-link">
+                see my current setup →
+              </Link>
+            </p>
           </div>
         </div>
 
