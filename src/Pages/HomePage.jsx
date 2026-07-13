@@ -81,7 +81,6 @@ function HomePage() {
         <hr className="home-divider" />
 
         <div className="home-tldr-block">
-          <span className="home-links-label">TLDR</span>
           <p className="home-about">
             Hey, im joey and im studying ai at purdue university.
           </p>
