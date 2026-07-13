@@ -40,7 +40,7 @@ html {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("./images/sunflowerbg.png");
+  background-image: url("./images/bgimage.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
