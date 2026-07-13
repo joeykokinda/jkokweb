@@ -81,15 +81,17 @@ function HomePage() {
         <hr className="home-divider" />
 
         <p className="home-about">
-          Hey, im joey and im studying ai at purdue university.
+          Hey, im joey and im studying ai at purdue university. today im focused
+          on ai agents and automation, always building with the best tech out
+          right now.
         </p>
         <p className="home-about-more">
-          I build at the intersection of ai agents, automation, crypto infra,
-          and embedded devices. I have experience running crypto infrastructure
-          like self hosted BTC, XMR, and ETH nodes and Solana tooling, building
-          AI agent security like onchain audit logging and guardrails, and full
-          stack development in Go, C, TypeScript, and Python. A lot of my recent
-          work is hardware that sits between AI agents and the actions they take.
+          I have experience across crypto infrastructure, AI agents, full stack
+          development, and embedded hardware. That means self hosted BTC, XMR,
+          and ETH nodes, agent tooling and automation, and building in Go, C,
+          TypeScript, and Python. I have shipped apps to the App Store, run my
+          own Ethereum infrastructure, and won 1st place in the Polymarket bounty
+          at the Midwest Blockchain Conference.
         </p>
 
         <hr className="home-divider" />
