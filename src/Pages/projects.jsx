@@ -25,6 +25,7 @@ import veridexImage from "../images/veridex/veridex1.png";
 import creouImage from "../images/Creou/landing.png";
 import wardImage from "../images/Ward/00-intro.png";
 import omenswapImage from "../images/OmenSwap/og.png";
+import phonefarmImage from "../images/PhoneFarm/phonefarm-dashboard.png";
 
 function Projects() {
   const navigate = useNavigate();
@@ -45,11 +46,11 @@ function Projects() {
     () => ({
       all: [],
       website: ["creou", "ward", "omenswap", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
-      hardware: ["raspi", "bike", "pyras"],
-      software: ["creou", "ward", "omenswap", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
+      hardware: ["phonefarm", "raspi", "bike", "pyras"],
+      software: ["phonefarm", "creou", "ward", "omenswap", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
       web3: ["ward", "omenswap", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
       hackathon: ["ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
-      active: ["creou", "ward", "omenswap", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
+      active: ["phonefarm", "creou", "ward", "omenswap", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
       oneTime: ["ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
     }),
@@ -69,6 +70,16 @@ function Projects() {
           "AI UGC platform for faceless creators. Pick a niche and Creou turns out native, TikTok-style slideshow posts your audience actually saves — no camera, no face, no shoot. Generate style-locked slideshow decks, clone viral formats into editable blueprints, schedule posts, and track save rate. One Next.js app on Supabase with a self-hosted Python generation worker running Claude, GPT-Image-2, and Gemini.",
         link: "/projects/creou",
         tags: ["Next.js", "React", "TypeScript", "Supabase", "Stripe", "Python", "AI"],
+      },
+      {
+        id: "phonefarm",
+        title: "PhoneFarm - Android Fleet Dashboard",
+        image: phonefarmImage,
+        year: "2026",
+        description:
+          "A local web dashboard to monitor and control a fleet of 6+ Android phones from one machine over wireless ADB. Streams each screen live with scrcpy + WebCodecs, mirrors input to the whole fleet at once, and records macros that replay across every device on a schedule. Reached privately over Tailscale.",
+        link: "/projects/phonefarm",
+        tags: ["Node.js", "scrcpy", "WebCodecs", "ADB", "Automation", "Tailscale"],
       },
       {
         id: "omenswap",

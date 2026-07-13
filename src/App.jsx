@@ -35,6 +35,7 @@ import Veridex from "./Pages/veridex";
 import Creou from "./Pages/creou";
 import Ward from "./Pages/ward";
 import Omenswap from "./Pages/omenswap";
+import PhoneFarm from "./Pages/phonefarm";
 import BlogIndex from "./Pages/Blog/BlogIndex";
 import BlogPost from "./Pages/Blog/BlogPost";
 // import Langnav from "./Pages/langnav";
@@ -101,6 +102,7 @@ function AppContent() {
             <Route path="/projects/creou" element={<Creou />} />
             <Route path="/projects/ward" element={<Ward />} />
             <Route path="/projects/omenswap" element={<Omenswap />} />
+            <Route path="/projects/phonefarm" element={<PhoneFarm />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/ai" element={<AILounge />} />

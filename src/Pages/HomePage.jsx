@@ -80,20 +80,71 @@ function HomePage() {
 
         <hr className="home-divider" />
 
-        <p className="home-about">
-          Hey, im joey and im studying ai at purdue university.
-        </p>
-        <p className="home-tldr">
-          today im focused on ai agents and automation, always building with the
-          best tech out right now.
-        </p>
+        <div className="home-tldr-block">
+          <span className="home-links-label">TLDR</span>
+          <p className="home-about">
+            Hey, im joey and im studying ai at purdue university.
+          </p>
+          <p className="home-tldr">
+            today im focused on ai agents and automation, always building with
+            the best tech out right now.
+          </p>
+        </div>
+
         <p className="home-about-more">
           I have experience across crypto infrastructure, AI agents, full stack
-          development, and embedded hardware. That means self hosted BTC, XMR,
-          and ETH nodes, agent tooling and automation, and building in Go, C,
-          TypeScript, and Python. I have shipped apps to the App Store, run my
-          own Ethereum infrastructure, and won 1st place in the Polymarket bounty
-          at the Midwest Blockchain Conference.
+          development, and embedded hardware. That means self hosted BTC and XMR
+          nodes and my own Ethereum infra (
+          <a
+            href="https://pyras.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            pyras.org
+          </a>
+          ), agent tooling and automation (
+          <a
+            href="https://creou.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            creou.app
+          </a>
+          ,{" "}
+          <a
+            href="https://omenswap.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            omenswap.com
+          </a>
+          ), custom hardware (
+          <Link to="/projects/phonefarm" className="text-link">
+            see my phone farm project
+          </Link>
+          ), and building applications across all stacks (
+          <a
+            href="https://turtosa.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            turtosa.com
+          </a>
+          ). Most recently I placed 3rd in the AI agent bounty at the Hello Apex
+          Hedera hackathon with{" "}
+          <Link to="/projects/veridex" className="text-link">
+            Veridex
+          </Link>
+          , and won 1st place in the Polymarket bounty at the Midwest Blockchain
+          Conference with{" "}
+          <Link to="/projects/jaeger" className="text-link">
+            Jaeger
+          </Link>
+          .
         </p>
 
         <hr className="home-divider" />
