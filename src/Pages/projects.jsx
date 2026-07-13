@@ -543,7 +543,9 @@ function Projects() {
                     <span className="status-dot hackathon">Hackathon</span>
                   )}
                 </div>
-                <img src={project.image} alt={project.title} />
+                <div className="project-thumb">
+                  <img src={project.image} alt={project.title} />
+                </div>
                 <div className="project-info">
                   <div>
                     <h3>{project.title}</h3>

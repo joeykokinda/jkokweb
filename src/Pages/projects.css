@@ -99,36 +99,58 @@
   box-shadow: 0 16px 40px rgba(31, 111, 176, 0.22);
 }
 
-.project-card img {
+/* Thumbnail wrapper: stretches to the card's full height, no whitespace */
+.project-card {
+  min-height: 215px;
+}
+
+.project-thumb {
+  position: relative;
   width: 300px;
-  height: 230px;
   flex-shrink: 0;
-  align-self: flex-start;
-  object-fit: cover;
+  align-self: stretch;
+  overflow: hidden;
   border-right: var(--border);
+}
+
+.project-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.project-card:hover img {
+.project-card:hover .project-thumb img {
   transform: scale(1.03);
 }
 
-/* App icons + logo-style images: contained thumbnail on the left */
-.project-card[data-type="mobile-app"] img,
-.project-card[data-id="tools"] img,
-.project-card[data-id="unbolted"] img,
-.project-card[data-id="meta"] img,
-.project-card[data-id="raspi"] img,
-.project-card[data-id="bike"] img,
-.project-card[data-id="locallens"] img,
-.project-card[data-id="cosmos"] img,
-.project-card[data-id="block"] img {
-  width: 300px;
-  height: 230px;
-  padding: 24px;
+/* App icons + logo-style images: contained on a cream backing */
+.project-card[data-type="mobile-app"] .project-thumb,
+.project-card[data-id="tools"] .project-thumb,
+.project-card[data-id="unbolted"] .project-thumb,
+.project-card[data-id="meta"] .project-thumb,
+.project-card[data-id="raspi"] .project-thumb,
+.project-card[data-id="bike"] .project-thumb,
+.project-card[data-id="locallens"] .project-thumb,
+.project-card[data-id="cosmos"] .project-thumb,
+.project-card[data-id="block"] .project-thumb {
   background: var(--cream-2);
+}
+
+.project-card[data-type="mobile-app"] .project-thumb img,
+.project-card[data-id="tools"] .project-thumb img,
+.project-card[data-id="unbolted"] .project-thumb img,
+.project-card[data-id="meta"] .project-thumb img,
+.project-card[data-id="raspi"] .project-thumb img,
+.project-card[data-id="bike"] .project-thumb img,
+.project-card[data-id="locallens"] .project-thumb img,
+.project-card[data-id="cosmos"] .project-thumb img,
+.project-card[data-id="block"] .project-thumb img {
+  padding: 24px;
   object-fit: contain;
-  margin: 0;
 }
 
 .project-card[data-id="locallens"] iframe {
@@ -388,22 +410,16 @@
     flex-direction: column;
   }
 
-  .project-card img,
-  .project-card[data-type="mobile-app"] img,
-  .project-card[data-id="tools"] img,
-  .project-card[data-id="unbolted"] img,
-  .project-card[data-id="meta"] img,
-  .project-card[data-id="raspi"] img,
-  .project-card[data-id="bike"] img,
-  .project-card[data-id="locallens"] img,
-  .project-card[data-id="cosmos"] img,
-  .project-card[data-id="block"] img,
-  .project-card[data-id="locallens"] iframe {
+  .project-thumb {
     width: 100%;
     height: 200px;
-    min-height: 0;
+    align-self: stretch;
     border-right: none;
     border-bottom: var(--border);
+  }
+
+  .project-thumb img {
+    min-height: 0;
   }
 }
 
