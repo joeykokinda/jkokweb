@@ -81,7 +81,9 @@ function HomePage() {
         <hr className="home-divider" />
 
         <p className="home-about">
-          Hey, im joey and im studying ai at purdue university.
+          Hey, im joey and im studying ai at purdue university. today im focused
+          on ai agents and automation — always building with the best tech
+          out right now.
         </p>
 
         <hr className="home-divider" />
