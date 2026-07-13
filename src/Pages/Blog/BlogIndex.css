@@ -1,37 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
-
 .bi-page {
   min-height: 100vh;
-  background: #080808;
-  font-family: "Space Grotesk", -apple-system, sans-serif;
+  background: transparent;
   position: relative;
-  color: #fff;
+  color: var(--ink);
 }
-
-/* ── Nav ── */
-.bi-nav {
-  position: relative;
-  z-index: 10;
-  padding: 24px 40px;
-  display: flex;
-  align-items: center;
-}
-
-.bi-nav-link {
-  color: rgba(255, 255, 255, 0.55);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.15s;
-}
-
-.bi-nav-link:hover { color: #fff; }
 
 /* ── Main ── */
 .bi-main {
   position: relative;
   z-index: 10;
-  padding: 48px 40px 96px;
+  padding: 24px 40px 96px;
 }
 
 .bi-container {
@@ -42,51 +20,57 @@
 .bi-heading {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.03em;
-  margin: 0 0 56px 0;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 0 0 40px 0;
 }
 
 /* ── Post list ── */
 .bi-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 18px;
 }
 
 .bi-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  gap: 8px;
+  padding: 1.5rem 1.75rem;
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.bi-item:first-child {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+.bi-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .bi-date {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #22c55e;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--sun-soft);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  letter-spacing: 0.02em;
 }
 
 .bi-title {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #fff;
-  transition: opacity 0.15s;
+  color: var(--ink);
   line-height: 1.35;
 }
 
-.bi-item:hover .bi-title { opacity: 0.7; }
+.bi-item:hover .bi-title { color: var(--sky-deep); }
 
 @media (max-width: 600px) {
-  .bi-main { padding: 32px 24px 72px; }
-  .bi-nav  { padding: 20px 24px; }
+  .bi-main { padding: 16px 24px 72px; }
   .bi-heading { font-size: 1.8rem; }
 }

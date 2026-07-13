@@ -142,12 +142,12 @@ function GitHub() {
                     <h3 className="github-section-title">Contribution Activity</h3>
                     <div className="contribution-graph">
                         <img
-                            src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&theme=github-dark&bg_color=00000000&color=00ff00&line=00ff00&point=ffffff&area=true&hide_border=false&border_color=00ff00`}
+                            src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&bg_color=fffdf6&color=26331f&line=1f6fb0&point=f2a800&area=true&area_color=a9dcf7&title_color=1f6fb0&hide_border=false&border_color=f2a800`}
                             alt="GitHub Activity Graph"
                             className="contribution-activity"
                         />
                         <img
-                            src={`https://github-readme-streak-stats.herokuapp.com?user=${GITHUB_USERNAME}&theme=dark&background=00000000&border=00ff00&stroke=00ff00&ring=00ff00&fire=ffffff&currStreakNum=ffffff&sideNums=00ff00&currStreakLabel=00ff00&sideLabels=00ff00&dates=00ff00`}
+                            src={`https://github-readme-streak-stats.herokuapp.com?user=${GITHUB_USERNAME}&background=fffdf6&border=f2a800&stroke=1f6fb0&ring=f2a800&fire=f2a800&currStreakNum=26331f&sideNums=26331f&currStreakLabel=1f6fb0&sideLabels=55634c&dates=55634c`}
                             alt="GitHub Streak"
                             className="contribution-streak"
                         />
@@ -243,7 +243,7 @@ const getLanguageColor = (language) => {
         Dart: '#00B4AB',
         Shell: '#89e051',
         Dockerfile: '#384d54',
-        default: '#00ff00'
+        default: '#6fa83c'
     };
 
     return colors[language] || colors.default;

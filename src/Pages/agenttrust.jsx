@@ -129,7 +129,7 @@ function AgentTrust() {
           <div className="projectDetailsText">
             <section className="project-section">
               <h2>Overview</h2>
-              <p style={{ padding: "10px 14px", border: "1px solid rgba(0,255,0,0.3)", borderRadius: "4px", background: "rgba(0,255,0,0.05)", marginBottom: "16px" }}>
+              <p style={{ padding: "10px 14px", border: "var(--border)", borderRadius: "12px", background: "var(--sun-soft)", color: "var(--ink)", marginBottom: "16px" }}>
                 <strong>Note:</strong> AgentTrust has been merged into <Link to="/projects/veridex" className="inline-link">Veridex</Link> — the full trust layer for AI agent commerce, with pre-execution gating, HCS attestation, operator policies, and more.
               </p>
               <p>
@@ -176,7 +176,7 @@ function AgentTrust() {
               <p>
                 <strong>Escrow-weighted scoring formula:</strong>
               </p>
-              <pre style={{ background: "rgba(0,0,0,0.6)", padding: "12px", borderRadius: "4px", overflowX: "auto", fontSize: "13px", color: "#00ff00", border: "1px solid rgba(0,255,0,0.2)" }}>
+              <pre style={{ background: "var(--cream-2)", padding: "12px", borderRadius: "12px", overflowX: "auto", fontSize: "13px", color: "var(--ink)", border: "var(--border)" }}>
 {`delta = (rating - 500) * sqrt(jobValue) * scalingFactor
 newScore = clamp(oldScore + delta, 0, 1000)`}
               </pre>
@@ -254,19 +254,19 @@ newScore = clamp(oldScore + delta, 0, 1000)`}
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", fontFamily: "Courier New, monospace" }}>
                   <thead>
-                    <tr style={{ borderBottom: "1px solid rgba(0,255,0,0.3)" }}>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Contract</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>EVM Address</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Hedera ID</th>
+                    <tr style={{ borderBottom: "1px solid var(--sun-deep)" }}>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>Contract</th>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>EVM Address</th>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>Hedera ID</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                    <tr style={{ borderBottom: "1px solid rgba(38,51,31,0.1)" }}>
                       <td style={{ padding: "8px" }}>AgentIdentity</td>
                       <td style={{ padding: "8px", fontSize: "11px" }}>0x0874571bAfe20fC5F36759d3DD3A6AD44e428250</td>
                       <td style={{ padding: "8px" }}>0.0.7992394</td>
                     </tr>
-                    <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                    <tr style={{ borderBottom: "1px solid rgba(38,51,31,0.1)" }}>
                       <td style={{ padding: "8px" }}>AgentMarketplace</td>
                       <td style={{ padding: "8px", fontSize: "11px" }}>0x46e12242aEa85a1fa2EA5C769cd600fA64A434C6</td>
                       <td style={{ padding: "8px" }}>0.0.7992397</td>
@@ -296,7 +296,7 @@ newScore = clamp(oldScore + delta, 0, 1000)`}
 
             <section className="project-section">
               <h2>Architecture</h2>
-              <pre style={{ background: "rgba(0,0,0,0.6)", padding: "12px", borderRadius: "4px", overflowX: "auto", fontSize: "12px", color: "#00ff00", border: "1px solid rgba(0,255,0,0.2)" }}>
+              <pre style={{ background: "var(--cream-2)", padding: "12px", borderRadius: "12px", overflowX: "auto", fontSize: "12px", color: "var(--ink)", border: "var(--border)" }}>
 {`┌──────────────────────────────────────────────────────────┐
 │                  Hedera Testnet (EVM)                     │
 │                                                           │

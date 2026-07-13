@@ -1,57 +1,73 @@
+:root {
+  --sky: #2b93d6;
+  --sky-deep: #1f6fb0;
+  --sky-light: #a9dcf7;
+  --sun: #ffc21a;
+  --sun-deep: #f2a800;
+  --sun-soft: #ffe08a;
+  --cream: #fffdf6;
+  --cream-2: #fff7e6;
+  --leaf: #6fa83c;
+  --ink: #26331f;
+  --ink-soft: #55634c;
+  --white: #ffffff;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 10px 30px rgba(31, 111, 176, 0.15);
+  --shadow-sm: 0 4px 14px rgba(31, 111, 176, 0.12);
+  --border: 1px solid rgba(242, 168, 0, 0.35);
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  font-family: "Terminus", monospace;
-  color: #466646;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
+    Arial, sans-serif;
+  color: var(--ink);
   scroll-behavior: smooth;
 }
 
-.app-wrapper {
-  min-height: 100vh;
-}
-
-.container {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "navbar"
-    "content";
-  min-height: 100vh;
+/* Shared fixed sunflower background for the whole site */
+.app {
   position: relative;
-  z-index: 1;
-}
-
-.content {
-  grid-area: content;
-  overflow-y: auto;
-  background-color: rgba(8, 8, 8, 0.404);
-}
-
-.scrollable-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.scrollable-content section {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.seemore {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 15px;
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("./images/sunflowerbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.seemore:hover {
-  text-decoration: underline;
+/* Soft cream wash over the photo so cards/text stay readable */
+.app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 253, 246, 0.35) 0%,
+    rgba(255, 253, 246, 0.55) 45%,
+    rgba(255, 253, 246, 0.7) 100%
+  );
+}
+
+a {
+  color: var(--sky-deep);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--sun-deep);
 }
 
 /* Scrollbar Styling */
@@ -60,54 +76,49 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: rgba(169, 220, 247, 0.35);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00ff00;
+  background: var(--sun);
   border-radius: 10px;
-  border: 2px solid #000000;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00cc00;
+  background: var(--sun-deep);
+  background-clip: padding-box;
 }
 
-/* For Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #00ff00 #000000;
+  scrollbar-color: var(--sun) rgba(169, 220, 247, 0.35);
 }
 
-/* Animation disabled states */
-.animations-disabled {
-  background-color: black !important;
-  color: white !important;
+/* Shared back button used on every inner page */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  color: var(--sky-deep);
+  border: 1.5px solid var(--sky);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-#matrix-canvas {
-  background-color: black;
-}
-
-.animations-disabled a,
-.animations-disabled .seemore,
-.animations-disabled .underline-link,
-.animations-disabled .download-link {
-  color: #00ff00 !important;
-}
-
-.animations-disabled .terminalBox {
-  background-color: #111 !important;
-  border-color: #00ff00 !important;
-}
-
-.animations-disabled .terminalHeader {
-  background-color: #222 !important;
-}
-
-.animations-disabled .terminalContent {
-  color: #00ff00 !important;
+.back-btn:hover {
+  background: var(--sky-light);
+  color: var(--sky-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Responsive Design */

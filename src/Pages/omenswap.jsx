@@ -153,7 +153,7 @@ function Omenswap() {
                 Agents call typed tools instead of scraping HTTP. Point any MCP client (Claude Code, Cursor, custom) at one URL:
               </p>
               <div style={{ overflowX: "auto" }}>
-                <pre style={{ fontSize: "13px", fontFamily: "Courier New, monospace", color: "#00ff00", background: "rgba(0,0,0,0.4)", padding: "12px", borderRadius: "4px" }}>
+                <pre style={{ fontSize: "13px", fontFamily: "Courier New, monospace", color: "var(--ink)", background: "var(--cream-2)", padding: "12px", borderRadius: "12px", border: "var(--border)" }}>
 {`{
   "mcpServers": {
     "omenswap": { "url": "https://mcp.omenswap.com" }

@@ -3,50 +3,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  overflow: hidden; /* Prevent scrolling */
+  background: transparent;
+  padding: 1.5rem;
+  box-sizing: border-box;
 }
 
 .contact-container {
+  position: relative;
   width: 90%;
   max-width: 600px;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid #00ff00;
-  border-radius: 10px;
-  padding: 2rem;
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem 2rem;
   text-align: center;
-  color: #00ff00;
-  font-family: "Courier New", monospace;
+  color: var(--ink);
 }
 
 .contact-back-button {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid #00ff00;
-  background: transparent;
-  color: #00ff00;
-  text-decoration: none;
-  font-family: "Courier New", monospace;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.contact-back-button:hover {
-  background-color: #00ff00;
-  color: black;
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
 }
 
 .contact-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  margin: 0.5rem 0 1rem;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .contact-description {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 2rem;
-  color: #00ff00;
+  color: var(--ink-soft);
+  line-height: 1.6;
 }
 
 .contact-details {
@@ -60,16 +52,28 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: var(--ink);
 }
 
 .contact-icon {
-  color: #00ff00;
+  color: var(--sun-deep);
+}
+
+.contact-link {
+  color: var(--sky-deep);
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: var(--sun-deep);
+  text-decoration: underline;
 }
 
 .contact-subtitle {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .contact-social-links {
@@ -79,10 +83,11 @@
 }
 
 .contact-social-link {
-  color: #00ff00;
-  transition: transform 0.3s ease;
+  color: var(--sky-deep);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .contact-social-link:hover {
+  color: var(--sun-deep);
   transform: scale(1.1);
 }

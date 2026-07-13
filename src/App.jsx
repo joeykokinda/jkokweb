@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import HomePage from "./Pages/HomePage";
+import ExperienceEducation from "./Pages/ExperienceEducation";
 import Resume from "./Pages/resume";
 import Scout from "./Pages/scout";
 import Raspi from "./Pages/raspi";
@@ -37,85 +38,8 @@ import Omenswap from "./Pages/omenswap";
 import BlogIndex from "./Pages/Blog/BlogIndex";
 import BlogPost from "./Pages/Blog/BlogPost";
 // import Langnav from "./Pages/langnav";
-import {
-  AnimationProvider,
-  useAnimationContext,
-} from "./Pages/animationContext";
-import Navbar from "./Pages/navbar";
-// import IntroAnimation from "./Pages/IntroAnimation";
 import ScrollRestoration from "./Pages/scrollToTop";
 import "./App.css";
-
-function MatrixBackground() {
-  const { isAnimationDisabled } = useAnimationContext();
-
-  useEffect(() => {
-    if (isAnimationDisabled) return;
-
-    const canvas = document.getElementById("matrix-canvas");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const katakana =
-      "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-    const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const nums = "0123456789";
-    const alphabet = katakana + latin + nums;
-
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const rainDrops = Array.from({ length: columns }).fill(1);
-
-    const draw = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.116)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "rgba(0, 255, 0, 0.199)";
-      ctx.font = fontSize + "px monospace";
-
-      for (let i = 0; i < rainDrops.length; i++) {
-        const text = alphabet.charAt(
-          Math.floor(Math.random() * alphabet.length),
-        );
-        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-
-        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          rainDrops[i] = 0;
-        }
-        rainDrops[i]++;
-      }
-    };
-
-    const interval = setInterval(draw, 60);
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isAnimationDisabled]);
-
-  return (
-    <canvas
-      id="matrix-canvas"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: -1,
-        display: isAnimationDisabled ? "none" : "block",
-      }}
-    />
-  );
-}
 
 function AppContent() {
   // const [showIntro, setShowIntro] = useState(() => {
@@ -144,12 +68,11 @@ function AppContent() {
         <IntroAnimation onComplete={handleIntroComplete} />
       ) : ( */}
         <>
-          <MatrixBackground />
-          <Navbar />
           <ScrollRestoration />
           {/* <Langnav /> */}
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/experience" element={<ExperienceEducation />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contactcard" element={<ContactPageSimple />} />
@@ -195,9 +118,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <AnimationProvider>
-          <AppContent />
-        </AnimationProvider>
+        <AppContent />
       </Router>
     </HelmetProvider>
   );

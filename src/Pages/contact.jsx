@@ -13,8 +13,8 @@ function ContactPage() {
   return (
     <div className="contact-page">
       <div className="contact-container">
-        <Link to="/" className="contact-back-button">
-          Back
+        <Link to="/" className="back-btn contact-back-button">
+          ← Back
         </Link>
         <h1 className="contact-title">Contact Me</h1>
         <p className="contact-description">

@@ -1,334 +1,167 @@
 .home-page {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.home-card {
   width: 100%;
-  color: #00ff00;
+  max-width: 720px;
+  background: rgba(255, 253, 246, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
 }
 
-.section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-
-.intro-section {
-  padding: 3.5rem 1rem;
-  padding-top: 3rem;
-}
-
-.content-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
+/* Intro row: avatar + name/socials */
+.home-intro {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  position: relative; /* Add this */
-}
-
-.text-content {
-  flex: 1;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin: 0 0 1rem 0;
-  font-weight: normal;
-  color: #ffffff;
-}
-
-p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  color: #00ff00;
-}
-
-.link {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  color: #ffffff;
-}
-
-.social-links {
-  display: flex;
+  align-items: center;
   gap: 1.5rem;
-  margin-top: 1.5rem;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
 }
 
-.social-link {
-  color: #00ff00;
-  text-decoration: none;
-  padding: 10px;
-  border: 1px solid #00ff00;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-}
-
-.social-link:hover {
-  background: #00ff00;
-  color: black;
-}
-
-.resume {
-  color: #00ff00;
-  text-decoration: none;
-  padding: 12px;
-  border: 1px solid #00ff00;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-.profile-section {
-  position: relative;
-  width: 150px;
-  height: 150px;
+.home-avatar {
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  border: none; /* removed border since sphere will go around it */
-  overflow: visible; /* changed from hidden to allow sphere to show outside */
+  object-fit: cover;
+  border: 3px solid var(--sun);
+  box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
 
-.profile-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #00ff00;
+.home-intro-text h1 {
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 700;
+}
+
+.home-tagline {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.home-tagline a {
+  color: var(--sky-deep);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-tagline a:hover {
+  color: var(--sun-deep);
+}
+
+.home-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-socials a {
+  color: var(--sky-deep);
+  display: inline-flex;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.home-socials a:hover {
+  color: var(--sun-deep);
+  transform: translateY(-2px);
+}
+
+.home-about {
+  margin: 1.75rem 0 0;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+/* Nav link cards */
+.home-nav {
+  margin-top: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.home-nav-card {
   position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--white);
+  border: 1.5px solid var(--sky-light);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.toggle-animations {
-  display: block;
-  margin: 2rem auto 0;
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #00ff00;
-  color: #00ff00;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.3s ease;
+.home-nav-card:hover {
+  border-color: var(--sun);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
-.toggle-animations:hover {
-  background: #00ff00;
-  color: black;
+.home-nav-label {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
-.animations-disabled {
-  background: black;
+.home-nav-desc {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
 }
 
-.animations-disabled .section {
-  background: black;
+.home-nav-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  color: var(--sun-deep);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    flex-direction: column-reverse;
-    align-items: center;
+.home-nav-card:hover .home-nav-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* First card (Projects) spans full width as the primary destination */
+.home-nav-card:first-child {
+  grid-column: 1 / -1;
+  background: var(--sun-soft);
+  border-color: var(--sun);
+}
+
+@media (max-width: 600px) {
+  .home-card {
+    padding: 1.75rem 1.35rem;
+  }
+
+  .home-intro {
+    flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
 
-  .profile-section {
-    margin-bottom: 2rem;
-  }
-
-  .social-links {
+  .home-socials {
     justify-content: center;
   }
 
-  .ascii-art {
-    font-size: 12px;
-    text-align: center;
-    margin: 0 auto 2rem auto;
-    max-width: 100%;
-    overflow-x: auto;
+  .home-nav {
+    grid-template-columns: 1fr;
   }
 
-  .text-content {
-    width: 100%;
+  .home-nav-arrow {
+    display: none;
   }
-}
-
-@media (max-width: 480px) {
-  .ascii-art {
-    font-size: 10px;
-  }
-}
-
-.skills-section {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-
-.skills-section h2 {
-  color: #00ff00;
-  font-size: 2rem;
-  font-weight: normal;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
-  gap: 1rem;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.skill-item img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.aboutBox {
-  background-color: rgba(0, 0, 0, 0.925); /* Same as terminalBox */
-  border: 1px solid #00ff00;
-  border-radius: 5px;
-  overflow: hidden;
-  font-family: "robot", "Courier New", monospace;
-  color: #00ff00;
-  display: flex;
-  flex-direction: column;
-  max-width: 800px; /* Ensure same width */
-  margin: 20px auto;
-}
-
-.aboutBox .terminalHeader {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 8px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #00ff00;
-}
-
-.aboutBox .terminalTitle {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.aboutBox .terminalControls {
-  display: flex;
-  gap: 5px;
-}
-
-.aboutBox .terminalControl {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #00ff00;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  cursor: not-allowed;
-}
-
-.aboutBox .terminalContent {
-  padding: 15px;
-  line-height: 1.6;
-  word-wrap: break-word;
-  color: #00ff00;
-}
-
-.whiteText {
-  color: #ffffff; /* White color */
-}
-
-.sphere-container {
-  position: absolute;
-  width: 300px; /* doubled the size to contain the orbit */
-  height: 300px;
-  top: -75px; /* center around profile */
-  left: -75px; /* center around profile */
-  z-index: 1;
-  overflow: visible;
-  background: transparent;
-}
-
-.full-width {
-  max-width: none;
-  padding: 2rem 1rem;
-}
-
-.projects-terminal {
-  width: 80%; /* changed from 98% */
-  max-width: 1800px;
-  margin: 20px auto;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* force 3 columns */
-  gap: 25px; /* increased gap */
-  padding: 25px;
-}
-
-.project-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.projects-title {
-  color: #00ff00;
-  font-size: 2.5rem;
-  font-weight: normal;
-
-  text-align: center;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .project-grid {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-  }
-
-  .projects-terminal {
-    width: 95%; /* wider on mobile */
-  }
-
-  .project-card img {
-    height: 180px; /* slightly smaller images on mobile */
-  }
-}
-
-.first-line {
-  font-family: "MyFont", monospace;
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 1rem;
 }

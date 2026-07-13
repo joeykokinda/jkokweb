@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AsciiBackground from "./AsciiBackground";
 import { posts } from "./posts";
 import "./BlogIndex.css";
 
 function BlogIndex() {
   return (
     <div className="bi-page">
-      <AsciiBackground />
-
-      <nav className="bi-nav">
-        <Link to="/" className="bi-nav-link">← home</Link>
-      </nav>
+      <Link to="/" className="back-btn">← Back</Link>
 
       <main className="bi-main">
         <div className="bi-container">

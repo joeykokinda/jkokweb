@@ -5,15 +5,6 @@ import "./experiences.css";
 function Experiences() {
   return (
     <div className="experienceBox">
-      <div className="experienceHeader">
-        <span className="terminalTitle">C:\Users\Experiences&gt;</span>
-        <div className="terminalControls">
-          <span className="terminalControl">−</span>
-          <span className="terminalControl">□</span>
-          <span className="terminalControl">×</span>
-        </div>
-      </div>
-
       <div className="experienceContent">
         <h3>Turtosa (Enterprise LLM Portal)</h3>
         <span className="experience-role">

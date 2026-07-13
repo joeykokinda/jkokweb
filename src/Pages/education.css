@@ -1,82 +1,9 @@
-.education-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.education-card {
-  display: flex;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid #00ff00;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.education-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-}
-
-.education-logo {
-  flex: 0 0 120px;
-  /* Increased from 80px to 120px */
-  margin-right: 20px;
-}
-
-.education-logo img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: white;
-  /* Add white background for the Purdue logo */
-  padding: 10px;
-  /* Add some padding to give the logo some breathing room */
-}
-
-.education-details {
-  flex: 1;
-}
-
-.education-details h3 {
-  color: #ffffff;
-  margin: 0 0 10px 0;
-  font-size: 1.5rem;
-}
-
-.education-details p {
-  margin: 5px 0;
-  color: #00ff00;
-}
-
-.education-details .degree {
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.education-details .duration {
-  font-style: italic;
-  color: #cccccc;
-  font-size: 0.9rem;
-}
-
-.education-details .activities {
-  margin-top: 10px;
-  line-height: 1.5;
-}
-
 .educationBox {
-  background-color: rgba(0, 0, 0, 0.925);
-  border: 1px solid #00ff00;
-  border-radius: 5px;
-  font-family: "Courier New", monospace;
-  color: #00ff00;
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   max-width: 800px;
@@ -84,36 +11,8 @@
   overflow: hidden;
 }
 
-.educationHeader {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 8px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #00ff00;
-}
-
-.terminalTitle {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.terminalControls {
-  display: flex;
-  gap: 5px;
-}
-
-.terminalControl {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #00ff00;
-  border-radius: 50%;
-  font-size: 10px;
-  cursor: not-allowed;
-}
-
 .educationContent {
-  padding: 15px;
+  padding: 1.5rem 2rem;
   line-height: 1.6;
 }
 
@@ -123,6 +22,20 @@
   align-items: flex-start;
 }
 
+.education-logo {
+  flex: 0 0 120px;
+}
+
+.education-logo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: var(--border);
+  background-color: var(--white);
+  padding: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
 .education-info {
   flex: 1;
 }
@@ -130,20 +43,22 @@
 .education-info h3 {
   margin: 0;
   font-size: 1.4rem;
-  color: #ffffff;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .education-degree {
   display: block;
   font-size: 1rem;
-  color: #ffffff;
+  font-weight: 600;
+  color: var(--sky-deep);
   margin-bottom: 5px;
 }
 
 .education-duration {
   display: block;
   font-style: italic;
-  color: #cccccc;
+  color: var(--ink-soft);
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
@@ -151,80 +66,66 @@
 .education-activities {
   margin: 10px 0;
   line-height: 1.5;
+  color: var(--ink-soft);
 }
 
 .education-divider {
   height: 1px;
-  background-color: #00ff00;
+  background-color: var(--sun-soft);
   margin: 25px 0;
   width: 100%;
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .educationFooter {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 10px;
-  border-top: 1px solid #00ff00;
+  background: var(--cream-2);
+  padding: 1rem 2rem;
+  border-top: var(--border);
   text-align: center;
 }
 
 .contact-text {
   margin: 0;
-  color: #00ff00;
+  color: var(--ink-soft);
 }
 
 .contact-link {
-  color: #ffffff;
+  color: var(--sky-deep);
   text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--sun-deep);
 }
 
 /* Media Queries for Responsive Layout */
 @media (max-width: 768px) {
-  .education-card {
-    flex-direction: column;
-    padding: 15px;
-  }
-
   .education-logo {
-    margin-right: 0;
-    margin-bottom: 15px;
     max-width: 100px;
-    /* Center the logo container */
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
-    /* Add more space at the top */
   }
 
   .education-logo img {
-    /* Center the image within the container */
     display: block;
     margin: 0 auto;
     max-width: 80%;
     margin-top: 10px;
-    /* Move image down */
-  }
-
-  .education-details h3 {
-    font-size: 1.2rem;
   }
 
   .education-item {
     flex-direction: column;
     align-items: flex-start;
-    /* Left align instead of center */
     text-align: left;
-    /* Left align text */
     padding: 0 10px;
-    /* Add some padding */
   }
 
   .education-info {
     width: 100%;
     text-align: left;
-    /* Left align all text in the info section */
     margin-top: 15px;
-    /* Add space between logo and info */
   }
 
   .education-info h3 {
@@ -249,7 +150,7 @@
   }
 
   .educationContent {
-    padding: 10px;
+    padding: 1rem;
   }
 
   .education-divider {
@@ -257,7 +158,7 @@
   }
 
   .educationFooter {
-    padding: 8px;
+    padding: 0.75rem 1rem;
     font-size: 0.9rem;
   }
 }

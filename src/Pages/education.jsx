@@ -7,15 +7,6 @@ import "./education.css";
 function Education() {
   return (
     <div className="educationBox">
-      <div className="educationHeader">
-        <span className="terminalTitle">C:\Users\Education&gt;</span>
-        <div className="terminalControls">
-          <span className="terminalControl">−</span>
-          <span className="terminalControl">□</span>
-          <span className="terminalControl">×</span>
-        </div>
-      </div>
-
       <div className="educationContent">
         {/* Purdue University Education */}
         <div className="education-item">

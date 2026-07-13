@@ -4,9 +4,9 @@ import "./resume.css";
 
 function Resume() {
   return (
-    <div className="project-details-container">
-      <Link to="/" className="back-button">
-        ← Back to Home
+    <div className="resume-page">
+      <Link to="/" className="back-btn">
+        ← Back
       </Link>
 
       <div className="resume-content">

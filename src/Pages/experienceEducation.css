@@ -1,0 +1,44 @@
+.exp-edu-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-edu-topbar {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.exp-edu-content {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.exp-edu-title {
+  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0 2.5rem;
+}
+
+.exp-edu-section {
+  margin-bottom: 2.5rem;
+}
+
+.exp-edu-heading {
+  color: var(--sky-deep);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sun-soft);
+}
+
+@media (max-width: 768px) {
+  .exp-edu-content {
+    padding: 1rem 1rem 2rem;
+  }
+}

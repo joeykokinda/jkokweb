@@ -30,8 +30,6 @@ function Projects() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
   const [filteredProjects, setFilteredProjects] = useState([]);
-  const [showAll, setShowAll] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [showSSHPopup, setShowSSHPopup] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -358,16 +356,6 @@ function Projects() {
   );
 
   useEffect(() => {
-
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     if (activeFilter === "all") {
       setFilteredProjects(projectsList);
     } else {
@@ -387,113 +375,32 @@ function Projects() {
     navigate(link);
   };
 
-  const visibleProjects = useMemo(() => {
-    const limit = isMobile ? 3 : 9;
-    return showAll ? filteredProjects : filteredProjects.slice(0, limit);
-  }, [filteredProjects, showAll, isMobile]);
-
-  const toggleShowAll = () => {
-    setShowAll(!showAll);
-    if (showAll) {
-      const projectsSection = document.querySelector(".projects-terminal");
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
   return (
     <>
       {showSSHPopup && (
         <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.9)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
+          className="ssh-overlay"
           onClick={() => setShowSSHPopup(false)}
         >
           <div
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.95)",
-              padding: "30px",
-              borderRadius: "8px",
-              maxWidth: "600px",
-              width: "90%",
-              border: "1px solid #fafafa",
-              boxShadow: "0 0 20px rgba(0, 255, 0, 0.1)",
-            }}
+            className="ssh-modal"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 style={{ color: "#ffffff", marginBottom: "20px", fontWeight: "normal", textShadow: "0 0 10px rgba(255, 255, 255, 0.2)" }}>
-              Access PolyTerm via SSH
-            </h2>
-            <p style={{ color: "#00ff00", marginBottom: "15px", fontFamily: "Courier New, monospace" }}>
-              To access the live PolyTerm dashboard:
-            </p>
-            <div
-              style={{
-                backgroundColor: "#000",
-                padding: "15px",
-                borderRadius: "4px",
-                fontFamily: "Courier New, monospace",
-                color: "#00ff00",
-                marginBottom: "10px",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                border: "1px solid #00ff00",
-              }}
-            >
-              <span>{sshCommand}</span>
+            <h2 className="ssh-title">Access PolyTerm via SSH</h2>
+            <p className="ssh-text">To access the live PolyTerm dashboard:</p>
+            <div className="ssh-command">
+              <code>{sshCommand}</code>
               <button
                 onClick={copyToClipboard}
-                style={{
-                  padding: "5px 10px",
-                  backgroundColor: copied ? "#00ff00" : "transparent",
-                  color: copied ? "#000" : "#00ff00",
-                  border: copied ? "none" : "1px solid #00ff00",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  fontFamily: "Courier New, monospace",
-                  fontSize: "14px",
-                  transition: "all 0.3s ease",
-                }}
+                className={`ssh-copy-btn ${copied ? "copied" : ""}`}
               >
                 {copied ? "Copied!" : "Copy"}
               </button>
             </div>
-            <p style={{ color: "#00ff00", fontSize: "14px", marginTop: "20px", fontFamily: "Courier New, monospace" }}>
-              if you don't know how to do this, gg 💀
-            </p>
+            <p className="ssh-hint">if you don't know how to do this, gg 💀</p>
             <button
               onClick={() => setShowSSHPopup(false)}
-              style={{
-                marginTop: "20px",
-                padding: "10px 20px",
-                backgroundColor: "transparent",
-                color: "#00ff00",
-                border: "1px solid #00ff00",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontFamily: "Courier New, monospace",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#00ff00";
-                e.target.style.color = "#000";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "transparent";
-                e.target.style.color = "#00ff00";
-              }}
+              className="ssh-close-btn"
             >
               Close
             </button>
@@ -501,14 +408,7 @@ function Projects() {
         </div>
       )}
       <div className="projects-terminal">
-        <div className="terminal-header">
-          <div className="terminal-title">C:\Users\Projects></div>
-          <div className="terminal-controls">
-            <span>−</span>
-            <span>□</span>
-            <span>×</span>
-          </div>
-        </div>
+        <Link to="/" className="back-btn">← Back</Link>
 
         <div className="terminal-content">
           <div className="project-filters">
@@ -582,7 +482,7 @@ function Projects() {
           </div>
 
           <div className="project-grid">
-            {visibleProjects.map((project) => (
+            {filteredProjects.map((project) => (
               <div
                 key={project.id}
                 className="project-card"
@@ -652,22 +552,6 @@ function Projects() {
               </div>
             ))}
           </div>
-          {(() => {
-            const threshold = isMobile ? 3 : 9;
-            if (filteredProjects.length > threshold) {
-              return (
-                <div className="see-all-container">
-                  <button
-                    className="see-all-btn"
-                    onClick={toggleShowAll}
-                  >
-                    {showAll ? "See Less ↑" : "See All ↓"}
-                  </button>
-                </div>
-              );
-            }
-            return null;
-          })()}
         </div>
       </div>
     </>

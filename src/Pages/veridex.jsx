@@ -135,10 +135,10 @@ function Veridex() {
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", fontFamily: "Courier New, monospace" }}>
                   <thead>
-                    <tr style={{ borderBottom: "1px solid rgba(0,255,0,0.3)" }}>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Contract</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>EVM Address</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Hedera ID</th>
+                    <tr style={{ borderBottom: "1px solid var(--sun-deep)" }}>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>Contract</th>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>EVM Address</th>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>Hedera ID</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -147,7 +147,7 @@ function Veridex() {
                       ["AgentMarketplace", "0x46e12242aEa85a1fa2EA5C769cd600fA64A434C6", "0.0.7992397"],
                       ["ContentRegistry", "0x031bbBBCCe16EfBb289b3f6059996D0e9Bba5BcC", "—"],
                     ].map(([contract, evm, hedera], i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                      <tr key={i} style={{ borderBottom: "1px solid rgba(38,51,31,0.1)" }}>
                         <td style={{ padding: "8px" }}>{contract}</td>
                         <td style={{ padding: "8px", fontSize: "11px" }}>{evm}</td>
                         <td style={{ padding: "8px" }}>{hedera}</td>
@@ -160,9 +160,9 @@ function Veridex() {
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", fontFamily: "Courier New, monospace" }}>
                   <thead>
-                    <tr style={{ borderBottom: "1px solid rgba(0,255,0,0.3)" }}>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>Contract</th>
-                      <th style={{ textAlign: "left", padding: "8px", color: "#00ff00" }}>EVM Address</th>
+                    <tr style={{ borderBottom: "1px solid var(--sun-deep)" }}>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>Contract</th>
+                      <th style={{ textAlign: "left", padding: "8px", color: "var(--ink)" }}>EVM Address</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -171,7 +171,7 @@ function Veridex() {
                       ["AgentMarketplace", "0xd8b68F31294e2D346810Bf3e3cD77593348BB89e"],
                       ["ContentRegistry", "0x9a9B2E9D436Fd6d1DEf6C1689786A5588BAf26e3"],
                     ].map(([contract, evm], i) => (
-                      <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                      <tr key={i} style={{ borderBottom: "1px solid rgba(38,51,31,0.1)" }}>
                         <td style={{ padding: "8px" }}>{contract}</td>
                         <td style={{ padding: "8px", fontSize: "11px" }}>{evm}</td>
                       </tr>

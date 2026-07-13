@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import AsciiBackground from "./AsciiBackground";
 import { getPost } from "./posts";
 import "./BlogPost.css";
 
@@ -12,11 +11,7 @@ function BlogPost() {
 
   return (
     <div className="bp-page">
-      <AsciiBackground />
-
-      <nav className="bp-nav">
-        <Link to="/blog" className="bp-nav-link">← blog</Link>
-      </nav>
+      <Link to="/blog" className="back-btn">← Back</Link>
 
       <main className="bp-main">
         <article className="bp-article">

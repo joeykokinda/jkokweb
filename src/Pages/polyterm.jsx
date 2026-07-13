@@ -86,55 +86,55 @@ function PolyTerm() {
         >
           <div
             style={{
-              backgroundColor: "rgba(0, 0, 0, 0.95)",
+              backgroundColor: "var(--cream)",
               padding: "30px",
-              borderRadius: "8px",
+              borderRadius: "18px",
               maxWidth: "600px",
               width: "90%",
-              border: "1px solid #fafafa",
-              boxShadow: "0 0 20px rgba(0, 255, 0, 0.1)",
+              border: "var(--border)",
+              boxShadow: "0 10px 30px rgba(31,111,176,0.15)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 style={{ color: "#ffffff", marginBottom: "20px", fontWeight: "normal", textShadow: "0 0 10px rgba(255, 255, 255, 0.2)" }}>
+            <h2 style={{ color: "var(--ink)", marginBottom: "20px", fontWeight: "700" }}>
               Access PolyTerm via SSH
             </h2>
-            <p style={{ color: "#00ff00", marginBottom: "15px", fontFamily: "Courier New, monospace" }}>
+            <p style={{ color: "var(--ink-soft)", marginBottom: "15px" }}>
               To access the live PolyTerm dashboard:
             </p>
             <div
               style={{
-                backgroundColor: "#000",
+                backgroundColor: "var(--cream-2)",
                 padding: "15px",
-                borderRadius: "4px",
+                borderRadius: "12px",
                 fontFamily: "Courier New, monospace",
-                color: "#00ff00",
+                color: "var(--ink)",
                 marginBottom: "10px",
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                border: "1px solid #00ff00",
+                border: "var(--border)",
               }}
             >
               <span>{sshCommand}</span>
               <button
                 onClick={copyToClipboard}
                 style={{
-                  padding: "5px 10px",
-                  backgroundColor: copied ? "#00ff00" : "transparent",
-                  color: copied ? "#000" : "#00ff00",
-                  border: copied ? "none" : "1px solid #00ff00",
-                  borderRadius: "4px",
+                  padding: "6px 14px",
+                  backgroundColor: copied ? "var(--sun-deep)" : "var(--sun)",
+                  color: "var(--ink)",
+                  border: "none",
+                  borderRadius: "999px",
                   cursor: "pointer",
-                  fontFamily: "Courier New, monospace",
+                  fontWeight: "600",
                   fontSize: "14px",
-                  transition: "all 0.3s ease",
+                  transition: "all 0.2s ease",
                 }}
               >
                 {copied ? "Copied!" : "Copy"}
               </button>
             </div>
-            <p style={{ color: "#00ff00", fontSize: "14px", marginTop: "20px", fontFamily: "Courier New, monospace" }}>
+            <p style={{ color: "var(--ink-soft)", fontSize: "14px", marginTop: "20px" }}>
               if you don't know how to do this, gg 💀
             </p>
             <button
@@ -142,21 +142,19 @@ function PolyTerm() {
               style={{
                 marginTop: "20px",
                 padding: "10px 20px",
-                backgroundColor: "transparent",
-                color: "#00ff00",
-                border: "1px solid #00ff00",
-                borderRadius: "4px",
+                backgroundColor: "var(--white)",
+                color: "var(--sky-deep)",
+                border: "1.5px solid var(--sky)",
+                borderRadius: "999px",
                 cursor: "pointer",
-                fontFamily: "Courier New, monospace",
-                transition: "all 0.3s ease",
+                fontWeight: "600",
+                transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#00ff00";
-                e.target.style.color = "#000";
+                e.target.style.backgroundColor = "var(--sky-light)";
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "transparent";
-                e.target.style.color = "#00ff00";
+                e.target.style.backgroundColor = "var(--white)";
               }}
             >
               Close
@@ -191,11 +189,12 @@ function PolyTerm() {
             </p>
             <div
               style={{
-                backgroundColor: "#000",
+                backgroundColor: "var(--cream-2)",
                 padding: "15px",
-                borderRadius: "4px",
+                borderRadius: "12px",
                 fontFamily: "monospace",
-                color: "#00ff00",
+                color: "var(--ink)",
+                border: "var(--border)",
                 marginBottom: "20px",
               }}
             >
@@ -215,7 +214,7 @@ function PolyTerm() {
               Built for traders who prefer working in the terminal, PolyTerm delivers critical market data without the overhead of navigating through web interfaces.
             </p>
             <p>
-              <strong>Open Source:</strong> Due to the nature of SSH access, this project is fully open source on <a href="https://github.com/joeykokinda/polyterm" target="_blank" rel="noopener noreferrer" style={{ color: "#00ff00", textDecoration: "underline" }}>GitHub</a>. You can review the entire codebase before connecting—transparency is important when SSHing into any application.
+              <strong>Open Source:</strong> Due to the nature of SSH access, this project is fully open source on <a href="https://github.com/joeykokinda/polyterm" target="_blank" rel="noopener noreferrer" style={{ color: "var(--sky-deep)", textDecoration: "underline" }}>GitHub</a>. You can review the entire codebase before connecting—transparency is important when SSHing into any application.
             </p>
           </section>
 

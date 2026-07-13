@@ -1,9 +1,9 @@
 .experienceBox {
-  background-color: rgba(0, 0, 0, 0.925);
-  border: 1px solid #00ff00;
-  border-radius: 5px;
-  font-family: "Courier New", monospace;
-  color: #00ff00;
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   max-width: 800px;
@@ -11,60 +11,35 @@
   overflow: hidden;
 }
 
-.experienceHeader {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 8px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #00ff00;
-}
-
-.terminalTitle {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.terminalControls {
-  display: flex;
-  gap: 5px;
-}
-
-.terminalControl {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #00ff00;
-  border-radius: 50%;
-  font-size: 10px;
-  cursor: not-allowed;
-}
-
 .experienceContent {
-  padding: 15px;
+  padding: 1.5rem 2rem;
   line-height: 1.6;
 }
 
 .experience-divider {
   height: 1px;
-  background-color: rgba(0, 255, 0, 0.2);
-  margin: 0 15px;
+  background-color: var(--sun-soft);
+  margin: 0 2rem;
 }
 
 .experienceContent h3 {
   margin: 0;
   font-size: 1.4rem;
-  color: #ffffff;
+  font-weight: 700;
+  color: var(--ink);
 }
 
 .experience-role {
   font-size: 1rem;
-  color: #ffffff;
+  font-weight: 600;
+  color: var(--sky-deep);
   margin-bottom: 10px;
   display: block;
 }
 
 .experienceContent p {
   margin: 10px 0;
+  color: var(--ink-soft);
 }
 
 .experience-list {
@@ -73,23 +48,29 @@
 }
 
 .experience-list li {
-  margin-bottom: 5px;
-  color: #00ff00;
+  margin-bottom: 6px;
+  color: var(--ink-soft);
 }
 
 .experienceFooter {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 10px;
-  border-top: 1px solid #00ff00;
+  background: var(--cream-2);
+  padding: 1rem 2rem;
+  border-top: var(--border);
   text-align: center;
 }
 
 .contact-text {
   margin: 0;
-  color: #00ff00;
+  color: var(--ink-soft);
 }
 
 .contact-link {
-  color: #ffffff;
+  color: var(--sky-deep);
   text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--sun-deep);
 }

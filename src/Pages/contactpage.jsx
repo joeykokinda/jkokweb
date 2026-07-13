@@ -38,6 +38,7 @@ END:VCARD`;
 
     return (
         <div className="contactpage-wrapper">
+            <Link to="/" className="back-btn contactpage-back">← Back</Link>
             <div className="contactpage-container">
                 <div className="contact-card">
                     <div className="contact-header">
