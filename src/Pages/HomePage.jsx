@@ -136,8 +136,17 @@ function HomePage() {
             turtosa.com
           </a>
           ,{" "}
+          <a
+            href="https://staklabs.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            staklabs.ai
+          </a>
+          ,{" "}
           <Link to="/projects" className="text-link">
-            projects
+            etc
           </Link>
           ). Most recently I placed 3rd in the AI agent bounty at the Hello Apex
           Hedera hackathon with{" "}
