@@ -81,17 +81,15 @@ function HomePage() {
         <hr className="home-divider" />
 
         <p className="home-about">
-          Hey, im joey and im studying ai at purdue university. i build at the
-          intersection of ai agents, automation, crypto infra, and embedded
-          devices.
+          Hey, im joey and im studying ai at purdue university.
         </p>
         <p className="home-about-more">
-          I&apos;ve built across crypto infrastructure — RPC nodes, self-hosted
-          BTC/XMR/ETH full nodes, and Solana tooling — AI agent security like
-          pre-execution guardrails and on-chain audit logging, and full-stack
-          systems in Go, C, TypeScript, and Python. Increasingly that&apos;s
-          hardware-backed controls that sit between autonomous agents and the
-          actions they take.
+          I build at the intersection of ai agents, automation, crypto infra,
+          and embedded devices. I have experience running crypto infrastructure
+          like self hosted BTC, XMR, and ETH nodes and Solana tooling, building
+          AI agent security like onchain audit logging and guardrails, and full
+          stack development in Go, C, TypeScript, and Python. A lot of my recent
+          work is hardware that sits between AI agents and the actions they take.
         </p>
 
         <hr className="home-divider" />
@@ -112,8 +110,8 @@ function HomePage() {
               <span className="home-recent-dates">(May&ndash;Jul 2026)</span>
             </p>
             <p className="home-recent-desc">
-              Built an AI ads pipeline for bulk ad creation per avatar &mdash;
-              auto-generating TikTok &amp; Instagram slideshows and videos.
+              Built an AI ads pipeline for bulk ad creation per avatar, auto
+              generating TikTok &amp; Instagram slideshows and videos.
             </p>
           </div>
         </div>

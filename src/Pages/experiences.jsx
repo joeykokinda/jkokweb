@@ -21,7 +21,7 @@ function Experiences() {
           AI Pipeline Intern | May 2026 – Jul 2026
         </span>
         <ul className="experience-list">
-          <li>Built an AI ads pipeline for bulk advertisement creation — one avatar (account) at a time</li>
+          <li>Built an AI ads pipeline for bulk advertisement creation, one avatar (account) at a time</li>
           <li>Engineered the system to auto-generate TikTok and Instagram slideshows and videos at scale</li>
         </ul>
       </div>
