@@ -10,84 +10,64 @@
 
 .contact-container {
   position: relative;
-  width: 90%;
-  max-width: 600px;
-  background: var(--cream);
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 253, 246, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: var(--border);
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 2.5rem 2rem 2rem;
-  text-align: center;
+  padding: 2.5rem;
   color: var(--ink);
 }
 
-.contact-back-button {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-}
-
 .contact-title {
-  font-size: 2rem;
-  margin: 0.5rem 0 1rem;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  margin: 0 0 0.75rem;
   color: var(--ink);
   font-weight: 700;
 }
 
 .contact-description {
-  font-size: 1.15rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  margin: 0 0 2rem;
   color: var(--ink-soft);
   line-height: 1.6;
 }
 
-.contact-details {
-  margin-bottom: 2rem;
-}
-
-.contact-item {
-  margin: 1rem 0;
-  font-size: 1.1rem;
+.contact-rows {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink);
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.contact-icon {
-  color: var(--sun-deep);
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.9rem;
 }
 
-.contact-link {
-  color: var(--sky-deep);
-  text-decoration: none;
-}
-
-.contact-link:hover {
-  color: var(--sun-deep);
-  text-decoration: underline;
-}
-
-.contact-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--ink);
+.contact-label {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
   font-weight: 700;
+  letter-spacing: 0.18em;
+  min-width: 4rem;
 }
 
-.contact-social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+.contact-row .link-row {
+  margin: 0;
+  font-size: clamp(0.95rem, 3.6vw, 1.05rem);
+  line-height: 1.8;
 }
 
-.contact-social-link {
-  color: var(--sky-deep);
-  transition: transform 0.2s ease, color 0.2s ease;
+.contact-row .text-link {
+  font-size: clamp(0.95rem, 3.6vw, 1.05rem);
 }
 
-.contact-social-link:hover {
-  color: var(--sun-deep);
-  transform: scale(1.1);
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 1.75rem 1.35rem;
+  }
 }

@@ -82,11 +82,9 @@ function HomePage() {
 
         <div className="home-tldr-block">
           <p className="home-about">
-            Hey, im joey and im studying ai at purdue university.
-          </p>
-          <p className="home-tldr">
-            today im focused on ai agents and automation, always building with
-            the best tech out right now.
+            Hey im Joey, today I am focused on{" "}
+            <span className="grad-text">ai agents and automation</span>, always
+            building with the best tech out right now.
           </p>
         </div>
 

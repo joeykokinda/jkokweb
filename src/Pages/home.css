@@ -63,7 +63,31 @@
   color: var(--ink);
   font-size: clamp(1.15rem, 4.2vw, 1.35rem);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+/* Cool animated gradient text effect */
+.grad-text {
+  background: linear-gradient(
+    90deg,
+    var(--sun-deep),
+    var(--leaf),
+    var(--sky),
+    var(--sun-deep)
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  animation: gradShift 5s linear infinite;
+}
+
+@keyframes gradShift {
+  to {
+    background-position: 250% center;
+  }
 }
 
 .home-tldr {

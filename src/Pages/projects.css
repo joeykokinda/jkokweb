@@ -72,58 +72,49 @@
 }
 
 /* Project grid */
+/* Horizontal list view: one project per row */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   padding: 0;
 }
 
 .project-card {
   background: var(--cream);
   border: var(--border);
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
   position: relative;
   cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(31, 111, 176, 0.22);
 }
 
 .project-card img {
-  width: 100%;
-  height: 220px;
+  width: 300px;
+  height: 230px;
+  flex-shrink: 0;
+  align-self: flex-start;
   object-fit: cover;
-  border-bottom: var(--border);
+  border-right: var(--border);
   transition: transform 0.3s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
-/* App icons */
-.project-card[data-type="mobile-app"] img {
-  width: 140px;
-  height: 140px;
-  border-radius: 28px;
-  margin: 30px auto;
-  display: block;
-  border: var(--border);
-  box-shadow: var(--shadow-sm);
-  object-fit: contain;
-  background: var(--cream-2);
-}
-
-/* Contained/logo-style images */
+/* App icons + logo-style images: contained thumbnail on the left */
+.project-card[data-type="mobile-app"] img,
 .project-card[data-id="tools"] img,
 .project-card[data-id="unbolted"] img,
 .project-card[data-id="meta"] img,
@@ -132,20 +123,19 @@
 .project-card[data-id="locallens"] img,
 .project-card[data-id="cosmos"] img,
 .project-card[data-id="block"] img {
-  padding: 20px;
+  width: 300px;
+  height: 230px;
+  padding: 24px;
   background: var(--cream-2);
-  width: 85%;
-  height: 180px;
-  display: block;
-  margin: 20px auto;
   object-fit: contain;
+  margin: 0;
 }
 
 .project-card[data-id="locallens"] iframe {
-  width: 85%;
-  height: 315px;
-  display: block;
-  margin: 20px auto;
+  width: 300px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-right: var(--border);
 }
 
 .gallery-item.no-hover {
@@ -392,15 +382,28 @@
 }
 
 /* Responsive */
-@media (max-width: 1400px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 860px) {
+  /* Stack the row: image on top, info below */
+  .project-card {
+    flex-direction: column;
   }
-}
 
-@media (max-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .project-card img,
+  .project-card[data-type="mobile-app"] img,
+  .project-card[data-id="tools"] img,
+  .project-card[data-id="unbolted"] img,
+  .project-card[data-id="meta"] img,
+  .project-card[data-id="raspi"] img,
+  .project-card[data-id="bike"] img,
+  .project-card[data-id="locallens"] img,
+  .project-card[data-id="cosmos"] img,
+  .project-card[data-id="block"] img,
+  .project-card[data-id="locallens"] iframe {
+    width: 100%;
+    height: 200px;
+    min-height: 0;
+    border-right: none;
+    border-bottom: var(--border);
   }
 }
 
@@ -408,11 +411,6 @@
   .projects-terminal {
     width: 92%;
     padding-top: 3rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .project-filters {
@@ -429,21 +427,6 @@
     width: 100%;
     text-align: center;
     margin-bottom: 6px;
-  }
-
-  .project-card img,
-  .project-card[data-type="mobile-app"] img,
-  .project-card[data-id="tools"] img,
-  .project-card[data-id="unbolted"] img,
-  .project-card[data-id="meta"] img,
-  .project-card[data-id="raspi"] img,
-  .project-card[data-id="bike"] img,
-  .project-card[data-id="locallens"] img,
-  .project-card[data-id="cosmos"] img,
-  .project-card[data-id="block"] img {
-    margin: 10px auto;
-    padding: 10px;
-    height: 150px;
   }
 
   .project-info {
