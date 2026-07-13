@@ -3,24 +3,46 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import profilePic from "../images/lainpfp.jpg";
 import "./home.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faXTwitter,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 
-const navLinks = [
-  { to: "/projects", label: "Projects", desc: "Everything I've built" },
-  {
-    to: "/experience",
-    label: "Experience & Education",
-    desc: "Where I've worked and studied",
-  },
-  { to: "/resume", label: "Resume", desc: "The full rundown" },
-  { to: "/blog", label: "Blog", desc: "Notes and writeups" },
-  { to: "/contact", label: "Contact", desc: "Get in touch" },
+const pageLinks = [
+  { type: "internal", to: "/projects", label: "projects" },
+  { type: "internal", to: "/experience", label: "experience" },
+  { type: "internal", to: "/resume", label: "resume" },
+  { type: "internal", to: "/blog", label: "blog" },
+  { type: "internal", to: "/contact", label: "contact" },
 ];
+
+const socialLinks = [
+  { href: "https://github.com/joeykokinda", label: "github" },
+  { href: "https://x.com/sp3ked", label: "x" },
+  { href: "https://www.linkedin.com/in/jkokinda/", label: "linkedin" },
+];
+
+function LinkRow({ items }) {
+  return (
+    <p className="link-row">
+      {items.map((item, i) => (
+        <React.Fragment key={item.label}>
+          {i > 0 && <span className="link-sep">.</span>}
+          {item.type === "internal" ? (
+            <Link to={item.to} className="text-link">
+              {item.label}
+            </Link>
+          ) : (
+            <a
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+            >
+              {item.label}
+            </a>
+          )}
+        </React.Fragment>
+      ))}
+    </p>
+  );
+}
 
 function HomePage() {
   return (
@@ -37,68 +59,45 @@ function HomePage() {
         <meta name="robots" content="index, follow, max-image-preview:large" />
       </Helmet>
 
-      <main className="home-card">
-        <div className="home-intro">
+      <main className="home-card glass">
+        <div className="home-head">
           <img src={profilePic} alt="Joey Kokinda" className="home-avatar" />
-          <div className="home-intro-text">
-            <h1>Joey Kokinda</h1>
-            <p className="home-tagline">
-              Student studying AI at{" "}
+          <div className="home-head-text">
+            <h1>JOEY KOKINDA</h1>
+            <p className="home-sub">
+              student studying ai at{" "}
               <a
                 href="https://www.admissions.purdue.edu/majors/a-to-z/artificial-intelligence-science.php"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-link"
               >
-                Purdue University
+                purdue university
               </a>
             </p>
-
-            <div className="home-socials">
-              <a
-                href="https://github.com/joeykokinda"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </a>
-              <a
-                href="https://x.com/sp3ked"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X"
-              >
-                <FontAwesomeIcon icon={faXTwitter} size="lg" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/jkokinda/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIcon icon={faLinkedin} size="lg" />
-              </a>
-            </div>
           </div>
         </div>
 
+        <hr className="home-divider" />
+
         <p className="home-about">
-          Hey, I'm Joey and I'm studying AI at Purdue University. I have
-          experience developing AI-powered applications across web, mobile, and
-          embedded systems. My passion lies in AI, computer vision, and
-          robotics — I love building things that push the boundaries of what's
-          possible.
+          Hey, im joey and im studying ai at purdue university. I have experience
+          developing AI-powered applications across web, mobile, and embedded
+          systems. My passion lies in AI, computer vision, and robotics – I love
+          building things that push the boundaries of whats possible.
         </p>
 
-        <nav className="home-nav">
-          {navLinks.map((link) => (
-            <Link key={link.to} to={link.to} className="home-nav-card">
-              <span className="home-nav-label">{link.label}</span>
-              <span className="home-nav-desc">{link.desc}</span>
-              <span className="home-nav-arrow">→</span>
-            </Link>
-          ))}
-        </nav>
+        <hr className="home-divider" />
+
+        <div className="home-links">
+          <span className="home-links-label">PAGES</span>
+          <LinkRow items={pageLinks} />
+        </div>
+
+        <div className="home-links">
+          <span className="home-links-label">LINKS</span>
+          <LinkRow items={socialLinks} />
+        </div>
       </main>
     </div>
   );

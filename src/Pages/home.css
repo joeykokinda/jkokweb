@@ -1,167 +1,102 @@
 .home-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem;
+  padding: clamp(1rem, 4vw, 2.5rem);
 }
 
 .home-card {
   width: 100%;
-  max-width: 720px;
-  background: rgba(255, 253, 246, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 2.5rem;
+  max-width: 640px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--ink);
 }
 
-/* Intro row: avatar + name/socials */
-.home-intro {
+/* Header: avatar + name */
+.home-head {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .home-avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  width: clamp(64px, 18vw, 92px);
+  height: clamp(64px, 18vw, 92px);
   object-fit: cover;
-  border: 3px solid var(--sun);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
 
-.home-intro-text h1 {
-  margin: 0 0 0.35rem;
+.home-head-text h1 {
+  margin: 0 0 0.3rem;
   color: var(--ink);
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-size: clamp(1.4rem, 6vw, 2rem);
   font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  word-break: break-word;
 }
 
-.home-tagline {
-  margin: 0 0 0.75rem;
+.home-sub {
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
 }
 
-.home-tagline a {
-  color: var(--sky-deep);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.home-tagline a:hover {
-  color: var(--sun-deep);
-}
-
-.home-socials {
-  display: flex;
-  gap: 1rem;
-}
-
-.home-socials a {
-  color: var(--sky-deep);
-  display: inline-flex;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.home-socials a:hover {
-  color: var(--sun-deep);
-  transform: translateY(-2px);
+.home-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+  margin: 1.4rem 0;
 }
 
 .home-about {
-  margin: 1.75rem 0 0;
+  margin: 0;
   color: var(--ink);
-  font-size: 1.02rem;
-  line-height: 1.65;
+  font-size: clamp(0.9rem, 3.6vw, 1rem);
+  line-height: 1.7;
 }
 
-/* Nav link cards */
-.home-nav {
-  margin-top: 1.75rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
-}
-
-.home-nav-card {
-  position: relative;
+/* Text link rows */
+.home-links {
   display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 1rem 1.2rem;
-  background: var(--white);
-  border: 1.5px solid var(--sky-light);
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: all 0.2s ease;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+  margin-top: 1rem;
 }
 
-.home-nav-card:hover {
-  border-color: var(--sun);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-sm);
+.home-links:first-of-type {
+  margin-top: 0;
 }
 
-.home-nav-label {
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-
-.home-nav-desc {
+.home-links-label {
   color: var(--ink-soft);
-  font-size: 0.85rem;
-}
-
-.home-nav-arrow {
-  position: absolute;
-  top: 1rem;
-  right: 1.1rem;
-  color: var(--sun-deep);
+  font-size: 0.72rem;
   font-weight: 700;
-  opacity: 0;
-  transform: translateX(-4px);
-  transition: all 0.2s ease;
+  letter-spacing: 0.18em;
+  min-width: 3.4rem;
 }
 
-.home-nav-card:hover .home-nav-arrow {
-  opacity: 1;
-  transform: translateX(0);
+.link-row {
+  margin: 0;
+  font-size: clamp(0.9rem, 3.8vw, 1.05rem);
+  line-height: 1.9;
 }
 
-/* First card (Projects) spans full width as the primary destination */
-.home-nav-card:first-child {
-  grid-column: 1 / -1;
-  background: var(--sun-soft);
-  border-color: var(--sun);
-}
-
-@media (max-width: 600px) {
-  .home-card {
-    padding: 1.75rem 1.35rem;
-  }
-
-  .home-intro {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 480px) {
+  .home-head {
     gap: 1rem;
   }
 
-  .home-socials {
-    justify-content: center;
+  .home-links {
+    flex-direction: column;
+    gap: 0.15rem;
   }
 
-  .home-nav {
-    grid-template-columns: 1fr;
-  }
-
-  .home-nav-arrow {
-    display: none;
+  .home-links-label {
+    margin-bottom: 0.1rem;
   }
 }

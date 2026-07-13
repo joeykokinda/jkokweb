@@ -1,17 +1,32 @@
+/* Self-hosted Space Grotesk (variable, weights 300–700) */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./fonts/SpaceGrotesk-var.ttf") format("truetype");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --mono: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  /* Square everything per design direction */
+  border-radius: 0 !important;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
-    Arial, sans-serif;
+  font-family: var(--mono);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, "Courier New", monospace;
+  font-family: var(--mono);
 }

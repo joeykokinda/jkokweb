@@ -11,11 +11,11 @@
   --ink: #26331f;
   --ink-soft: #55634c;
   --white: #ffffff;
-  --radius: 18px;
-  --radius-sm: 12px;
-  --shadow: 0 10px 30px rgba(31, 111, 176, 0.15);
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 10px 40px rgba(31, 111, 176, 0.18);
   --shadow-sm: 0 4px 14px rgba(31, 111, 176, 0.12);
-  --border: 1px solid rgba(242, 168, 0, 0.35);
+  --border: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 body,
@@ -41,13 +41,13 @@ html {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url("./images/sunflowerbackground.jpg");
+  background-image: url("./images/sunflowerbg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Soft cream wash over the photo so cards/text stay readable */
+/* Very light wash so the bright sky/sunflowers show through the glass */
 .app::after {
   content: "";
   position: fixed;
@@ -55,10 +55,19 @@ html {
   z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(255, 253, 246, 0.35) 0%,
-    rgba(255, 253, 246, 0.55) 45%,
-    rgba(255, 253, 246, 0.7) 100%
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.14) 55%,
+    rgba(255, 255, 255, 0.22) 100%
   );
+}
+
+/* Shared Apple-style frosted glass surface */
+.glass {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  border: var(--border);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 a {
@@ -97,28 +106,47 @@ a:hover {
   scrollbar-color: var(--sun) rgba(169, 220, 247, 0.35);
 }
 
-/* Shared back button used on every inner page */
+/* Shared back button used on every inner page (square, mono) */
 .back-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--sky-deep);
-  border: 1.5px solid var(--sky);
-  border-radius: 999px;
-  padding: 0.5rem 1.1rem;
-  font-size: 0.95rem;
-  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 0.5rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .back-btn:hover {
-  background: var(--sky-light);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--ink);
+}
+
+/* Inline text links (dot-separated), monospace + underline */
+.text-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.text-link:hover {
   color: var(--sky-deep);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
+}
+
+.link-sep {
+  color: var(--ink-soft);
+  margin: 0 0.5rem;
+  user-select: none;
 }
 
 /* Responsive Design */
