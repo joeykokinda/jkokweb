@@ -25,7 +25,8 @@
   width: clamp(64px, 18vw, 92px);
   height: clamp(64px, 18vw, 92px);
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50% !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow-sm);
   flex-shrink: 0;
 }
@@ -33,9 +34,9 @@
 .home-head-text h1 {
   margin: 0 0 0.3rem;
   color: var(--ink);
-  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: -0.01em;
   line-height: 1.1;
   word-break: break-word;
 }
@@ -55,8 +56,10 @@
 .home-about {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(0.9rem, 3.6vw, 1rem);
-  line-height: 1.7;
+  font-family: var(--hand);
+  font-size: clamp(1.35rem, 5vw, 1.7rem);
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 /* Text link rows */

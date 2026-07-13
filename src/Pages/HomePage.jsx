@@ -63,7 +63,7 @@ function HomePage() {
         <div className="home-head">
           <img src={profilePic} alt="Joey Kokinda" className="home-avatar" />
           <div className="home-head-text">
-            <h1>JOEY KOKINDA</h1>
+            <h1>Joey Kokinda</h1>
             <p className="home-sub">
               student studying ai at{" "}
               <a
