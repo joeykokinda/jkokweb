@@ -91,7 +91,7 @@ function HomePage() {
         <p className="home-about-more">
           I have experience across crypto infrastructure, AI agents, full stack
           development, and embedded hardware. That means self hosted BTC and XMR
-          nodes and my own Ethereum infra (
+          nodes (
           <a
             href="https://pyras.org"
             target="_blank"
