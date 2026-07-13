@@ -18,7 +18,7 @@ function Experiences() {
           (AI Growth)
         </h3>
         <span className="experience-role">
-          AI Pipeline Intern | May 2026 – Jul 2026
+          Intern | May 2026 – Jul 2026
         </span>
         <ul className="experience-list">
           <li>Built an AI ads pipeline for bulk advertisement creation, one avatar (account) at a time</li>

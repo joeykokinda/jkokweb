@@ -121,9 +121,13 @@ function HomePage() {
           >
             omenswap.com
           </a>
-          ), custom hardware (
+          ), various hardware projects (
           <Link to="/projects/phonefarm" className="text-link">
-            see my phone farm project
+            phone farm
+          </Link>
+          ,{" "}
+          <Link to="/projects/raspi" className="text-link">
+            raspi
           </Link>
           ), and building applications across all stacks (
           <a
@@ -153,7 +157,7 @@ function HomePage() {
           <span className="home-links-label">RECENT</span>
           <div className="home-recent-body">
             <p className="home-recent-role">
-              AI Pipeline Intern &middot;{" "}
+              Intern &middot;{" "}
               <a
                 href="https://10x.so"
                 target="_blank"

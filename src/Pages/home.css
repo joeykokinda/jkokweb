@@ -61,11 +61,9 @@
 .home-about {
   margin: 0;
   color: var(--ink);
-  font-family: var(--hand);
-  font-size: clamp(1.35rem, 5vw, 1.7rem);
-  font-weight: 500;
-  line-height: 1.35;
-  opacity: 0.55;
+  font-size: clamp(1.15rem, 4.2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .home-tldr {
