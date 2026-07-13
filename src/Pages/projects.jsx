@@ -252,9 +252,7 @@ function Projects() {
         id: "cosmos",
         title: "CosmosPool - DeFi Liquidity Protocol",
         image: cosmosImage,
-        status: "live",
         year: "2025",
-        liveUrl: "https://www.cosmospool.xyz/",
         description:
           "CosmosPool is a decentralized liquidity provision system built on Unichain that simplifies DeFi participation. It enables users to deposit single-sided assets (e.g. WETH or USDC) into concentrated liquidity pools, automating the matching process with complementary deposits for optimal liquidity provision.",
         link: "/projects/cosmos",
@@ -305,10 +303,7 @@ function Projects() {
         title: "Scout - Shopping and Selling App",
         image: scoutLogo,
         type: "mobile-app",
-        status: "live",
         year: "2024",
-        liveUrl:
-          "https://apps.apple.com/us/app/scout-shop-sell-with-camera/id6502788045?platform=iphone",
         description:
           'Scout is an innovative mobile application designed to revolutionize the way users shop and sell items. The app utilizes "google scan" to recognize items and compare prices across 100+ retailers.',
         link: "/projects/scout",
@@ -378,11 +373,15 @@ function Projects() {
   }, [activeFilter, filterCategories, projectsList]);
 
   const handleProjectClick = (link) => {
-    // Save current scroll position for this specific project
-    const projectName = link.split('/projects/')[1];
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    sessionStorage.setItem(`projectScrollPosition_${projectName}`, scrollY.toString());
-    
+    // Remember the list scroll position so returning from the project
+    // detail lands in the same spot
+    const scrollY =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    sessionStorage.setItem("projectsListScroll", scrollY.toString());
+
     navigate(link);
   };
 

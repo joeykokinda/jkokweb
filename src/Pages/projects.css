@@ -127,6 +127,11 @@
   transform: scale(1.03);
 }
 
+/* Per-project crop tuning so key content stays in frame */
+.project-card[data-id="exoform"] .project-thumb img {
+  object-position: left center;
+}
+
 /* App icons + logo-style images: contained on a cream backing */
 .project-card[data-type="mobile-app"] .project-thumb,
 .project-card[data-id="tools"] .project-thumb,

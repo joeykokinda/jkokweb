@@ -19,7 +19,7 @@ function Meta() {
         </div>
       )}
       <div className="project-details-container" data-project="meta">
-      <Link to="/" className="back-button">
+      <Link to="/projects" className="back-button">
         ← Back to Projects
       </Link>
 

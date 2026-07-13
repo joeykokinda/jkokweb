@@ -53,7 +53,7 @@ function AgentTrust() {
           <meta name="robots" content="index, follow, noarchive" />
         </Helmet>
 
-        <Link to="/" className="back-button">
+        <Link to="/projects" className="back-button">
           ← Back to Projects
         </Link>
 

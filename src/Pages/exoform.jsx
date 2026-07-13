@@ -35,7 +35,7 @@ function Exoform() {
         </div>
       )}
       <div className="project-details-container">
-      <Link to="/" className="back-button">
+      <Link to="/projects" className="back-button">
         ← Back to Projects
       </Link>
 

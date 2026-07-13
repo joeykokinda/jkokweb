@@ -42,7 +42,7 @@ function YouVest() {
         <link rel="canonical" href="https://jkok.dev/projects/youvest" />
         <meta name="robots" content="index, follow, noarchive" />
       </Helmet>
-      <Link to="/" className="back-button">
+      <Link to="/projects" className="back-button">
         ← Back to Projects
       </Link>
 

@@ -18,7 +18,7 @@ function Promptr() {
         </div>
       )}
       <div className="project-details-container" data-project="promptr">
-      <Link to="/" className="back-button">
+      <Link to="/projects" className="back-button">
         ← Back to Projects
       </Link>
 

@@ -185,7 +185,7 @@ const AILounge = () => {
 
   return (
     <div className="ai-lounge-container">
-      <Link to="/" className="back-button">
+      <Link to="/projects" className="back-button">
         &lt; Back to Homepage
       </Link>
 
