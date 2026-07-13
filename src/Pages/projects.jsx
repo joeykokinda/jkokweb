@@ -24,7 +24,7 @@ import pyrasImage from "../images/Pyras/pyras1.png";
 import veridexImage from "../images/veridex/veridex1.png";
 import creouImage from "../images/Creou/landing.png";
 import wardImage from "../images/Ward/00-intro.png";
-import omenswapImage from "../images/OmenSwap/og.png";
+import omenswapImage from "../images/OmenSwap/home.png";
 import phonefarmImage from "../images/PhoneFarm/phonefarm-dashboard.png";
 
 function Projects() {

@@ -106,7 +106,7 @@
 
 .project-thumb {
   position: relative;
-  width: 300px;
+  width: 360px;
   flex-shrink: 0;
   align-self: stretch;
   overflow: hidden;
@@ -189,6 +189,11 @@
   line-height: 1.6;
   margin-bottom: 20px;
   font-size: 0.98rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .see-more {
