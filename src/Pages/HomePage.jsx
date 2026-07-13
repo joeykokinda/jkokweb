@@ -81,10 +81,7 @@ function HomePage() {
         <hr className="home-divider" />
 
         <p className="home-about">
-          Hey, im joey and im studying ai at purdue university. I have experience
-          developing AI-powered applications across web, mobile, and embedded
-          systems. My passion lies in AI, computer vision, and robotics – I love
-          building things that push the boundaries of whats possible.
+          Hey, im joey and im studying ai at purdue university.
         </p>
 
         <hr className="home-divider" />
@@ -105,8 +102,8 @@ function HomePage() {
               <span className="home-recent-dates">(May&ndash;Jul 2026)</span>
             </p>
             <p className="home-recent-desc">
-              Built an AI pipeline generating slideshow &amp; video content across
-              many personas to promote the company&apos;s app at scale.
+              Built an AI ads pipeline for bulk ad creation per avatar &mdash;
+              auto-generating TikTok &amp; Instagram slideshows and videos.
             </p>
           </div>
         </div>

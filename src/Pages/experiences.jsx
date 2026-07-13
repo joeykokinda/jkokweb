@@ -21,9 +21,8 @@ function Experiences() {
           AI Pipeline Intern | May 2026 – Jul 2026
         </span>
         <ul className="experience-list">
-          <li>Built an AI content pipeline to promote the company's app at scale, generating native slideshow and short-form video posts automatically across a large number of accounts</li>
-          <li>Engineered bulk multi-account production with a consistent persona and avatar per account, each tailored to its niche</li>
-          <li>Automated the full create-to-publish flow so campaigns could scale without manual content work</li>
+          <li>Built an AI ads pipeline for bulk advertisement creation — one avatar (account) at a time</li>
+          <li>Engineered the system to auto-generate TikTok and Instagram slideshows and videos at scale</li>
         </ul>
       </div>
 
