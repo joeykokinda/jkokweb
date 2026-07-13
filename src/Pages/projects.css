@@ -3,8 +3,8 @@
 .projects-terminal {
   position: relative;
   background: transparent;
-  width: 90%;
-  max-width: 1400px;
+  width: 92%;
+  max-width: 1580px;
   margin: 1.5rem auto 4rem auto;
   padding-top: 3.5rem;
 }
@@ -74,8 +74,8 @@
 /* Project grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
   padding: 0;
 }
 
@@ -392,7 +392,13 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -24,8 +24,7 @@ html {
   padding: 0;
   width: 100%;
   min-height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
-    Arial, sans-serif;
+  font-family: var(--mono);
   color: var(--ink);
   scroll-behavior: smooth;
 }
@@ -128,6 +127,34 @@ a:hover {
 .back-btn:hover {
   background: rgba(255, 255, 255, 0.65);
   color: var(--ink);
+}
+
+/* Back button pinned top-left at all times (both class names in use) */
+.back-btn,
+.back-button {
+  position: fixed !important;
+  top: 1rem !important;
+  left: 1rem !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  z-index: 500;
+}
+
+/* Top clearance so content doesn't sit under the fixed back button */
+.projects-terminal,
+.exp-edu-content,
+.resume-page,
+.nf-container,
+.bi-page,
+.bp-page,
+.contact-container,
+.contactpage-container {
+  padding-top: 4.75rem !important;
+}
+
+.project-details-container {
+  margin-top: 4.75rem !important;
 }
 
 /* Inline text links (dot-separated), monospace + underline */
