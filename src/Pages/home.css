@@ -62,6 +62,13 @@
   line-height: 1.35;
 }
 
+.home-about-more {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: clamp(0.86rem, 3.3vw, 0.95rem);
+  line-height: 1.6;
+}
+
 /* Recent experience block */
 .home-recent {
   display: flex;

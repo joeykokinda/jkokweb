@@ -81,9 +81,17 @@ function HomePage() {
         <hr className="home-divider" />
 
         <p className="home-about">
-          Hey, im joey and im studying ai at purdue university. today im focused
-          on ai agents and automation — always building with the best tech
-          out right now.
+          Hey, im joey and im studying ai at purdue university. i build at the
+          intersection of ai agents, automation, crypto infra, and embedded
+          devices.
+        </p>
+        <p className="home-about-more">
+          I&apos;ve built across crypto infrastructure — RPC nodes, self-hosted
+          BTC/XMR/ETH full nodes, and Solana tooling — AI agent security like
+          pre-execution guardrails and on-chain audit logging, and full-stack
+          systems in Go, C, TypeScript, and Python. Increasingly that&apos;s
+          hardware-backed controls that sit between autonomous agents and the
+          actions they take.
         </p>
 
         <hr className="home-divider" />
