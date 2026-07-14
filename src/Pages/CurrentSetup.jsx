@@ -9,7 +9,7 @@ import gpuRig from "../images/Setup/gpu-rig.png";
 import server from "../images/Setup/server.png";
 import pc4090 from "../images/Setup/pc-4090.png";
 import pc3070ti from "../images/Setup/pc-3070ti.png";
-import dockerHomenode from "../images/Setup/docker-homenode.jpeg";
+import irlDocker from "../images/Setup/irl-docker.png";
 import macmini from "../images/Setup/macmini.png";
 import phonefarm from "../images/Setup/phonefarm.png";
 import printerCentauri from "../images/Setup/printer-centauri.png";
@@ -34,12 +34,12 @@ function CurrentSetup() {
         {
           name: "Workstation #1",
           img: pc4090,
-          specs: ["EndeavourOS", "RTX 4090", "Full desktop build", "Dual monitors"],
+          specs: ["EndeavourOS", "RTX 4090"],
         },
         {
           name: "Workstation #2",
           img: pc3070ti,
-          specs: ["Windows", "RTX 3070 Ti", "Full desktop build"],
+          specs: ["Windows", "RTX 3070 Ti"],
         },
         {
           name: "Mac Mini",
@@ -67,7 +67,6 @@ function CurrentSetup() {
             "2× Intel Xeon CPUs",
             "28 cores each (56 total)",
           ],
-          note: "The heavy-lifting box for anything that needs real cores and memory.",
         },
       ],
     },
@@ -76,29 +75,25 @@ function CurrentSetup() {
       sub: "Always-on machines running node infrastructure and backend services.",
       devices: [
         {
-          name: "IRL Docker Home Node",
-          img: dockerHomenode,
+          name: "IRL Docker",
+          img: irlDocker,
           specs: [
             "DappNode home node",
             "Self-hosted Monero (XMR) node",
             "Self-hosted Bitcoin (BTC) node",
+            "2× Dell SFF Linux backend boxes",
           ],
           note: (
             <>
               A true IRL Docker host running my dApp home node so crypto apps
-              talk to my own infrastructure instead of third-party RPC. Powers{" "}
+              talk to my own infrastructure instead of third-party RPC, plus
+              dedicated Linux boxes for lightweight backend services. Powers{" "}
               <Link to="/projects/pyras" className="text-link">
                 Pyras
               </Link>
               .
             </>
           ),
-        },
-        {
-          name: "Linux Backend Servers",
-          img: dockerHomenode,
-          specs: ["2× Dell SFF", "Linux", "Always-on"],
-          note: "Small dedicated Linux boxes hosting lightweight backend services.",
         },
       ],
     },
@@ -114,31 +109,11 @@ function CurrentSetup() {
         </>
       ),
       devices: [
-        {
-          name: "Elegoo Centauri Carbon",
-          img: printerCentauri,
-          specs: ["256×256×256 mm", "Carbon-fiber capable", "Enclosed chamber"],
-        },
-        {
-          name: "Bambu Lab A1 Mini",
-          img: printerA1mini1,
-          specs: ["AMS multicolor", "Compact bed", "Fast prototyping"],
-        },
-        {
-          name: "Bambu Lab A1 Mini",
-          img: printerA1mini2,
-          specs: ["AMS multicolor", "Compact bed", "Fast prototyping"],
-        },
-        {
-          name: "Bambu Lab A1",
-          img: printerA1_1,
-          specs: ["256×256 mm bed", "AMS multicolor", "High throughput"],
-        },
-        {
-          name: "Bambu Lab A1",
-          img: printerA1_2,
-          specs: ["256×256 mm bed", "AMS multicolor", "High throughput"],
-        },
+        { name: "Elegoo Centauri Carbon", img: printerCentauri, specs: [] },
+        { name: "Bambu Lab A1 Mini", img: printerA1mini1, specs: [] },
+        { name: "Bambu Lab A1 Mini", img: printerA1mini2, specs: [] },
+        { name: "Bambu Lab A1", img: printerA1_1, specs: [] },
+        { name: "Bambu Lab A1", img: printerA1_2, specs: [] },
       ],
     },
     {
@@ -224,11 +199,13 @@ function CurrentSetup() {
                   </div>
                   <div className="device-card-body">
                     <h3 className="device-card-name">{d.name}</h3>
-                    <ul className="device-specs">
-                      {d.specs.map((s, i) => (
-                        <li key={i}>{s}</li>
-                      ))}
-                    </ul>
+                    {d.specs.length > 0 && (
+                      <ul className="device-specs">
+                        {d.specs.map((s, i) => (
+                          <li key={i}>{s}</li>
+                        ))}
+                      </ul>
+                    )}
                     {d.note && <p className="device-note">{d.note}</p>}
                   </div>
                 </div>
@@ -237,28 +214,6 @@ function CurrentSetup() {
           </section>
         ))}
 
-        <div className="project-content">
-          <div className="projectDetailsText">
-            <section className="project-section">
-              <h2>The Tailnet</h2>
-              <p>
-                Everything joins one Tailscale (WireGuard) tailnet — a private
-                mesh where the Raspberry Pi, the node boxes, our workstations, and
-                our phones all reach each other directly. Nothing is exposed to
-                the public internet; we hit any machine over its tailnet address
-                from anywhere and it behaves as if we were on the same wifi, with
-                zero port forwarding.
-              </p>
-            </section>
-          </div>
-        </div>
-
-        <p className="setup-contact">
-          Contact me at{" "}
-          <a href="mailto:j@kokinda.com" className="text-link">
-            j@kokinda.com
-          </a>
-        </p>
       </div>
     </>
   );

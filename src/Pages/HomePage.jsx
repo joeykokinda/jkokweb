@@ -15,6 +15,7 @@ const socialLinks = [
   { href: "https://github.com/joeykokinda", label: "github" },
   { href: "https://x.com/sp3ked", label: "x" },
   { href: "https://www.linkedin.com/in/jkokinda/", label: "linkedin" },
+  { href: "mailto:j@kokinda.com", label: "email" },
 ];
 
 function LinkRow({ items }) {
