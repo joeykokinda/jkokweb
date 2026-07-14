@@ -77,7 +77,7 @@ function HomePage() {
             </p>
             <p className="home-sub home-setup-link">
               <Link to="/setup" className="text-link">
-                see my homelab →
+see my homelab
               </Link>
             </p>
           </div>
