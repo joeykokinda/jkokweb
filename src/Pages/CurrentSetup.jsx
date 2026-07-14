@@ -130,12 +130,14 @@ function CurrentSetup() {
           ],
           note: (
             <>
-              Runs the{" "}
+              Connected to a Raspberry Pi that I can connect to remotely to see
+              the{" "}
               <Link to="/projects/phonefarm" className="text-link">
                 PhoneFarm
               </Link>{" "}
-              dashboard as a service — keeps ADB alive, restarts stalled devices,
-              and fires scheduled macros server-side.
+              dashboard of all the phones and drive every device from anywhere.
+              The Pi runs it as a service — keeps ADB alive, restarts stalled
+              devices, and fires scheduled macros server-side.
             </>
           ),
         },
