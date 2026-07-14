@@ -15,7 +15,6 @@ const socialLinks = [
   { href: "https://github.com/joeykokinda", label: "github" },
   { href: "https://x.com/sp3ked", label: "x" },
   { href: "https://www.linkedin.com/in/jkokinda/", label: "linkedin" },
-  { href: "mailto:j@kokinda.com", label: "email" },
 ];
 
 function LinkRow({ items }) {
@@ -96,14 +95,23 @@ see my homelab
         <p className="home-about-more">
           I have experience across crypto infrastructure, AI agents, full stack
           development, and embedded hardware. That means self hosted BTC and XMR
-          nodes (
+          nodes and crypto infra (
+          <a
+            href="https://omenswap.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            omenswap
+          </a>{" "}
+          and{" "}
           <a
             href="https://pyras.org"
             target="_blank"
             rel="noopener noreferrer"
             className="text-link"
           >
-            pyras.org
+            pyras
           </a>
           ), agent tooling and automation (
           <a
@@ -113,15 +121,6 @@ see my homelab
             className="text-link"
           >
             creou.app
-          </a>
-          ,{" "}
-          <a
-            href="https://omenswap.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-          >
-            omenswap.com
           </a>
           ), various hardware projects (
           <Link to="/projects/phonefarm" className="text-link">
@@ -200,6 +199,11 @@ see my homelab
         <div className="home-links">
           <span className="home-links-label">LINKS</span>
           <LinkRow items={socialLinks} />
+        </div>
+
+        <div className="home-links">
+          <span className="home-links-label">EMAIL</span>
+          <span className="home-email">j@kokinda.com</span>
         </div>
       </main>
     </div>
