@@ -88,6 +88,17 @@
   font-size: clamp(0.9rem, 3.8vw, 1.05rem);
 }
 
+.home-contact-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-contact-link:hover {
+  color: var(--sky-deep);
+}
+
 .home-tldr {
   margin: 0.7rem 0 0;
   color: var(--ink);

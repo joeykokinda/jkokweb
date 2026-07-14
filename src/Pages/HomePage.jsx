@@ -196,7 +196,12 @@ see my homelab
           <LinkRow items={socialLinks} />
         </div>
 
-        <p className="home-contact">contact me at j AT kokinda DOT com</p>
+        <p className="home-contact">
+          contact me at{" "}
+          <a href="mailto:j@kokinda.com" className="home-contact-link">
+            j @ kokinda . com
+          </a>
+        </p>
       </main>
     </div>
   );
