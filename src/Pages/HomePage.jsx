@@ -64,7 +64,7 @@ function HomePage() {
           <div className="home-head-text">
             <h1>Joey Kokinda</h1>
             <p className="home-sub">
-              student studying ai at{" "}
+              studying ai at{" "}
               <a
                 href="https://www.admissions.purdue.edu/majors/a-to-z/artificial-intelligence-science.php"
                 target="_blank"
@@ -86,7 +86,7 @@ function HomePage() {
 
         <div className="home-tldr-block">
           <p className="home-about">
-            Today I am focused on{" "}
+            I am focused on{" "}
             <span className="grad-text">ai agents and automation</span> and
             always building with the best tech available.
           </p>
