@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./experiences.css";
 
 function Experiences() {
@@ -78,9 +77,9 @@ function Experiences() {
       <div className="experienceFooter">
         <p className="contact-text">
           I am always looking for new opportunities!{" "}
-          <Link to="/contact" className="contact-link">
+          <a href="mailto:j@kokinda.com" className="contact-link">
             Contact me here
-          </Link>
+          </a>
         </p>
       </div>
     </div>

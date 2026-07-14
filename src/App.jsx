@@ -10,7 +10,6 @@ import Bike from "./Pages/bike";
 import Unbolted from "./Pages/unbolted";
 import Tool from "./Pages/tools";
 import NotFound from "./Pages/notfound";
-import Contact from "./Pages/contact";
 import ContactPageSimple from "./Pages/contactpage";
 import Admin from "./Pages/admin";
 import Docu from "./Pages/docu";
@@ -75,10 +74,9 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/experience" element={<ExperienceEducation />} />
+            <Route path="/contactcard" element={<ContactPageSimple />} />
             <Route path="/setup" element={<CurrentSetup />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/contactcard" element={<ContactPageSimple />} />
             <Route path="/projects/trip" element={<Trip />} />
             <Route path="/projects/scout" element={<Scout />} />
             <Route path="/projects/raspi" element={<Raspi />} />

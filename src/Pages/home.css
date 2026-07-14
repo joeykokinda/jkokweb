@@ -19,6 +19,11 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  min-width: 0;
+}
+
+.home-head-text {
+  min-width: 0;
 }
 
 .home-avatar {
@@ -100,6 +105,7 @@
 
 .home-recent-body {
   flex: 1;
+  min-width: 0;
 }
 
 .home-recent-role {
@@ -144,8 +150,15 @@
 
 .link-row {
   margin: 0;
+  min-width: 0;
+  flex: 1 1 auto;
   font-size: clamp(0.9rem, 3.8vw, 1.05rem);
   line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.home-about-more {
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 480px) {
