@@ -137,7 +137,7 @@ see my homelab
             rel="noopener noreferrer"
             className="text-link"
           >
-            turtosa
+            turtosa.com
           </a>
           ,{" "}
           <Link to="/projects/ward" className="text-link">
@@ -196,10 +196,7 @@ see my homelab
           <LinkRow items={socialLinks} />
         </div>
 
-        <div className="home-links">
-          <span className="home-links-label">EMAIL</span>
-          <span className="home-email">j@kokinda.com</span>
-        </div>
+        <p className="home-contact">contact me at j AT kokinda DOT com</p>
       </main>
     </div>
   );

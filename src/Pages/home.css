@@ -82,8 +82,9 @@
   font-weight: 700;
 }
 
-.home-email {
-  color: var(--ink);
+.home-contact {
+  margin: 1.4rem 0 0;
+  color: var(--ink-soft);
   font-size: clamp(0.9rem, 3.8vw, 1.05rem);
 }
 
