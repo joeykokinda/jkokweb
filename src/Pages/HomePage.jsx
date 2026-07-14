@@ -64,7 +64,7 @@ function HomePage() {
           <div className="home-head-text">
             <h1>Joey Kokinda</h1>
             <p className="home-sub">
-              studying ai at{" "}
+              studying artificial intelligence at{" "}
               <a
                 href="https://www.admissions.purdue.edu/majors/a-to-z/artificial-intelligence-science.php"
                 target="_blank"
