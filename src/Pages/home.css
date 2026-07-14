@@ -61,7 +61,7 @@
 .home-divider {
   border: none;
   border-top: 1px solid rgba(255, 255, 255, 0.55);
-  margin: 1.4rem 0;
+  margin: 1rem 0;
 }
 
 .home-tldr-block .home-links-label {
@@ -72,9 +72,9 @@
 .home-about {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(1.15rem, 4.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 3.8vw, 1.2rem);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .grad-text {
@@ -108,10 +108,10 @@
 }
 
 .home-about-more {
-  margin: 1rem 0 0;
+  margin: 0.85rem 0 0;
   color: var(--ink-soft);
-  font-size: clamp(0.86rem, 3.3vw, 0.95rem);
-  line-height: 1.6;
+  font-size: clamp(0.82rem, 3.1vw, 0.9rem);
+  line-height: 1.55;
 }
 
 /* Recent experience block */

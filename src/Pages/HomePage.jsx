@@ -87,8 +87,8 @@ function HomePage() {
         <div className="home-tldr-block">
           <p className="home-about">
             Today I am focused on{" "}
-            <span className="grad-text">ai agents and automation</span>, always
-            building with the best tech out right now.
+            <span className="grad-text">ai agents and automation</span> and
+            always building with the best tech available.
           </p>
         </div>
 
@@ -191,8 +191,7 @@ function HomePage() {
             </p>
             <p className="home-recent-desc">
               Owned an AI ad pipeline end to end: parallelized per-avatar
-              generation of TikTok/IG slideshows and videos (Seedance 2.0 +
-              Claude creative direction, ffmpeg assembly)…{" "}
+              generation of TikTok/IG slideshows and videos…{" "}
               <Link to="/experience" className="text-link">
                 see more
               </Link>
