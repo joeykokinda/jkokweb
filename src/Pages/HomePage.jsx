@@ -137,8 +137,12 @@ see my homelab
             rel="noopener noreferrer"
             className="text-link"
           >
-            turtosa.com
+            turtosa
           </a>
+          ,{" "}
+          <Link to="/projects/ward" className="text-link">
+            ward
+          </Link>
           ,{" "}
           <Link to="/projects" className="text-link">
             etc
