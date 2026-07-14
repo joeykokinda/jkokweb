@@ -4,22 +4,23 @@ import { Helmet } from "react-helmet-async";
 import "./projectDetails.css";
 import "./CurrentSetup.css";
 
-import laptop from "../images/Setup/laptop.png";
-import gpuRig from "../images/Setup/gpu-rig.png";
-import server from "../images/Setup/server.png";
-import pc4090 from "../images/Setup/pc-4090.png";
-import pc3070ti from "../images/Setup/pc-3070ti.png";
-import irlDocker from "../images/Setup/irl-docker.png";
-import macmini from "../images/Setup/macmini.png";
-import phonefarm from "../images/Setup/phonefarm.png";
-import printerCentauri from "../images/Setup/printer-centauri.png";
-import printerA1mini1 from "../images/Setup/printer-a1mini-1.png";
-import printerA1mini2 from "../images/Setup/printer-a1mini-2.png";
-import printerA1_1 from "../images/Setup/printer-a1-1.png";
-import printerA1_2 from "../images/Setup/printer-a1-2.png";
-import hardware1 from "../images/Setup/hardware-1.png";
-import hardware2 from "../images/Setup/hardware-2.png";
-import fullSetup from "../images/Setup/full-setup.png";
+import laptop from "../images/Setup/laptop.jpg";
+import gpuRig from "../images/Setup/gpu-rig.jpg";
+import server from "../images/Setup/server.jpg";
+import pc4090 from "../images/Setup/pc-4090.jpg";
+import pc3070ti from "../images/Setup/pc-3070ti.jpg";
+import irlDocker from "../images/Setup/irl-docker.jpg";
+import macmini from "../images/Setup/macmini.jpg";
+import phonefarm from "../images/Setup/phonefarm.jpg";
+import printerCentauri from "../images/Setup/printer-centauri.jpg";
+import printerA1mini1 from "../images/Setup/printer-a1mini-1.jpg";
+import printerA1mini2 from "../images/Setup/printer-a1mini-2.jpg";
+import printerA1_1 from "../images/Setup/printer-a1-1.jpg";
+import printerA1_2 from "../images/Setup/printer-a1-2.jpg";
+import hardware1 from "../images/Setup/hardware-1.jpg";
+import hardware2 from "../images/Setup/hardware-2.jpg";
+import fullSetup from "../images/Setup/full-setup.jpg";
+import fullSetup2 from "../images/Setup/full-setup-2.jpg";
 
 function CurrentSetup() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -52,13 +53,13 @@ function CurrentSetup() {
     },
     {
       title: "Compute & AI",
-      sub: "Training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory, also used as the backend for some of me and my brother's services.",
+      sub: "These devices are used for training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory, also used as the backend for some of me and my brother's services.",
       devices: [
         {
           name: "GPU Rig",
           img: gpuRig,
           specs: ["2× RTX 3090", "RTX 2080 (offline)", "GTX 1080 (offline)"],
-          note: "Runs localized agents on a Qwen 3.6 27B uncensored model, fully self-hosted.",
+          note: "Currently using this for the Qwen 3.6 27B uncensored model, running localized agents fully self-hosted.",
         },
         {
           name: "Server",
@@ -191,7 +192,12 @@ function CurrentSetup() {
                     className="device-card-media"
                     onClick={() => setLightboxImage(d.img)}
                   >
-                    <img src={d.img} alt={d.name} />
+                    <img
+                      src={d.img}
+                      alt={d.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="device-card-body">
                     <h3 className="device-card-name">{d.name}</h3>
@@ -222,7 +228,12 @@ function CurrentSetup() {
                   className="device-card-media"
                   onClick={() => setLightboxImage(img)}
                 >
-                  <img src={img} alt={`Hardware station ${idx + 1}`} />
+                  <img
+                    src={img}
+                    alt={`Hardware station ${idx + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
             ))}
@@ -231,11 +242,21 @@ function CurrentSetup() {
 
         <section className="setup-section">
           <h2 className="setup-section-title">Full Setup</h2>
-          <div
-            className="setup-full"
-            onClick={() => setLightboxImage(fullSetup)}
-          >
-            <img src={fullSetup} alt="Full setup overview" />
+          <div className="setup-full-stack">
+            {[fullSetup, fullSetup2].map((img, idx) => (
+              <div
+                key={idx}
+                className="setup-full"
+                onClick={() => setLightboxImage(img)}
+              >
+                <img
+                  src={img}
+                  alt={`Full setup overview ${idx + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
           </div>
         </section>
       </div>

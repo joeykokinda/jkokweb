@@ -91,7 +91,7 @@
 .terminal-content {
   padding: 8px;
   color: #fff;
-  font-family: "Consolas", monospace;
+  font-family: "Berkeley Mono", "Consolas", monospace;
   font-size: 14px;
   line-height: 1.2;
   margin: 0;
@@ -276,7 +276,7 @@
 
 /* Loading bar styling */
 .loading-bar {
-  font-family: "Consolas", monospace;
+  font-family: "Berkeley Mono", "Consolas", monospace;
   color: #0f0;
   margin-top: 10px;
   white-space: pre;

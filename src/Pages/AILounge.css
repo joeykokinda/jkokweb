@@ -2,7 +2,7 @@
   padding: 20px;
   max-width: 800px;
   margin: 40px auto;
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
 }
 
 .ai-lounge-container .back-button {
@@ -10,7 +10,7 @@
   color: #00ff00;
   text-decoration: none;
   margin-bottom: 1.5rem;
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   transition: all 0.3s ease;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .ai-lounge-container .terminal {
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   background-color: #0c0c0c;
   color: #33ff33;
   line-height: 1.5;
@@ -58,7 +58,7 @@
 .ai-lounge-container .terminal-line {
   margin-bottom: 5px;
   padding: 2px 0;
-  font-family: 'Courier New', monospace;
+  font-family: "Berkeley Mono", 'Courier New', monospace;
   animation: fadeIn 0.2s ease-in;
 }
 
@@ -88,7 +88,7 @@
   background-color: transparent;
   border: none;
   color: #33ff33;
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   margin-left: 5px;
   outline: none;
   caret-color: #33ff33;
@@ -108,7 +108,7 @@
   padding: 8px;
   width: 100%;
   margin-bottom: 10px;
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   box-sizing: border-box;
 }
 
@@ -118,7 +118,7 @@
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   font-weight: bold;
 }
 

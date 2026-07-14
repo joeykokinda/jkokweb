@@ -85,7 +85,7 @@
   padding: 18px 22px;
   overflow-x: auto;
   margin: 0 0 20px 0;
-  font-family: "SF Mono", "Fira Code", Menlo, monospace;
+  font-family: "Berkeley Mono", "SF Mono", "Fira Code", Menlo, monospace;
   font-size: 0.875rem;
   line-height: 1.7;
   color: var(--ink);
@@ -103,7 +103,7 @@
 
 /* Inline code */
 .bp-content code {
-  font-family: "SF Mono", "Fira Code", Menlo, monospace;
+  font-family: "Berkeley Mono", "SF Mono", "Fira Code", Menlo, monospace;
   font-size: 0.85em;
   color: var(--sky-deep);
   background: var(--sun-soft);

@@ -361,7 +361,7 @@
 }
 
 .ssh-command code {
-  font-family: "Courier New", monospace;
+  font-family: "Berkeley Mono", "Courier New", monospace;
   font-size: 0.95rem;
   color: var(--ink);
   word-break: break-all;
