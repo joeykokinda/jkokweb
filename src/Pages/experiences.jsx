@@ -28,7 +28,16 @@ function Experiences() {
       <div className="experience-divider"></div>
 
       <div className="experienceContent">
-        <h3>Turtosa</h3>
+        <h3>
+          <a
+            href="https://turtosa.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+          >
+            Turtosa
+          </a>
+        </h3>
         <span className="experience-role">
           Co-Founder | July 2025 – Present
         </span>
@@ -48,7 +57,19 @@ function Experiences() {
         <ul className="experience-list">
           <li>Represent Boiler Blockchain at hackathons and events (most recently at EthDenver 2025)</li>
           <li>Collaborate with peers to develop innovative blockchain solutions and promote the club's presence</li>
-          <li>Built and maintain the official Boiler Blockchain website (boilerblockchain.org). Helped upgrade the site by designing, creating, and integrating dynamic pages/content</li>
+          <li>
+            Built and maintain the official Boiler Blockchain website (
+            <a
+              href="https://boilerblockchain.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              boilerblockchain.org
+            </a>
+            ). Helped upgrade the site by designing, creating, and integrating
+            dynamic pages/content
+          </li>
         </ul>
       </div>
 

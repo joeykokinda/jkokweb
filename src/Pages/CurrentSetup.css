@@ -4,6 +4,28 @@
   margin: 2.5rem 0;
 }
 
+.setup-full {
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  background: #0d0d0f;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.setup-full img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  margin: 0 auto;
+  transition: transform 0.35s ease;
+}
+
+.setup-full:hover img {
+  transform: scale(1.02);
+}
+
 .setup-section-title {
   color: var(--ink);
   font-size: 1.5rem;

@@ -17,6 +17,9 @@ import printerA1mini1 from "../images/Setup/printer-a1mini-1.png";
 import printerA1mini2 from "../images/Setup/printer-a1mini-2.png";
 import printerA1_1 from "../images/Setup/printer-a1-1.png";
 import printerA1_2 from "../images/Setup/printer-a1-2.png";
+import hardware1 from "../images/Setup/hardware-1.png";
+import hardware2 from "../images/Setup/hardware-2.png";
+import fullSetup from "../images/Setup/full-setup.png";
 
 function CurrentSetup() {
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -207,6 +210,34 @@ function CurrentSetup() {
           </section>
         ))}
 
+        <section className="setup-section">
+          <h2 className="setup-section-title">Various Hardware Stations</h2>
+          <p className="setup-section-sub">
+            Benches for electronics, embedded, and hardware prototyping.
+          </p>
+          <div className="device-grid">
+            {[hardware1, hardware2].map((img, idx) => (
+              <div key={idx} className="device-card">
+                <div
+                  className="device-card-media"
+                  onClick={() => setLightboxImage(img)}
+                >
+                  <img src={img} alt={`Hardware station ${idx + 1}`} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="setup-section">
+          <h2 className="setup-section-title">Full Setup</h2>
+          <div
+            className="setup-full"
+            onClick={() => setLightboxImage(fullSetup)}
+          >
+            <img src={fullSetup} alt="Full setup overview" />
+          </div>
+        </section>
       </div>
     </>
   );

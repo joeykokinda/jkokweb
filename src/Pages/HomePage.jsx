@@ -76,7 +76,7 @@ function HomePage() {
             </p>
             <p className="home-sub home-setup-link">
               <Link to="/setup" className="text-link">
-see my homelab
+                [see my homelab]
               </Link>
             </p>
           </div>
@@ -103,8 +103,8 @@ see my homelab
             className="text-link"
           >
             omenswap.com
-          </a>{" "}
-          and{" "}
+          </a>
+          ,{" "}
           <a
             href="https://pyras.org"
             target="_blank"
@@ -122,6 +122,10 @@ see my homelab
           >
             creou.app
           </a>
+          ,{" "}
+          <Link to="/projects/veridex" className="text-link">
+            veridex
+          </Link>
           ), various hardware projects (
           <Link to="/projects/phonefarm" className="text-link">
             phone farm
@@ -163,7 +167,7 @@ see my homelab
         <p className="home-about-more">
           Make sure to check out{" "}
           <Link to="/setup" className="text-link">
-            my homelab
+            [my homelab]
           </Link>{" "}
           if you have not already.
         </p>
