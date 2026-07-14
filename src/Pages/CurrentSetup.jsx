@@ -49,7 +49,7 @@ function CurrentSetup() {
     },
     {
       title: "Compute & AI",
-      sub: "Heavy iron for the real work — training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory.",
+      sub: "Training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory. Used obviously as backend for some of me and my brother's services.",
       devices: [
         {
           name: "GPU Rig",
