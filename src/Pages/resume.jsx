@@ -13,16 +13,16 @@ function Resume() {
         <h1>Resume</h1>
         <div className="resume-image-container">
           <img
-            src="/kokindajoeyresume.png"
-            alt="Joey's Resume"
+            src="/Kokinda_Joey_Resume.png"
+            alt="Joey Kokinda's Resume"
             className="resume-image"
           />
         </div>
         <div className="download-section">
           <p>Want a copy?</p>
           <a
-            href="/KokindaJoeyResume.pdf"
-            download="KokindaJoeyResume.pdf"
+            href="/Kokinda_Joey_Resume.pdf"
+            download="Kokinda_Joey_Resume.pdf"
             className="download-button"
           >
             Download Resume ↓
