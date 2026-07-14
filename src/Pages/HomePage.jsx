@@ -102,7 +102,7 @@ see my homelab
             rel="noopener noreferrer"
             className="text-link"
           >
-            omenswap
+            omenswap.com
           </a>{" "}
           and{" "}
           <a
@@ -111,7 +111,7 @@ see my homelab
             rel="noopener noreferrer"
             className="text-link"
           >
-            pyras
+            pyras.org
           </a>
           ), agent tooling and automation (
           <a
@@ -138,15 +138,6 @@ see my homelab
             className="text-link"
           >
             turtosa.com
-          </a>
-          ,{" "}
-          <a
-            href="https://staklabs.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-          >
-            staklabs.ai
           </a>
           ,{" "}
           <Link to="/projects" className="text-link">
