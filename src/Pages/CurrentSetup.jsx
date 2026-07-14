@@ -24,7 +24,6 @@ function CurrentSetup() {
   const groups = [
     {
       title: "Workstations",
-      sub: "The machines I actually work on day to day.",
       devices: [
         {
           name: "Main Laptop",
@@ -42,10 +41,9 @@ function CurrentSetup() {
           specs: ["Windows", "RTX 3070 Ti"],
         },
         {
-          name: "Mac Mini",
+          name: "2024 M4 Mac Mini",
           img: macmini,
-          specs: ["macOS", "Xcode toolchain", "App Store builds"],
-          note: "Dedicated to App Store development and iOS builds.",
+          specs: ["App Store dev station"],
         },
       ],
     },
