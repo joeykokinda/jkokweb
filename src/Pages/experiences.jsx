@@ -20,8 +20,8 @@ function Experiences() {
           Intern | May 2026 – Jul 2026
         </span>
         <ul className="experience-list">
-          <li>Built an AI ads pipeline for bulk advertisement creation, one avatar (account) at a time</li>
-          <li>Engineered the system to auto-generate TikTok and Instagram slideshows and videos at scale</li>
+          <li>Owned an AI ad pipeline end to end: parallelized per-avatar generation of TikTok/IG slideshows and videos (Seedance 2.0 + Claude creative direction, ffmpeg assembly) with no throughput ceiling</li>
+          <li>Built one-click competitor ad cloning that rebrands rivals' top creatives into ready-to-run ads and growth content</li>
         </ul>
       </div>
 

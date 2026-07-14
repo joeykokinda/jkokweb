@@ -190,8 +190,11 @@ function HomePage() {
               <span className="home-recent-dates">(May&ndash;Jul 2026)</span>
             </p>
             <p className="home-recent-desc">
-              Built an AI ads pipeline for bulk ad creation per avatar, auto
-              generating TikTok &amp; Instagram slideshows and videos.
+              Owned an AI ad pipeline end to end: parallelized per-avatar
+              generation of TikTok/IG slideshows and videos (Seedance 2.0 +
+              Claude creative direction, ffmpeg assembly) with no throughput
+              ceiling, plus one-click competitor ad cloning that rebrands rivals'
+              top creatives into ready-to-run ads and growth content.
             </p>
           </div>
         </div>
