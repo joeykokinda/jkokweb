@@ -27,6 +27,9 @@ import wardImage from "../images/Ward/00-intro.png";
 import omenswapImage from "../images/OmenSwap/home.png";
 import phonefarmImage from "../images/PhoneFarm/phonefarm-dashboard.png";
 
+// Projects pinned to the top of the list, in this order
+const PINNED_IDS = ["creou", "phonefarm", "omenswap", "pyras", "exoform"];
+
 function Projects() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
@@ -361,16 +364,26 @@ function Projects() {
     [],
   );
 
+  const orderedProjects = useMemo(() => {
+    const pinned = PINNED_IDS.map((id) =>
+      projectsList.find((project) => project.id === id),
+    ).filter(Boolean);
+    const rest = projectsList.filter(
+      (project) => !PINNED_IDS.includes(project.id),
+    );
+    return [...pinned, ...rest];
+  }, [projectsList]);
+
   useEffect(() => {
     if (activeFilter === "all") {
-      setFilteredProjects(projectsList);
+      setFilteredProjects(orderedProjects);
     } else {
       const selectedIds = filterCategories[activeFilter] || [];
       setFilteredProjects(
-        projectsList.filter((project) => selectedIds.includes(project.id)),
+        orderedProjects.filter((project) => selectedIds.includes(project.id)),
       );
     }
-  }, [activeFilter, filterCategories, projectsList]);
+  }, [activeFilter, filterCategories, orderedProjects]);
 
   const handleProjectClick = (link) => {
     // Remember the list scroll position so returning from the project
