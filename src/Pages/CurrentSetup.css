@@ -143,6 +143,16 @@
   color: var(--sun-deep);
 }
 
+.device-specs-sub {
+  margin-top: 0.3rem;
+  margin-left: 1rem;
+}
+
+.device-specs-sub li::before {
+  content: "–";
+  opacity: 0.7;
+}
+
 .device-note {
   margin: 0.15rem 0 0;
   color: var(--ink);

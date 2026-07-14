@@ -80,9 +80,13 @@ function CurrentSetup() {
           name: "IRL Docker Container",
           img: irlDocker,
           specs: [
-            "DappNode home node",
-            "Self-hosted Monero (XMR) node",
-            "Self-hosted Bitcoin (BTC) node",
+            {
+              label: "DappNode home node",
+              children: [
+                "Self-hosted Monero (XMR) node",
+                "Self-hosted Bitcoin (BTC) node",
+              ],
+            },
             "2× Dell SFF Linux backend boxes",
           ],
           note: (
@@ -203,9 +207,20 @@ function CurrentSetup() {
                     <h3 className="device-card-name">{d.name}</h3>
                     {d.specs.length > 0 && (
                       <ul className="device-specs">
-                        {d.specs.map((s, i) => (
-                          <li key={i}>{s}</li>
-                        ))}
+                        {d.specs.map((s, i) =>
+                          typeof s === "string" ? (
+                            <li key={i}>{s}</li>
+                          ) : (
+                            <li key={i}>
+                              {s.label}
+                              <ul className="device-specs device-specs-sub">
+                                {s.children.map((c, j) => (
+                                  <li key={j}>{c}</li>
+                                ))}
+                              </ul>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     )}
                     {d.note && <p className="device-note">{d.note}</p>}
