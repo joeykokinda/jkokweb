@@ -34,7 +34,6 @@ function Projects() {
   const navigate = useNavigate();
   const [activeFilter, setActiveFilter] = useState("all");
   const [filteredProjects, setFilteredProjects] = useState([]);
-  const [showMoreFilters, setShowMoreFilters] = useState(false);
   const [showSSHPopup, setShowSSHPopup] = useState(false);
   const [copied, setCopied] = useState(false);
   const sshCommand = "ssh polyterm@polyterm.app";
@@ -376,14 +375,15 @@ function Projects() {
 
   useEffect(() => {
     if (activeFilter === "all") {
+      // Only apply the pinned order when no sort/filter is active
       setFilteredProjects(orderedProjects);
     } else {
       const selectedIds = filterCategories[activeFilter] || [];
       setFilteredProjects(
-        orderedProjects.filter((project) => selectedIds.includes(project.id)),
+        projectsList.filter((project) => selectedIds.includes(project.id)),
       );
     }
-  }, [activeFilter, filterCategories, orderedProjects]);
+  }, [activeFilter, filterCategories, orderedProjects, projectsList]);
 
   const handleProjectClick = (link) => {
     // Remember the list scroll position so returning from the project
@@ -435,73 +435,25 @@ function Projects() {
 
         <div className="terminal-content">
           <div className="project-filters">
-            <span className="filter-label">Sort by: </span>
-            <button
-              className={`filter-btn ${activeFilter === "website" ? "active" : ""}`}
-              onClick={() => setActiveFilter("website")}
+            <label className="filter-label" htmlFor="project-sort">
+              Sort by:
+            </label>
+            <select
+              id="project-sort"
+              className="filter-select"
+              value={activeFilter}
+              onChange={(e) => setActiveFilter(e.target.value)}
             >
-              Website
-            </button>
-            <button
-              className={`filter-btn ${activeFilter === "hardware" ? "active" : ""}`}
-              onClick={() => setActiveFilter("hardware")}
-            >
-              Hardware
-            </button>
-            <button
-              className={`filter-btn ${activeFilter === "software" ? "active" : ""}`}
-              onClick={() => setActiveFilter("software")}
-            >
-              Software
-            </button>
-            <button
-              className={`filter-btn ${activeFilter === "web3" ? "active" : ""}`}
-              onClick={() => setActiveFilter("web3")}
-            >
-              Web3
-            </button>
-            <button
-              className={`filter-btn ${activeFilter === "hackathon" ? "active" : ""}`}
-              onClick={() => setActiveFilter("hackathon")}
-            >
-              Hackathon
-            </button>
-            {!showMoreFilters && (
-              <span
-                onClick={() => setShowMoreFilters(true)}
-                className="filter-link"
-              >
-                Show More
-              </span>
-            )}
-            {showMoreFilters && (
-              <>
-                <button
-                  className={`filter-btn ${activeFilter === "active" ? "active" : ""}`}
-                  onClick={() => setActiveFilter("active")}
-                >
-                  Active
-                </button>
-                <button
-                  className={`filter-btn ${activeFilter === "inactive" ? "active" : ""}`}
-                  onClick={() => setActiveFilter("inactive")}
-                >
-                  Inactive
-                </button>
-                <button
-                  className={`filter-btn ${activeFilter === "oneTime" ? "active" : ""}`}
-                  onClick={() => setActiveFilter("oneTime")}
-                >
-                  One Time Completion
-                </button>
-                <span
-                  onClick={() => setShowMoreFilters(false)}
-                  className="filter-link"
-                >
-                  Show Less
-                </span>
-              </>
-            )}
+              <option value="all">All</option>
+              <option value="website">Website</option>
+              <option value="hardware">Hardware</option>
+              <option value="software">Software</option>
+              <option value="web3">Web3</option>
+              <option value="hackathon">Hackathon</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="oneTime">One Time Completion</option>
+            </select>
           </div>
 
           <div className="project-grid">
