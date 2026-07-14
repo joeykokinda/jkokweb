@@ -31,9 +31,10 @@
 
 .setup-section-sub {
   color: var(--ink);
-  opacity: 0.75;
+  opacity: 0.85;
   margin: 0 0 1.4rem;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
+  line-height: 1.5;
 }
 
 .device-grid {

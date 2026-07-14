@@ -75,7 +75,7 @@ function CurrentSetup() {
       sub: "Always-on machines running node infrastructure and backend services.",
       devices: [
         {
-          name: "IRL Docker",
+          name: "IRL Docker Container",
           img: irlDocker,
           specs: [
             "DappNode home node",
