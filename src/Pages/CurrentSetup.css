@@ -1,12 +1,5 @@
 /* Current Setup — device catalog */
 
-.setup-intro {
-  color: var(--ink);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  margin: 0 0 1rem;
-}
-
 .setup-section {
   margin: 2.5rem 0;
 }

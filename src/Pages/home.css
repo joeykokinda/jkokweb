@@ -53,8 +53,9 @@
 }
 
 .home-setup-link {
-  margin-top: 0.35rem;
-  font-weight: 600;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 4vw, 1.2rem);
 }
 
 .home-divider {

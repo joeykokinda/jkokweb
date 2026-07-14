@@ -160,7 +160,7 @@ function CurrentSetup() {
       )}
       <div className="project-details-container">
         <Helmet>
-          <title>Current Setup | Joey Kokinda</title>
+          <title>My Homelab | Joey Kokinda</title>
           <meta
             name="description"
             content="Joey Kokinda's current setup: a self-hosted homelab — workstations, a GPU rig running local Qwen agents, a 56-core server, self-hosted BTC/XMR nodes on a DappNode home node, a Mac mini, an Android phone farm, and a fleet of Bambu Lab and Elegoo 3D printers."
@@ -174,15 +174,8 @@ function CurrentSetup() {
         </Link>
 
         <div className="project-header">
-          <h1>Current Setup</h1>
+          <h1>My Homelab</h1>
         </div>
-
-        <p className="setup-intro">
-          Me and my brother's local setup — a self-hosted homelab of
-          workstations, always-on node machines, an Android phone farm, and a
-          wall of 3D printers, all stitched into one private Tailscale tailnet we
-          can reach from anywhere.
-        </p>
 
         {groups.map((group, gi) => (
           <section className="setup-section" key={gi}>
