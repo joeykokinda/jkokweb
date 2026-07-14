@@ -192,9 +192,10 @@ function HomePage() {
             <p className="home-recent-desc">
               Owned an AI ad pipeline end to end: parallelized per-avatar
               generation of TikTok/IG slideshows and videos (Seedance 2.0 +
-              Claude creative direction, ffmpeg assembly) with no throughput
-              ceiling, plus one-click competitor ad cloning that rebrands rivals'
-              top creatives into ready-to-run ads and growth content.
+              Claude creative direction, ffmpeg assembly)…{" "}
+              <Link to="/experience" className="text-link">
+                see more
+              </Link>
             </p>
           </div>
         </div>
