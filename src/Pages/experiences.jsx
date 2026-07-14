@@ -28,15 +28,14 @@ function Experiences() {
       <div className="experience-divider"></div>
 
       <div className="experienceContent">
-        <h3>Turtosa (Enterprise LLM Portal)</h3>
+        <h3>Turtosa</h3>
         <span className="experience-role">
           Co-Founder | July 2025 – Present
         </span>
-        <ul className="experience-list">
-          <li>Co-founded a platform that connects cloud and local LLM services, offering enterprise-wide AI management with compliance and security features</li>
-          <li>Developed robust user management, data sovereignty controls, and integration with multiple AI models (Claude, OpenAI, Gemini) for enterprise use</li>
-          <li>Implemented monitoring, usage limits, tagging systems, and a unified API for easy deployment in air-gapped, on-prem, and SaaS environments</li>
-        </ul>
+        <p>
+          Turtosa is more of the name for the product creations of me, my
+          brother, and friends. There are many brands and products under it.
+        </p>
       </div>
 
       <div className="experience-divider"></div>

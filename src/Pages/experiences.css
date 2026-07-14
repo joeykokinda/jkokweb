@@ -1,25 +1,19 @@
 .experienceBox {
-  background: var(--cream);
-  border: var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  margin: 20px auto;
-  overflow: hidden;
+  width: 100%;
 }
 
 .experienceContent {
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 0;
   line-height: 1.6;
 }
 
 .experience-divider {
   height: 1px;
   background-color: var(--sun-soft);
-  margin: 0 2rem;
+  margin: 0;
 }
 
 .experienceContent h3 {
@@ -53,9 +47,8 @@
 }
 
 .experienceFooter {
-  background: var(--cream-2);
-  padding: 1rem 2rem;
-  border-top: var(--border);
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--sun-soft);
   text-align: center;
 }
 

@@ -86,7 +86,7 @@ see my homelab
 
         <div className="home-tldr-block">
           <p className="home-about">
-            Hey im Joey, today I am focused on{" "}
+            Today I am focused on{" "}
             <span className="grad-text">ai agents and automation</span>, always
             building with the best tech out right now.
           </p>
@@ -158,6 +158,14 @@ see my homelab
             Jaeger
           </Link>
           .
+        </p>
+
+        <p className="home-about-more">
+          Make sure to check out{" "}
+          <Link to="/setup" className="text-link">
+            my homelab
+          </Link>{" "}
+          if you have not already.
         </p>
 
         <hr className="home-divider" />
