@@ -24,11 +24,10 @@ import pyrasImage from "../images/Pyras/pyras1.png";
 import veridexImage from "../images/veridex/veridex1.png";
 import creouImage from "../images/Creou/landing.png";
 import wardImage from "../images/Ward/00-intro.png";
-import omenswapImage from "../images/OmenSwap/home.png";
 import phonefarmImage from "../images/PhoneFarm/phonefarm-dashboard.png";
 
 // Projects pinned to the top of the list, in this order
-const PINNED_IDS = ["creou", "phonefarm", "omenswap", "pyras", "exoform"];
+const PINNED_IDS = ["creou", "phonefarm", "pyras", "exoform"];
 
 function Projects() {
   const navigate = useNavigate();
@@ -47,12 +46,12 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["creou", "ward", "omenswap", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
+      website: ["creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       hardware: ["phonefarm", "raspi", "bike", "pyras"],
-      software: ["phonefarm", "creou", "ward", "omenswap", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
-      web3: ["ward", "omenswap", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
+      software: ["phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex"],
+      web3: ["ward", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex"],
       hackathon: ["ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust"],
-      active: ["phonefarm", "creou", "ward", "omenswap", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
+      active: ["phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools"],
       oneTime: ["ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust"],
     }),
@@ -82,18 +81,6 @@ function Projects() {
           "A local web dashboard to monitor and control a fleet of 6+ Android phones from one machine over wireless ADB. Streams each screen live with scrcpy + WebCodecs, mirrors input to the whole fleet at once, and records macros that replay across every device on a schedule. Reached privately over Tailscale.",
         link: "/projects/phonefarm",
         tags: ["Node.js", "scrcpy", "WebCodecs", "ADB", "Automation", "Tailscale"],
-      },
-      {
-        id: "omenswap",
-        title: "OmenSwap - Non-Custodial Swaps for Agents and Humans",
-        image: omenswapImage,
-        year: "2026",
-        status: "live",
-        liveUrl: "https://omenswap.com",
-        description:
-          "Non-custodial crypto swaps for AI agents and humans. No accounts, no KYC, no custody — send from your own wallet to a one-time CREATE2 deposit address and OmenSwap pays out your destination on-chain. One Go backend behind five interfaces: web app, no-JS mirror, SSH TUI, a native MCP server for agents, and a plain HTTP API. Swaps ETH, BTC, XMR, USDC, USDT, SOL and Polygon.",
-        link: "/projects/omenswap",
-        tags: ["Go", "React", "Foundry", "MCP", "AI Agents", "Web3"],
       },
       {
         id: "ward",

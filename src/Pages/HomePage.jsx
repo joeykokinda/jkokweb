@@ -97,15 +97,6 @@ function HomePage() {
           development, and embedded hardware. That means self hosted BTC and XMR
           nodes and crypto infra (
           <a
-            href="https://omenswap.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-          >
-            omenswap.com
-          </a>
-          ,{" "}
-          <a
             href="https://pyras.org"
             target="_blank"
             rel="noopener noreferrer"

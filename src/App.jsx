@@ -33,7 +33,6 @@ import Pyras from "./Pages/pyras";
 import Veridex from "./Pages/veridex";
 import Creou from "./Pages/creou";
 import Ward from "./Pages/ward";
-import Omenswap from "./Pages/omenswap";
 import PhoneFarm from "./Pages/phonefarm";
 import CurrentSetup from "./Pages/CurrentSetup";
 import BlogIndex from "./Pages/Blog/BlogIndex";
@@ -101,7 +100,6 @@ function AppContent() {
             <Route path="/projects/veridex" element={<Veridex />} />
             <Route path="/projects/creou" element={<Creou />} />
             <Route path="/projects/ward" element={<Ward />} />
-            <Route path="/projects/omenswap" element={<Omenswap />} />
             <Route path="/projects/phonefarm" element={<PhoneFarm />} />
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
