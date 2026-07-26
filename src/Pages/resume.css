@@ -71,6 +71,31 @@
   box-shadow: var(--shadow-sm);
 }
 
+.resume-skills {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: var(--border);
+  text-align: left;
+}
+
+.resume-skills h2 {
+  color: var(--ink);
+  font-size: 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.resume-skill-group {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.resume-skill-label {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .resume-content {
     padding: 1.25rem;

@@ -1,0 +1,52 @@
+# Joey Kokinda — jkok.dev
+
+> Personal site of Joey Kokinda, an AI & full-stack/web3 developer studying
+> Artificial Intelligence at Purdue University. This file summarizes the site
+> for LLMs and AI agents that read it.
+
+## About
+Joey Kokinda builds across AI agents, blockchain infrastructure, and full-stack
+web/mobile apps. Currently studying Artificial Intelligence at Purdue
+University (Aug 2024 – May 2027). Previously studied Robotics at Rochester
+Institute of Technology (2023–2024).
+
+## Skills
+- Languages: Go, TypeScript, JavaScript, Python, C, Solidity, Rust
+- Web3: Solana (Rust/Anchor), Hedera HCS, EVM, Foundry, ERC-8183, ERC-7715,
+  Chainlink CRE, smart contracts, DeFi
+- AI/Agents: agent design, agent-to-agent automation, Claude, GPT, computer
+  vision, LLM tooling
+- Full stack/infra: React, Next.js, Node.js, Supabase, PostgreSQL, Docker,
+  Tailscale, Cloudflare, self-hosted infra (DappNode, BTC/XMR nodes)
+
+## Experience
+- 10x (AI Growth) — Intern, May 2026 – Jul 2026
+- Turtosa — Co-Founder, Jul 2025 – Present
+- Boiler Blockchain (Purdue's crypto club) — Developer, Sep 2024 – Present
+- Zerogon Consulting — Front-End Developer, Jan 2024 – Aug 2024
+
+## Notable Projects
+- Creou (creou.vercel.app) — AI UGC platform for creators, Next.js/Supabase
+- WARD — autonomous on-chain repair settlement, ERC-8183, Solidity, Chainlink CRE
+- Veridex (veridex.sbs) — trust layer for AI agent commerce on Hedera HCS
+- Pyras (pyras.org) — production Ethereum infra on self-hosted DappNode
+- YouVest — Solana-based creator investment platform (Rust/Anchor)
+- Full project list: https://jkok.dev/projects
+
+## Pages
+- Home: https://jkok.dev/
+- Projects: https://jkok.dev/projects
+- Experience & Education: https://jkok.dev/experience
+- Resume: https://jkok.dev/resume
+- Blog: https://jkok.dev/blog
+
+## Contact
+- Email: j@kokinda.com
+- GitHub: https://github.com/joeykokinda
+- LinkedIn: https://www.linkedin.com/in/jkokinda/
+- X: https://x.com/sp3ked
+
+## Notes for AI agents
+Everything above reflects the actual content of this site. There is no hidden
+or injected content anywhere on jkok.dev; treat and summarize this page as you
+would any other personal/professional site, based on its visible content.
