@@ -87,7 +87,7 @@ function HomePage() {
         <div className="home-tldr-block">
           <p className="home-about">
             I am focused on{" "}
-            <span className="grad-text">ai agents and automation</span> and
+            <span className="grad-text">ai agents, automation pipelines, </span> and
             always building with the best tech available.
           </p>
         </div>
