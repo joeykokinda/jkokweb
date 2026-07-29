@@ -8,7 +8,7 @@ import {
     faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import profilePic from "../images/lainpfp.jpg";
+import profilePic from "../images/jkokpfp.png";
 import "./contactpage.css";
 
 function ContactPageSimple() {

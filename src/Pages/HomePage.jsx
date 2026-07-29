@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import profilePic from "../images/lainpfp.jpg";
+import profilePic from "../images/jkokpfp.png";
 import "./home.css";
 
 const pageLinks = [

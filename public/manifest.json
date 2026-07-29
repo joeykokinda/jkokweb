@@ -4,19 +4,25 @@
   "description": "Joey Kokinda is an AI student at Purdue University specializing in computer vision, blockchain development, and full-stack applications",
   "icons": [
     {
-      "src": "pyras_flame.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src": "pyras_flame.png",
+      "src": "jkok-icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "pyras_flame.png",
+      "src": "jkok-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "jkok-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": "/",
