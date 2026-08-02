@@ -70,7 +70,7 @@ function Resume() {
         <h1>Resume</h1>
         <div className="resume-image-container">
           <img
-            src="/Kokinda_Joey_Resume.png"
+            src="/resume_screenshot.png"
             alt="Joey Kokinda's Resume"
             className="resume-image"
           />
@@ -78,7 +78,7 @@ function Resume() {
         <div className="download-section">
           <p>Want a copy?</p>
           <a
-            href="/Kokinda_Joey_Resume.pdf"
+            href="/jkokinda_resume.pdf"
             download="Kokinda_Joey_Resume.pdf"
             className="download-button"
           >
