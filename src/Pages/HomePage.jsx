@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-// import profilePic from "../images/jkokpfp.png";
+import profilePic from "../images/jkokpfp.png";
 import "./home.css";
 
 const pageLinks = [
@@ -60,7 +60,7 @@ function HomePage() {
 
       <main className="home-card glass">
         <div className="home-head">
-          {/* <img src={profilePic} alt="Joey Kokinda" className="home-avatar" /> */}
+          <img src={profilePic} alt="Joey Kokinda" className="home-avatar" />
           <div className="home-head-text">
             <h1>Joey Kokinda</h1>
             <p className="home-sub">

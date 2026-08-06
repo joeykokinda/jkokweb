@@ -5,46 +5,31 @@ import "./resume.css";
 
 const skillGroups = [
   {
+    label: "AI & Agents",
+    items: [
+      "LLM orchestration (Claude, OpenAI, Gemini)",
+      "Multi-agent systems",
+      "MCP servers",
+    ],
+  },
+  {
     label: "Languages",
-    items: ["Go", "TypeScript", "JavaScript", "Python", "C", "Solidity", "Rust"],
+    items: ["Go", "TypeScript", "Python", "Rust", "Solidity", "C"],
   },
   {
-    label: "Web3 / Blockchain",
+    label: "Infra & Web3",
     items: [
-      "Solana (Rust/Anchor)",
-      "Hedera HCS",
-      "EVM",
-      "Foundry",
-      "ERC-8183",
-      "ERC-7715",
-      "Chainlink CRE",
-      "Smart Contracts",
-      "DeFi",
-    ],
-  },
-  {
-    label: "AI / Agents",
-    items: [
-      "AI agent design",
-      "Agent-to-agent automation",
-      "Claude",
-      "GPT",
-      "Computer vision",
-      "LLM tooling",
-    ],
-  },
-  {
-    label: "Full Stack / Infra",
-    items: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "Supabase",
-      "PostgreSQL",
       "Docker",
-      "Tailscale",
+      "PostgreSQL",
+      "Supabase",
+      "Next.js",
       "Cloudflare",
-      "Self-hosted infra (DappNode, BTC/XMR nodes)",
+      "Linux",
+      "ffmpeg",
+      "Hedera HCS",
+      "EVM / Foundry",
+      "Solana",
+      "BTC/XMR nodes",
     ],
   },
 ];
@@ -78,7 +63,7 @@ function Resume() {
         <div className="download-section">
           <p>Want a copy?</p>
           <a
-            href="/jkokinda_resume.pdf"
+            href="/KokindaJoeResume.pdf"
             download="Kokinda_Joey_Resume.pdf"
             className="download-button"
           >
