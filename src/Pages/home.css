@@ -27,8 +27,8 @@
 }
 
 .home-avatar {
-  width: clamp(64px, 18vw, 92px);
-  height: clamp(64px, 18vw, 92px);
+  width: clamp(84px, 24vw, 120px);
+  height: clamp(84px, 24vw, 120px);
   object-fit: cover;
   border-radius: 50% !important;
   border: 2px solid rgba(255, 255, 255, 0.7);
