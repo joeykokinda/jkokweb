@@ -145,6 +145,10 @@
   line-height: 1.55;
 }
 
+.home-recent-gap {
+  margin-bottom: 0.9rem;
+}
+
 /* Text link rows */
 .home-links {
   display: flex;

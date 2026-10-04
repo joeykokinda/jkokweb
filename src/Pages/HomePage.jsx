@@ -169,6 +169,22 @@ function HomePage() {
           <span className="home-links-label">RECENT</span>
           <div className="home-recent-body">
             <p className="home-recent-role">
+              Published &middot;{" "}
+              <a
+                href="https://www.ledger.com/academy/series/n3xt/research-last-mile-oracle-agents-physical-world"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-link"
+              >
+                Ledger N3xt
+              </a>{" "}
+              <span className="home-recent-dates">(Sep 2026)</span>
+            </p>
+            <p className="home-recent-desc home-recent-gap">
+              The Last-Mile Oracle: how AI agents can verify real-world outcomes,
+              with the proof required scaling to the stakes.
+            </p>
+            <p className="home-recent-role">
               Intern &middot;{" "}
               <a
                 href="https://10x.so"
