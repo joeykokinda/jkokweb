@@ -13,12 +13,19 @@ function BlogIndex() {
           <h1 className="bi-heading">Blog</h1>
 
           <div className="bi-list">
-            {posts.map((post) => (
-              <Link key={post.slug} to={`/blog/${post.slug}`} className="bi-item">
-                <time className="bi-date">{post.date}</time>
-                <span className="bi-title">{post.title}</span>
-              </Link>
-            ))}
+            {posts.map((post) => {
+              const body = (
+                <>
+                  <time className="bi-date">{post.date}</time>
+                  <span className="bi-title">{post.title}{post.url && " ↗"}</span>
+                </>
+              );
+              return post.url ? (
+                <a key={post.slug} href={post.url} target="_blank" rel="noopener noreferrer" className="bi-item">{body}</a>
+              ) : (
+                <Link key={post.slug} to={`/blog/${post.slug}`} className="bi-item">{body}</Link>
+              );
+            })}
           </div>
         </div>
       </main>

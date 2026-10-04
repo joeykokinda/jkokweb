@@ -3,6 +3,12 @@ import React from "react";
 
 export const posts = [
   {
+    slug: "last-mile-oracle",
+    title: "The Last-Mile Oracle: Agents in the Physical World (Ledger N3xt)",
+    date: "Sep 28, 2026",
+    url: "https://www.ledger.com/academy/series/n3xt/research-last-mile-oracle-agents-physical-world",
+  },
+  {
     slug: "solo-hacking-today-is-the-best-choice",
     title: "Solo hacking today is the best choice and here is why",
     date: "Apr 5, 2026",
@@ -68,5 +74,5 @@ export const posts = [
 ];
 
 export function getPost(slug) {
-  return posts.find((p) => p.slug === slug) || null;
+  return posts.find((p) => p.slug === slug && !p.url) || null;
 }
