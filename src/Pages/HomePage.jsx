@@ -86,16 +86,39 @@ function HomePage() {
 
         <div className="home-tldr-block">
           <p className="home-about">
-            I am focused on{" "}
-            <span className="grad-text">ai agents, automation pipelines, </span> and
-            always building with the best tech available.
+            I build systems that build things:{" "}
+            <span className="grad-text">
+              agent orchestration, automation pipelines,
+            </span>{" "}
+            and fleets of machines that keep working after I log off.
           </p>
         </div>
 
         <p className="home-about-more">
-          I have experience across crypto infrastructure, AI agents, full stack
-          development, and embedded hardware. That means self hosted BTC and XMR
-          nodes and crypto infra (
+          I've built an AI ad pipeline that generates AI UGC TikTok and IG
+          content for AI avatars in parallel in a scalable workflow, the content
+          pipeline behind{" "}
+          <a
+            href="https://creou.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link"
+          >
+            Creou
+          </a>
+          , a trust layer for AI agents (
+          <Link to="/projects/veridex" className="text-link">
+            veridex
+          </Link>
+          ), and an agent that hires and pays real people for repairs (
+          <Link to="/projects/ward" className="text-link">
+            ward
+          </Link>
+          ). On the hardware side I run a{" "}
+          <Link to="/projects/phonefarm" className="text-link">
+            phone farm
+          </Link>{" "}
+          controlled by agents and my own BTC, XMR, and Ethereum nodes (
           <a
             href="https://pyras.org"
             target="_blank"
@@ -104,28 +127,11 @@ function HomePage() {
           >
             pyras.org
           </a>
-          ), agent tooling and automation (
-          <a
-            href="https://creou.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link"
-          >
-            creou.app
-          </a>
-          ,{" "}
-          <Link to="/projects/veridex" className="text-link">
-            veridex
-          </Link>
-          ), various hardware projects (
-          <Link to="/projects/phonefarm" className="text-link">
-            phone farm
-          </Link>
-          ,{" "}
+          ). Older interesting projects:{" "}
           <Link to="/projects/raspi" className="text-link">
             raspi
           </Link>
-          ), and building applications across all stacks (
+          ,{" "}
           <a
             href="https://turtosa.com"
             target="_blank"
@@ -135,19 +141,18 @@ function HomePage() {
             turtosa.com
           </a>
           ,{" "}
-          <Link to="/projects/ward" className="text-link">
-            ward
-          </Link>
-          ,{" "}
           <Link to="/projects" className="text-link">
             etc
           </Link>
-          ). Most recently I placed 3rd in the AI agent bounty at the Hello Apex
-          Hedera hackathon with{" "}
+          . Automate everything.
+        </p>
+
+        <p className="home-about-more">
+          I placed 3rd in the AI agent bounty at Hello Apex Hedera with{" "}
           <Link to="/projects/veridex" className="text-link">
             Veridex
-          </Link>
-          , and won 1st place in the Polymarket bounty at the Midwest Blockchain
+          </Link>{" "}
+          and won 1st in the Polymarket bounty at the Midwest Blockchain
           Conference with{" "}
           <Link to="/projects/jaeger" className="text-link">
             Jaeger
