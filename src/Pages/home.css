@@ -197,3 +197,8 @@
     margin-bottom: 0.1rem;
   }
 }
+
+/* Berkeley Mono ships one weight, so fake bold with a stroke */
+.home-card strong {
+  -webkit-text-stroke: 0.035em currentColor;
+}
