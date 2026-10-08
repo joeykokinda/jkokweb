@@ -87,10 +87,13 @@ function HomePage() {
         <div className="home-tldr-block">
           <p className="home-about">
             I build systems that build things:{" "}
-            <span className="grad-text">
-              agent orchestration, automation pipelines,
-            </span>{" "}
-            and fleets of machines that keep working after I log off.
+            <strong>
+              <span className="grad-text">
+                agent orchestration, automation pipelines,
+              </span>{" "}
+              and fleets of machines that keep working
+            </strong>{" "}
+            after I log off.
           </p>
         </div>
 
@@ -144,7 +147,7 @@ function HomePage() {
           <Link to="/projects" className="text-link">
             etc
           </Link>
-          . Automate everything.
+          . <strong>Automate everything.</strong>
         </p>
 
         <p className="home-about-more">
