@@ -27,6 +27,54 @@ function CurrentSetup() {
 
   const groups = [
     {
+      title: "Compute & AI",
+      sub: "These devices are used for training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory, also used as the backend for some of me and my brother's services.",
+      devices: [
+        {
+          name: "GPU Rig",
+          img: gpuRig,
+          specs: ["2× RTX 3090", "RTX 2080 (offline)", "GTX 1080 (offline)"],
+          note: "Currently using this for the Qwen 3.6 27B uncensored model, running localized agents fully self-hosted.",
+        },
+        {
+          name: "Server",
+          img: server,
+          specs: [
+            "384 GB RAM",
+            "2× Intel Xeon CPUs",
+            "28 cores each (56 total)",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Phone Farm",
+      sub: "A rack of 6+ Android phones driven over wireless ADB by an always-on Raspberry Pi.",
+      devices: [
+        {
+          name: "Android Phone Farm",
+          img: phonefarm,
+          specs: [
+            "6+ Android devices",
+            "Wireless ADB fleet",
+            "Raspberry Pi controller, 24/7",
+          ],
+          note: (
+            <>
+              Connected to a Raspberry Pi that I can connect to remotely to see
+              the{" "}
+              <Link to="/projects/phonefarm" className="text-link">
+                PhoneFarm
+              </Link>{" "}
+              dashboard of all the phones and drive every device from anywhere.
+              The Pi runs it as a service — keeps ADB alive, restarts stalled
+              devices, and fires scheduled macros server-side.
+            </>
+          ),
+        },
+      ],
+    },
+    {
       title: "Workstations",
       devices: [
         {
@@ -48,27 +96,6 @@ function CurrentSetup() {
           name: "2024 M4 Mac Mini",
           img: macmini,
           specs: ["App Store dev station"],
-        },
-      ],
-    },
-    {
-      title: "Compute & AI",
-      sub: "These devices are used for training models, running brute-force jobs, and crunching large parallel workloads that need serious cores and memory, also used as the backend for some of me and my brother's services.",
-      devices: [
-        {
-          name: "GPU Rig",
-          img: gpuRig,
-          specs: ["2× RTX 3090", "RTX 2080 (offline)", "GTX 1080 (offline)"],
-          note: "Currently using this for the Qwen 3.6 27B uncensored model, running localized agents fully self-hosted.",
-        },
-        {
-          name: "Server",
-          img: server,
-          specs: [
-            "384 GB RAM",
-            "2× Intel Xeon CPUs",
-            "28 cores each (56 total)",
-          ],
         },
       ],
     },
@@ -120,33 +147,6 @@ function CurrentSetup() {
         { name: "Bambu Lab A1 Mini", img: printerA1mini2, specs: [] },
         { name: "Bambu Lab A1", img: printerA1_1, specs: [] },
         { name: "Bambu Lab A1", img: printerA1_2, specs: [] },
-      ],
-    },
-    {
-      title: "Phone Farm",
-      sub: "A rack of 6+ Android phones driven over wireless ADB by an always-on Raspberry Pi.",
-      devices: [
-        {
-          name: "Android Phone Farm",
-          img: phonefarm,
-          specs: [
-            "6+ Android devices",
-            "Wireless ADB fleet",
-            "Raspberry Pi controller, 24/7",
-          ],
-          note: (
-            <>
-              Connected to a Raspberry Pi that I can connect to remotely to see
-              the{" "}
-              <Link to="/projects/phonefarm" className="text-link">
-                PhoneFarm
-              </Link>{" "}
-              dashboard of all the phones and drive every device from anywhere.
-              The Pi runs it as a service — keeps ADB alive, restarts stalled
-              devices, and fires scheduled macros server-side.
-            </>
-          ),
-        },
       ],
     },
   ];
