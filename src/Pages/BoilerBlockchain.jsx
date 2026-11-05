@@ -67,7 +67,15 @@ function BoilerBlockchain() {
         <p>
           Places we've been: MBC 2025 (1st in the Polymarket bounty with{" "}
           <Link to="/projects/jaeger" className="text-link">Jaeger</Link>),
-          Solana Breakpoint, and ETHDenver 2025 and 2026.
+          Solana Breakpoint, ETHDenver 2025 and 2026, ETHGlobal NYC 2026, and
+          UBC 2026.
+        </p>
+        <p>
+          Featured in{" "}
+          <a href="https://www.youtube.com/watch?v=ZPfEsIBZUS4" target="_blank" rel="noopener noreferrer" className="text-link">
+            this video
+          </a>
+          .
         </p>
 
         <AsciiChain />
