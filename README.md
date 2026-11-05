@@ -1,3 +1,3 @@
-# My personal website (jkok.dev)
+# My personal website (jkokinda.com)
 
-[View here](https://jkok.dev/)
+[View here](https://jkokinda.com/)
