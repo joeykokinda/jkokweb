@@ -5,7 +5,7 @@ import profilePic from "../images/jkokpfp.png";
 import AsciiLoop from "./AsciiLoop";
 import mbcWin from "../images/BoilerBlockchain/mbc-polymarket-win.webp";
 import hackathonWinners from "../images/BoilerBlockchain/mbc-hackathon-winners.webp";
-import teachingClass from "../images/BoilerBlockchain/teaching-class.webp";
+import tenXHome from "../images/10x-home.webp";
 import spartan from "../images/Activities/spartan.webp";
 import snowboard from "../images/Activities/snowboard.webp";
 import basketball from "../images/Activities/basketball.webp";
@@ -75,8 +75,18 @@ const projectTiles = [
 ];
 
 const experienceTiles = [
-  { src: hackathonWinners, title: "hacking", tags: "1st . mbc '25" },
-  { src: teachingClass, title: "guiding", tags: "club sessions" },
+  {
+    src: hackathonWinners,
+    title: "Boiler Blockchain",
+    tags: "core dev + board",
+    to: "/boilerblockchain",
+  },
+  {
+    src: tenXHome,
+    title: "10x",
+    tags: "AI growth intern",
+    href: "https://10x.so",
+  },
 ];
 
 const hobbyTiles = [
@@ -90,7 +100,7 @@ const hobbyTiles = [
   { src: printing3d, title: "3d printing" },
 ];
 
-function PhotoTile({ tile, to }) {
+function PhotoTile({ tile }) {
   const className = `home-tile${tile.wide ? " home-tile-wide" : ""}`;
   const body = (
     <>
@@ -99,13 +109,17 @@ function PhotoTile({ tile, to }) {
       {tile.tags && <span>{tile.tags}</span>}
     </>
   );
-  return to ? (
-    <Link to={to} className={className}>
+  if (tile.to) return (
+    <Link to={tile.to} className={className}>
       {body}
     </Link>
-  ) : (
-    <figure className={className}>{body}</figure>
   );
+  if (tile.href) return (
+    <a href={tile.href} target="_blank" rel="noopener noreferrer" className={className}>
+      {body}
+    </a>
+  );
+  return <figure className={className}>{body}</figure>;
 }
 
 function HomePage() {
@@ -144,7 +158,7 @@ function HomePage() {
           <h2 className="home-panel-title">PROJECTS</h2>
           <div className="home-tile-grid home-tile-grid-projects">
             {projectTiles.map((tile) => (
-              <PhotoTile key={tile.title} tile={tile} to={tile.to} />
+              <PhotoTile key={tile.title} tile={tile} />
             ))}
           </div>
           <Link to="/projects" className="home-panel-button">
@@ -154,13 +168,13 @@ function HomePage() {
 
         <section className="home-panel glass">
           <h2 className="home-panel-title">EXPERIENCE</h2>
-          <div className="home-tile-grid">
+          <div className="home-tile-grid home-tile-grid-experience">
             {experienceTiles.map((tile) => (
-              <PhotoTile key={tile.title} tile={tile} to="/experience" />
+              <PhotoTile key={tile.title} tile={tile} />
             ))}
           </div>
           <Link to="/experience" className="home-panel-button">
-            view experience &rarr;
+            view other experiences &rarr;
           </Link>
         </section>
 
@@ -181,6 +195,7 @@ function HomePage() {
         </section>
       </aside>
 
+      <div className="home-center-column">
       <main className="home-card glass">
         <div className="home-head">
           <img src={profilePic} alt="Joey Kokinda" className="home-avatar" />
@@ -385,6 +400,18 @@ function HomePage() {
         </p>
       </main>
 
+      <section className="home-panel home-panel-etc glass">
+        <h2 className="home-panel-title">ETC</h2>
+        <Link to="/larp" className="home-feature home-feature-link">
+          <img src={larpPreview} alt="Laptop and monitors setup" />
+          <figcaption>
+            <strong>LARP CORNER</strong>
+            <span>click me &rarr;</span>
+          </figcaption>
+        </Link>
+      </section>
+      </div>
+
       <aside className="home-panel home-panel-right glass">
         <h2 className="home-panel-title">STANDOUTS</h2>
         <figure className="home-feature">
@@ -408,14 +435,6 @@ function HomePage() {
             <span>2025 pyras . 2026 perigee</span>
           </figcaption>
         </figure>
-        <h2 className="home-panel-title home-panel-subtitle">ETC</h2>
-        <Link to="/larp" className="home-feature home-feature-link">
-          <img src={larpPreview} alt="Laptop and monitors setup" loading="lazy" />
-          <figcaption>
-            <strong>LARP CORNER</strong>
-            <span>click me &rarr;</span>
-          </figcaption>
-        </Link>
       </aside>
       </div>
     </div>

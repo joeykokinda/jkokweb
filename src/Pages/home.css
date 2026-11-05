@@ -206,15 +206,23 @@
 /* Three panels floating on the sky: tiles, main card, feature photos */
 .home-layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 680px) 240px;
+  grid-template-columns: minmax(260px, 1fr) minmax(0, 680px) minmax(240px, 1fr);
   gap: 1.25rem;
   align-items: start;
   justify-content: center;
   width: 100%;
+  max-width: 1600px;
 }
 
 .home-card {
   max-width: none;
+}
+
+.home-center-column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .home-panel-left {
@@ -383,6 +391,10 @@ figure.home-tile:hover {
   .home-tile-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .home-tile-grid-experience {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 480px) {
@@ -434,10 +446,16 @@ figure.home-tile:hover {
 }
 
 /* Standouts: one glass panel, each feature a card inside it */
-.home-panel-right .home-feature {
+.home-panel-right .home-feature,
+.home-panel-etc .home-feature {
   padding: 0.4rem;
   border: 1px solid rgba(38, 51, 31, 0.25);
   background: var(--cream);
+}
+
+.home-panel-etc .home-feature img {
+  aspect-ratio: 16 / 9;
+  object-position: center;
 }
 
 .home-feature-link {
@@ -496,16 +514,6 @@ figure.home-tile:hover {
 .home-tile-grid-projects .home-tile img {
   aspect-ratio: 4 / 3;
   object-position: top;
-}
-
-/* Desktop: keep side photos compact so the center card leads */
-.home-panel-right .home-feature img,
-.home-feature.home-feature-big img {
-  aspect-ratio: 4 / 3;
-}
-
-.home-feature-big figcaption strong {
-  font-size: 1rem;
 }
 
 .home-tile-grid-hobbies {

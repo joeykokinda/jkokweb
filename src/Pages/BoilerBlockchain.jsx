@@ -22,8 +22,8 @@ import acrossCampusesRound2 from "../images/BoilerBlockchain/solana-across-campu
 import "./gallery.css";
 
 const photos = [
-  { src: mbcCrew, caption: "the whole crew at MBC '25" },
   { src: teachingClass, caption: "teaching a Boiler Blockchain class" },
+  { src: mbcCrew, caption: "the whole crew at MBC '25" },
   { src: mbcChecks, caption: "bounty checks at MBC '25" },
   { src: acrossCampusesGroup, caption: "Solana Across Campuses @ Purdue" },
   { src: acrossCampusesRound2, caption: "Solana Across Campuses, round 2" },

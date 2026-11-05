@@ -8,7 +8,7 @@ function Gallery({ photos, className = "" }) {
       {photos.map((photo) => (
         <figure key={photo.src} className="photo-item">
           <a href={photo.src} target="_blank" rel="noopener noreferrer">
-            <img src={photo.src} alt={photo.caption || "photo"} loading="lazy" />
+            <img src={photo.src} alt={photo.caption || "photo"} />
           </a>
           {photo.caption && <figcaption>{photo.caption}</figcaption>}
         </figure>
