@@ -97,7 +97,7 @@ export const MORE_PROJECTS = {
         heading: "Overview",
         body: [
           "Helpa understands how your machine works and guides your hands through fixing it. Point your phone at a broken dryer, dishwasher, toilet, fridge, or car, say what's wrong, or pick it from a list. Helpa reads the model sticker, researches that exact machine, and shows each move on a 3D model of it.",
-          "Built solo for the Meta Global AI Developer Hackathon (Indie Developer track). Everything was written during the event, running on Meta's Muse Spark, Muse Wonder, SAM 3.1, Muse Image, and Muse Voice Transcribe models.",
+          "Built solo and submitted to the Meta Global AI Developer Hackathon (Indie Developer track). Everything was written during the event, running on Meta's Muse Spark, Muse Wonder, SAM 3.1, Muse Image, and Muse Voice Transcribe models.",
         ],
       },
       {

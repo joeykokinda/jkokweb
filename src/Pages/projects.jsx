@@ -86,10 +86,11 @@ function Projects() {
         title: "Helpa - AI Repair Guide in 3D",
         image: helpaImage,
         year: "2026",
-        status: "live",
+        status: "completed",
+        completionDate: "Fall 2026",
         liveUrl: "https://helpa.pyras.org",
         description:
-          "Point your phone at a broken dryer, dishwasher, toilet, or car and Helpa reads the model sticker, researches that exact machine, and shows each move on a 3D model of it. Snap a photo to check your work, get the exact part number, or hand off to a local pro. Built solo for the Meta Global AI Developer Hackathon on Muse Spark, Muse Wonder, and SAM 3.1.",
+          "Point your phone at a broken dryer, dishwasher, toilet, or car and Helpa reads the model sticker, researches that exact machine, and shows each move on a 3D model of it. Snap a photo to check your work, get the exact part number, or hand off to a local pro. Built solo and submitted to the Meta Global AI Developer Hackathon, running on Muse Spark, Muse Wonder, and SAM 3.1.",
         link: "/projects/helpa",
         tags: ["Next.js", "Three.js", "Go", "Meta AI", "SAM", "PWA"],
         hackathon: true,
