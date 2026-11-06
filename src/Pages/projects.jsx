@@ -35,6 +35,7 @@ import detectImage from "../images/TurtosaDetect/detect1.png";
 import cellImage from "../images/CELL/cell1.png";
 import taprigImage from "../images/TapRig/taprig2.png";
 import helpaImage from "../images/Helpa/step-airflow.webp";
+import doomImage from "../images/Doomscroll/doom-worn.jpg";
 
 // Featured projects, in display order. Everything else lands in "Other".
 const FEATURED_IDS = ["taprig", "helpa", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
@@ -57,13 +58,13 @@ function Projects() {
     () => ({
       all: [],
       website: ["helpa", "creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "corec", "nightdial", "cell"],
-      hardware: ["taprig", "phonefarm", "raspi", "bike", "pyras", "accept"],
-      software: ["taprig", "helpa", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
+      hardware: ["doomscroll", "taprig", "phonefarm", "raspi", "bike", "pyras", "accept"],
+      software: ["doomscroll", "taprig", "helpa", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
       web3: ["ward", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex", "airlock", "cell"],
       hackathon: ["helpa", "ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust", "airlock"],
       active: ["taprig", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "aimem", "corec"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools", "airlock", "accept", "turtosadetect", "cell"],
-      oneTime: ["helpa", "ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
+      oneTime: ["doomscroll", "helpa", "ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
     }),
     [],
   );
@@ -94,6 +95,18 @@ function Projects() {
         link: "/projects/helpa",
         tags: ["Next.js", "Three.js", "Go", "Meta AI", "SAM", "PWA"],
         hackathon: true,
+      },
+      {
+        id: "doomscroll",
+        title: "Doomscrolling - A Halloween Costume",
+        image: doomImage,
+        year: "2026",
+        status: "completed",
+        completionDate: "Halloween 2026",
+        description:
+          "Went as doomscrolling for Halloween: three phones mounted across a hoodie, scrolling short-form clips all night. The mounts clamp through the fabric with no holes, and took four iterations to get right: friction fit, snap fit with M3 screw backup, a slide-in redesign when the phones turned out bigger than spec, and a printed latch pin. No wifi at the party, so the phones run a custom offline feed app.",
+        link: "/projects/doomscroll",
+        tags: ["3D Printing", "Python", "Android", "Hardware", "Bambu"],
       },
       {
         id: "creou",

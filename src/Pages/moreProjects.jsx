@@ -46,6 +46,10 @@ import helpaStep from "../images/Helpa/step-airflow.webp";
 import helpaStuck from "../images/Helpa/stuck.webp";
 import helpaDrawn from "../images/Helpa/drawn.webp";
 import helpaPros from "../images/Helpa/pros.webp";
+import doomWorn from "../images/Doomscroll/doom-worn.jpg";
+import doomMounts from "../images/Doomscroll/doom-mounts.jpg";
+import doomVideo1 from "../images/Doomscroll/doom-vid1.mp4";
+import doomVideo2 from "../images/Doomscroll/doom-vid2.mp4";
 
 // Detail pages for projects that share the standard layout. Older projects
 // keep their own files; add new ones here.
@@ -79,6 +83,46 @@ export const MORE_PROJECTS = {
       {
         heading: "Stack",
         body: ["TypeScript/Node daemon over ADB with pinned scrcpy for video and raw input, SQLite, Electron desktop app. Validated on a physical Moto G Play 2024 on my home server. Pre-alpha. PhoneFarm is its first physical fleet."],
+      },
+    ],
+  },
+  doomscroll: {
+    title: "Doomscrolling - A Halloween Costume",
+    metaTitle: "Doomscrolling Costume",
+    metaDescription:
+      "A Halloween costume of three phones mounted on a hoodie, endlessly scrolling short-form video, held on by custom 3D-printed mounts.",
+    images: [doomVideo2, doomWorn, doomVideo1, doomMounts],
+    links: [{ label: "Post on X ↗", href: "https://x.com/sp3ked/status/2116210664536760544" }],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "Halloween is supposed to be creative, not just throwing on something everyone else is wearing. So I went as doomscrolling: three phones mounted across the chest of a hoodie, scrolling short-form clips all night.",
+          "Everything holding it together was designed and printed for it, and the phones run a custom app so the feed keeps going with no internet.",
+        ],
+      },
+      {
+        heading: "The Mounts",
+        body: [
+          "The hard constraint was no holes in the hoodie. Each mount is a hoop clamp: a front cradle with a groove under its flange, and a back plate worn inside the hoodie with a ridge that presses into that groove through the fabric.",
+        ],
+        list: [
+          ["v1, friction fit", "Ridge pressed into a straight-walled groove. It held by friction alone and pulled out too easily."],
+          ["v2, snap fit", "A 3.8 mm bead on a 4.0 mm ridge, with the groove widening past a lip so it clicks in and locks. Printed test coupons first to tune the snap on the real fabric before committing to full plates."],
+          ["Screw backup", "Four M3 tabs with countersunk screws and nuts captured in hex pockets, so nothing falls off mid-party. An earlier version with printed M10 thumbscrews got dropped."],
+          ["v3, slide-in", "The phones turned out to be the 2026 Moto G Play, a few millimetres bigger than the 2024 model the first versions were built for. Redesigned as an open-top slide-in cradle with a floor channel to clear the camera bump."],
+          ["v4, latch pin", "The hair tie holding the phone in got replaced by a printed latch pin with a split barb that snaps past the far wall. Pinch the prongs to release."],
+        ],
+      },
+      {
+        heading: "The Phones",
+        body: [
+          "No reliable wifi or signal at a Halloween party means no TikTok. So I made a custom app for the phones that plays a feed of downloaded clips fully offline and keeps scrolling on its own, so all three screens stay alive all night without me touching them.",
+        ],
+      },
+      {
+        heading: "Stack",
+        body: ["Parametric mounts generated in Python and printed in PLA on a Bambu A1, three Moto G Play phones, and a custom offline Android video feed app."],
       },
     ],
   },
@@ -441,6 +485,17 @@ function MoreProject() {
         <div className="app-gallery">
           {project.images.map((src, idx) => (
             <div key={idx} className="gallery-item">
+              {src.endsWith(".mp4") ? (
+                <video
+                  src={src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  style={{ objectFit: "contain", background: "rgba(0, 0, 0, 0.8)", display: "block" }}
+                />
+              ) : (
               <img
                 src={src}
                 alt={`${project.metaTitle} Screenshot ${idx + 1}`}
@@ -451,6 +506,7 @@ function MoreProject() {
                 }}
                 onClick={() => setLightboxImage(src)}
               />
+              )}
             </div>
           ))}
         </div>

@@ -206,7 +206,8 @@ button.live-link {
   transform: scale(1.02);
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
