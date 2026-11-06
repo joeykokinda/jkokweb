@@ -37,10 +37,86 @@ import exoform3 from "../images/Exoform/exo-3.jpg";
 import exoform4 from "../images/Exoform/exo-4.jpg";
 import exoform5 from "../images/Exoform/exo-5.jpg";
 import exoform6 from "../images/Exoform/exo-6.jpg";
+import taprig1 from "../images/TapRig/taprig1.png";
+import taprig2 from "../images/TapRig/taprig2.png";
+import taprig3 from "../images/TapRig/taprig3.png";
+import helpaHome from "../images/Helpa/home.webp";
+import helpaPlan from "../images/Helpa/plan.webp";
+import helpaStep from "../images/Helpa/step-airflow.webp";
+import helpaStuck from "../images/Helpa/stuck.webp";
+import helpaDrawn from "../images/Helpa/drawn.webp";
+import helpaPros from "../images/Helpa/pros.webp";
 
 // Detail pages for projects that share the standard layout. Older projects
 // keep their own files; add new ones here.
 export const MORE_PROJECTS = {
+  taprig: {
+    title: "TapRig - Give Agents a Phone",
+    metaTitle: "TapRig",
+    metaDescription:
+      "Open-source, local-first control plane and runtime for phone agents. Plug in an Android device, type a task, and watch the agent operate it.",
+    images: [taprig1, taprig2, taprig3],
+    links: [{ label: "GitHub ↗", href: "https://github.com/joeykokinda/taprig", github: true }],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "Agents got a computer, a browser, a terminal, and an email address. They didn't get a phone. TapRig is an open-source, local-first control plane that turns spare Android devices into hands for agents: plug one in, describe a task, and watch the agent operate it. Run one agent on one phone, independent agents across a fleet, or one coordinated workflow across many devices.",
+          "It's built SSH-first: the daemon lives on the server the phones are plugged into, and the CLI, desktop app, browser control room, API, and MCP server are all clients of the same authenticated local API.",
+        ],
+      },
+      {
+        heading: "How It Works",
+        list: [
+          ["Device actors", "Each phone gets a serialized actor that tracks boot, keyguard, screen, and foreground app state, and survives disconnects and reconnects."],
+          ["Semantic first", "Event-driven Android state and typed actions come before screenshots. Vision is the fallback for surfaces that aren't accessible."],
+          ["Verified batches", "Actions are batched and verified locally instead of calling a model for every tap. A run only completes on postcondition evidence, never just successful taps."],
+          ["Credential broker", "Scoped, one-time secrets for things like PIN unlock. Agents and logs only ever see whether a secret was available, never its value."],
+          ["Durable runs", "Runs, questions, approvals, and evidence are stored in SQLite. Interrupted runs recover on their original phones after a daemon restart."],
+          ["Control room", "Live device readiness, run traces, cost, approvals, and takeover in one inspectable UI."],
+        ],
+      },
+      {
+        heading: "Stack",
+        body: ["TypeScript/Node daemon over ADB with pinned scrcpy for video and raw input, SQLite, Electron desktop app. Validated on a physical Moto G Play 2024 on my home server. Pre-alpha. PhoneFarm is its first physical fleet."],
+      },
+    ],
+  },
+  helpa: {
+    title: "Helpa - AI Repair Guide in 3D",
+    metaTitle: "Helpa",
+    metaDescription:
+      "Point your phone at a broken appliance or car and Helpa reads the model, researches that exact machine, and walks you through the fix on a 3D model of it.",
+    images: [helpaHome, helpaPlan, helpaStep, helpaStuck, helpaDrawn, helpaPros],
+    links: [
+      { label: "Live Site ↗", href: "https://helpa.pyras.org" },
+      { label: "GitHub ↗", href: "https://github.com/joeykokinda/helpa", github: true },
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "Helpa understands how your machine works and guides your hands through fixing it. Point your phone at a broken dryer, dishwasher, toilet, fridge, or car, say what's wrong, or pick it from a list. Helpa reads the model sticker, researches that exact machine, and shows each move on a 3D model of it.",
+          "Built solo for the Meta Global AI Developer Hackathon (Indie Developer track). Everything was written during the event, running on Meta's Muse Spark, Muse Wonder, SAM 3.1, Muse Image, and Muse Voice Transcribe models.",
+        ],
+      },
+      {
+        heading: "How It Works",
+        list: [
+          ["Identify", "Snap the model sticker or VIN, or just describe the problem. Muse Spark reads the exact machine and pulls its manual and parts list."],
+          ["3D twin", "8 hand-built rigs with real joints (doors hinge, filters twist, drain plugs unscrew) plus on-demand models Spark writes as validated declarative recipes."],
+          ["Parallel pipeline", "Research, the 3D model, and SAM part-finding on your own photo run at the same time and stream to the phone as they land."],
+          ["Check what I did", "Snap a photo after a step and Helpa answers COMPLETED, INCOMPLETE with a specific correction, or UNCERTAIN."],
+          ["Jobs", "Needs a part? Muse Wonder finds the exact part number and tracks the order. Needs a pro? It finds local pros and writes the message for you."],
+          ["Safe by default", "Gas, mains wiring, refrigerant, and airbags always get \"call a pro\"."],
+        ],
+      },
+      {
+        heading: "Stack",
+        body: ["Next.js PWA with react-three-fiber, Go agent backend with per-visitor rate limits and a daily spend cap, Meta Model API. Self-hosted on my home server."],
+      },
+    ],
+  },
   exoform: {
     title: "Exoform - 3D Printed National Parks",
     metaTitle: "Exoform",

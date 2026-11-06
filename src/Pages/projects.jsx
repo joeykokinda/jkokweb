@@ -33,9 +33,11 @@ import corecImage from "../images/CoRec/corec1.png";
 import nightdialImage from "../images/Nightdial/nightdial1.jpg";
 import detectImage from "../images/TurtosaDetect/detect1.png";
 import cellImage from "../images/CELL/cell1.png";
+import taprigImage from "../images/TapRig/taprig2.png";
+import helpaImage from "../images/Helpa/step-airflow.webp";
 
 // Featured projects, in display order. Everything else lands in "Other".
-const FEATURED_IDS = ["creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
+const FEATURED_IDS = ["taprig", "helpa", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
 
 function Projects() {
   const navigate = useNavigate();
@@ -54,20 +56,44 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "corec", "nightdial", "cell"],
-      hardware: ["phonefarm", "raspi", "bike", "pyras", "accept"],
-      software: ["phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
+      website: ["helpa", "creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "corec", "nightdial", "cell"],
+      hardware: ["taprig", "phonefarm", "raspi", "bike", "pyras", "accept"],
+      software: ["taprig", "helpa", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
       web3: ["ward", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex", "airlock", "cell"],
-      hackathon: ["ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust", "airlock"],
-      active: ["phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "aimem", "corec"],
+      hackathon: ["helpa", "ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust", "airlock"],
+      active: ["taprig", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "aimem", "corec"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "tools", "airlock", "accept", "turtosadetect", "cell"],
-      oneTime: ["ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
+      oneTime: ["helpa", "ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
     }),
     [],
   );
 
   const projectsList = useMemo(
     () => [
+      {
+        id: "taprig",
+        title: "TapRig - Give Agents a Phone",
+        image: taprigImage,
+        year: "2026",
+        status: "in-progress",
+        description:
+          "Open-source, local-first control plane and runtime for phone agents. Plug in an Android device, type a task, and watch the agent operate it: one phone, a fleet of independent agents, or one coordinated workflow. Semantic Android state before vision, locally verified action batches, a scoped credential broker, and durable runs that recover after restarts. CLI, desktop app, control room, API, and MCP all share one daemon.",
+        link: "/projects/taprig",
+        tags: ["TypeScript", "Node.js", "Android", "ADB", "AI Agents", "Electron"],
+      },
+      {
+        id: "helpa",
+        title: "Helpa - AI Repair Guide in 3D",
+        image: helpaImage,
+        year: "2026",
+        status: "live",
+        liveUrl: "https://helpa.pyras.org",
+        description:
+          "Point your phone at a broken dryer, dishwasher, toilet, or car and Helpa reads the model sticker, researches that exact machine, and shows each move on a 3D model of it. Snap a photo to check your work, get the exact part number, or hand off to a local pro. Built solo for the Meta Global AI Developer Hackathon on Muse Spark, Muse Wonder, and SAM 3.1.",
+        link: "/projects/helpa",
+        tags: ["Next.js", "Three.js", "Go", "Meta AI", "SAM", "PWA"],
+        hackathon: true,
+      },
       {
         id: "creou",
         title: "Creou - AI UGC Platform for Creators",
