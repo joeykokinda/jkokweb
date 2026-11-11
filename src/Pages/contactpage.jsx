@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getEmail } from "../components/Email";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faGithub,
@@ -21,7 +22,7 @@ FN:Joey Kokinda
 N:Kokinda;Joey;;;
 ORG:Purdue University
 TITLE:AI Student & Developer
-EMAIL:jkokinda9@gmail.com
+EMAIL:${getEmail()}
 TEL:+1${phoneNum}
 URL:https://jkokinda.com
 NOTE:AI Student at Purdue University. Experience in AI-powered applications across web, mobile, and embedded systems. Passion for AI, computer vision, and robotics.

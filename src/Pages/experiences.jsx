@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Email from "../components/Email";
 import "./experiences.css";
 
 function Experiences() {
@@ -106,9 +107,7 @@ function Experiences() {
       <div className="experienceFooter">
         <p className="contact-text">
           I am always looking for new opportunities!{" "}
-          <a href="mailto:j@kokinda.com" className="contact-link">
-            Contact me here
-          </a>
+          <Email className="contact-link">Contact me here</Email>
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Email from "../components/Email";
 import { Helmet } from "react-helmet-async";
 import profilePic from "../images/jkokpfp.png";
 import AsciiLoop from "./AsciiLoop";
@@ -385,9 +386,7 @@ function HomePage() {
 
         <p className="home-contact">
           contact me at{" "}
-          <a href="mailto:j@kokinda.com" className="home-contact-link">
-            j @ kokinda . com
-          </a>{" "}
+          <Email className="home-contact-link" />{" "}
           or dm me on{" "}
           <a
             href="https://x.com/sp3ked"

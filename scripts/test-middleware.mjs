@@ -1,0 +1,15 @@
+import assert from "node:assert";
+import { editionFor, onRequest } from "../functions/_middleware.js";
+const req = (country, lang, extra = {}) => Object.assign(new Request("https://jkokinda.com/projects", { headers: { accept: "text/html", "accept-language": lang, "user-agent": "Mozilla/5.0", ...extra } }), { cf: { country } });
+assert.equal(editionFor(req("MX", "en-US")), "mx");
+assert.equal(editionFor(req("US", "es-ES,en")), "mx");
+assert.equal(editionFor(req("US", "zh-CN")), "cn");
+assert.equal(editionFor(req("NG", "en")), "ng");
+assert.equal(editionFor(req("US", "en-US")), null);
+assert.equal(editionFor(req("MX", "es", { cookie: "edition=main" })), null);
+assert.equal(editionFor(req("RU", "ru", { "user-agent": "Googlebot" })), null);
+const redirect = await onRequest({ request: req("RU", "ru"), next: () => "next" });
+assert.equal(redirect.headers.get("location"), "https://ru.jkokinda.com/projects");
+const optOut = await onRequest({ request: new Request("https://jkokinda.com/?edition=main"), next: () => "next" });
+assert.match(optOut.headers.get("set-cookie"), /edition=main/);
+console.log("ok");
