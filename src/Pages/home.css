@@ -542,118 +542,56 @@ figure.home-tile:hover {
   color: #e8650a;
 }
 
-/* Capri, the agent, drifting around the home page. Click goes to her project. */
-.capri-roamer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  animation: capri-roam 46s ease-in-out infinite;
-}
-
-.capri-roamer-face {
-  display: block;
-  width: clamp(64px, 9vw, 104px);
-  aspect-ratio: 1;
-  border-radius: 50% !important;
-  overflow: hidden;
-  border: 2px solid #2bff88;
-  box-shadow: 0 0 0 2px #ff2e4d, 0 0 22px rgba(43, 255, 136, 0.65);
+/* Capri, the agent, perched on the profile photo. Click goes to her project. */
+.home-avatar-wrap {
   position: relative;
-  animation: capri-bob 2.6s ease-in-out infinite;
+  flex-shrink: 0;
+  margin-top: clamp(46px, 13vw, 66px);
 }
 
-/* Trailer glitch shot cuts in over her face for a beat, then back. */
-.capri-roamer-face video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  animation: capri-cut 9s steps(1) infinite;
-}
-
-.capri-roamer-face img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 56% 50%;
-  transform: scale(1.5);
+.home-avatar-wrap .home-avatar {
+  position: relative;
+  z-index: 1;
   display: block;
 }
 
-.capri-roamer-tag {
-  display: flex;
-  flex-direction: column;
-  padding: 0.35rem 0.6rem;
-  border: 1px solid #2bff88;
-  border-radius: 6px;
-  background: rgba(8, 10, 14, 0.88);
-  color: #d8ffe9;
-  font-family: monospace;
-  font-size: 0.72rem;
-  line-height: 1.35;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
+.capri-perch {
+  position: absolute;
+  left: -36%;
+  bottom: 72%;
+  width: 150%;
+  z-index: 0;
+  transform-origin: 45% 100%;
+  animation: capri-sway 5s ease-in-out infinite, capri-glitch 8s steps(1) infinite;
 }
 
-.capri-roamer-tag strong {
-  color: #2bff88;
+.capri-perch img {
+  display: block;
+  width: 100%;
+  border-radius: 0 !important;
+  filter: drop-shadow(0 4px 6px rgba(20, 10, 30, 0.3));
+  transition: transform 0.25s;
 }
 
-.capri-roamer:hover,
-.capri-roamer:focus-visible {
-  animation-play-state: paused;
+.capri-perch:hover img,
+.capri-perch:focus-visible img {
+  transform: translateY(-6px) scale(1.04);
 }
 
-.capri-roamer:hover .capri-roamer-tag,
-.capri-roamer:focus-visible .capri-roamer-tag {
-  opacity: 1;
+@keyframes capri-sway {
+  0%, 100% { rotate: -2.5deg; }
+  50% { rotate: 2.5deg; }
 }
 
-@keyframes capri-roam {
-  0%, 100% { transform: translate(4vw, 12vh); }
-  18% { transform: translate(72vw, 8vh); }
-  36% { transform: translate(80vw, 62vh); }
-  54% { transform: translate(38vw, 78vh); }
-  72% { transform: translate(3vw, 58vh); }
-  86% { transform: translate(46vw, 30vh); }
-}
-
-@keyframes capri-bob {
-  0%, 100% { translate: 0 0; rotate: -4deg; }
-  50% { translate: 0 -10px; rotate: 4deg; }
-}
-
-@keyframes capri-cut {
-  0%, 100% { opacity: 0; }
-  40% { opacity: 1; }
-  46% { opacity: 0; }
-  84% { opacity: 1; }
-  96% { opacity: 0; }
+@keyframes capri-glitch {
+  0%, 100% { translate: 0 0; filter: none; }
+  61% { translate: 4px 0; filter: hue-rotate(80deg); }
+  62% { translate: -3px 1px; filter: none; }
+  63% { translate: 0 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .capri-roamer {
+  .capri-perch {
     animation: none;
-    top: auto;
-    left: auto;
-    right: 1rem;
-    bottom: 1rem;
-  }
-
-  .capri-roamer-face {
-    animation: none;
-  }
-
-  .capri-roamer-face video {
-    display: none;
   }
 }

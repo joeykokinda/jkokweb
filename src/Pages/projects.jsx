@@ -90,7 +90,7 @@ function Projects() {
         year: "2026",
         status: "live",
         description:
-          "My full personal agent: connected to all my systems, with long-term memory and secure access to my devices, reachable from Telegram. Not a wrapper around an agent framework: the tool loop, memory, approval system, scheduler, watchers, and dashboard are all my own code, about 2,600 lines of Node with zero npm dependencies. She runs shell commands on my home server behind Approve/Deny taps, launches coding agents in isolated worktrees, drives my phone farm, and messages me first when something breaks.",
+          "My full personal agent: connected to all my systems, with long-term memory and secure access to my devices, reachable from Telegram. Not a wrapper around an agent framework: the tool loop, memory, approval system, scheduler, watchers, and dashboard are all custom. She runs shell commands on my home server behind Approve/Deny taps, launches coding agents in isolated worktrees, drives my phone farm, and messages me first when something breaks.",
         tags: ["AI Agents", "Node.js", "Telegram", "SQLite", "Self-Hosted"],
         link: "/projects/capri",
       },

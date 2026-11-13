@@ -198,7 +198,7 @@ export const MORE_PROJECTS = {
     title: "Capri - My Personal Agent, Built From Scratch",
     metaTitle: "Capri - Personal Agent",
     metaDescription:
-      "Capri is a personal agent I wrote from scratch: a zero-dependency Node tool loop on my home server that I talk to over Telegram to run my machines, projects, and day.",
+      "Capri is my fully custom personal agent: connected to all my systems, with long-term memory and secure access to my devices, reachable from Telegram.",
     images: [capri1],
     links: [],
     sections: [
@@ -206,7 +206,7 @@ export const MORE_PROJECTS = {
         heading: "Overview",
         body: [
           "Capri is my full personal agent, with everything connected: my servers, my repositories, my phones, my calendar and mail, and my second brain. She has long-term memory of what I've told her and secure access to my devices, lives on my always-on home server, and I talk to her over Telegram. She can also rebuild herself.",
-          "She is not an install of someone else's agent framework with a prompt on top. I ran an off-the-shelf agent gateway before this and replaced it, because I wanted to understand and own every layer. The model loop, the memory, the approval system, the scheduler, the watchers, the Telegram rendering, and the dashboard are all code I wrote: about 2,600 lines of Node across 15 files, with zero npm dependencies. When something is wrong with her, there is no framework to blame and nothing I can't open and fix.",
+          "She is not an install of someone else's agent framework with a prompt on top. I ran an off-the-shelf agent gateway before this and replaced it, because I wanted to understand and own every layer. The model loop, the memory, the approval system, the scheduler, the watchers, the Telegram rendering, and the dashboard are all custom.",
         ],
       },
       {
@@ -244,7 +244,7 @@ export const MORE_PROJECTS = {
       {
         heading: "Stack",
         body: [
-          "Node 22 with no npm dependencies, SQLite, the Telegram Bot API over long polling, OpenRouter for models, and a Google Apps Script bridge for Gmail and Calendar instead of an OAuth client. Runs as a systemd user service on my home server, deployed with a git push. Covered by 27 tests on Node's built-in test runner. She uses Aimem for context and hands phone work to TapRig.",
+          "Node 22, SQLite, the Telegram Bot API over long polling, OpenRouter for models, and a Google Apps Script bridge for Gmail and Calendar instead of an OAuth client. Runs as a systemd user service on my home server, deployed with a git push. She uses Aimem for context and hands phone work to TapRig.",
         ],
       },
     ],
