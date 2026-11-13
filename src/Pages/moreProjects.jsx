@@ -193,6 +193,61 @@ export const MORE_PROJECTS = {
       },
     ],
   },
+  capri: {
+    title: "Capri - My Personal Agent, Built From Scratch",
+    metaTitle: "Capri - Personal Agent",
+    metaDescription:
+      "Capri is a personal agent I wrote from scratch: a zero-dependency Node tool loop on my home server that I talk to over Telegram to run my machines, projects, and day.",
+    images: [],
+    links: [],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "Capri is my right hand: one agent that lives on my always-on home server and that I talk to over Telegram. She can see and run my machines, my repositories, and my day, and she can rebuild herself.",
+          "She is not an install of someone else's agent framework with a prompt on top. I ran an off-the-shelf agent gateway before this and replaced it, because I wanted to understand and own every layer. The model loop, the memory, the approval system, the scheduler, the watchers, the Telegram rendering, and the dashboard are all code I wrote: about 2,600 lines of Node across 15 files, with zero npm dependencies. When something is wrong with her, there is no framework to blame and nothing I can't open and fix.",
+        ],
+      },
+      {
+        heading: "How I Use It",
+        list: [
+          ["From my phone, anywhere", "I text or send a voice note like I would to a person. Every message runs as its own turn in parallel, and each reply quotes the message it answers, so I can fire off five things at once."],
+          ["Shipping code away from my desk", "I describe a change and she starts a coding agent in a fresh git worktree and branch, as many at once as I want. When one finishes I get the diff summary with Merge, Open PR, and Discard buttons."],
+          ["Running the server", "Is the container up, what's in the logs, what's eating disk. Read-only commands just run. Anything that changes state waits for my tap."],
+          ["She messages me first", "A service or container going down or coming back, a calendar event or class 15 minutes out, homework due soon, important unread mail, GitHub notifications, a price crossing a line."],
+          ["Eyes on things", "She sends me screenshots of any site at phone or desktop size, reads photos, PDFs, and videos I forward, and drives the Android phones in my phone farm."],
+          ["Capturing thoughts", "Ideas and decisions I text her get filed into the right note in my second brain, quarantined as unreviewed until I promote them."],
+          ["Scheduled work", "One-off or repeating jobs run as full agent turns. If there's nothing worth saying, the job stays silent instead of pinging me."],
+        ],
+      },
+      {
+        heading: "How It Works",
+        list: [
+          ["Brain", "My own tool-calling loop against OpenRouter. The model is swappable from chat with one command. Empty replies are retried, cut-off ones continued, and rate limits backed off."],
+          ["Lean context", "Each turn gets only the last 10 messages, a rolling summary, my profile, and a short list of saved facts. Everything else is a tool call away. An earlier version that loaded my whole vault index and 80 messages cost about 40k tokens a turn and was slow, so I cut it down on purpose."],
+          ["Memory", "SQLite holds the full message log, the summary, saved facts, reminders, token usage, and an audit log of every tool call. A background pass after each reply files new facts and drops stale ones."],
+          ["Approvals", "I wrote a classifier that decides whether a shell command is read-only, including pipes and chained commands. Read-only runs instantly. Everything else shows up as Approve and Deny buttons. An auto mode skips the taps when I want speed and posts what it ran."],
+          ["Senses", "Voice notes and videos are transcribed and images and PDFs are read by a separate multimodal model, so the main model can stay cheap and fast."],
+          ["Replies", "Answers stream into a single Telegram message as they're written. Long turns show a live status message listing the steps so far, which deletes itself when the answer lands."],
+          ["Failure handling", "Known failures, like out of credits, a bad key, an outage, or the coding agent hitting its usage limit, become one line with the fix. She warns before the balance runs out and reports her own crashes on the next start."],
+          ["Self-review", "She can read her own failed tool calls, which feeds a weekly review of what to fix in her."],
+          ["Dashboard", "A Telegram Mini App, gated by Telegram's signed login data for my account only, plus webhooks so other systems can reach me through her."],
+        ],
+      },
+      {
+        heading: "Safety",
+        body: [
+          "A chat that can run commands on a server is remote code execution, so the boundary is deliberate. Only my Telegram account can talk to her. Coding work is isolated in worktrees and branches. Mail is read-only and treated as third-party data, and calendar writes need approval. The private folders of my vault aren't on the server at all, and her tools refuse to touch them anyway. Every tool call is written to the audit log.",
+        ],
+      },
+      {
+        heading: "Stack",
+        body: [
+          "Node 22 with no npm dependencies, SQLite, the Telegram Bot API over long polling, OpenRouter for models, and a Google Apps Script bridge for Gmail and Calendar instead of an OAuth client. Runs as a systemd user service on my home server, deployed with a git push. Covered by 27 tests on Node's built-in test runner. She uses Aimem for context and hands phone work to TapRig.",
+        ],
+      },
+    ],
+  },
   aimem: {
     title: "Aimem - Local-First Memory for Coding Agents",
     metaTitle: "Aimem - Memory for Coding Agents",
