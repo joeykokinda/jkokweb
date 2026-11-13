@@ -563,7 +563,19 @@ figure.home-tile:hover {
   overflow: hidden;
   border: 2px solid #2bff88;
   box-shadow: 0 0 0 2px #ff2e4d, 0 0 22px rgba(43, 255, 136, 0.65);
-  animation: capri-bob 2.6s ease-in-out infinite, capri-glitch 7s steps(1) infinite;
+  position: relative;
+  animation: capri-bob 2.6s ease-in-out infinite;
+}
+
+/* Trailer glitch shot cuts in over her face for a beat, then back. */
+.capri-roamer-face video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: capri-cut 9s steps(1) infinite;
 }
 
 .capri-roamer-face img {
@@ -620,11 +632,12 @@ figure.home-tile:hover {
   50% { translate: 0 -10px; rotate: 4deg; }
 }
 
-@keyframes capri-glitch {
-  0%, 100% { filter: none; }
-  48% { filter: hue-rotate(90deg) saturate(1.6); }
-  49% { filter: invert(1); }
-  50% { filter: none; }
+@keyframes capri-cut {
+  0%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+  46% { opacity: 0; }
+  84% { opacity: 1; }
+  96% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -638,5 +651,9 @@ figure.home-tile:hover {
 
   .capri-roamer-face {
     animation: none;
+  }
+
+  .capri-roamer-face video {
+    display: none;
   }
 }
