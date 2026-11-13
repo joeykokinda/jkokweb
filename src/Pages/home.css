@@ -543,10 +543,21 @@ figure.home-tile:hover {
 }
 
 /* Capri, the agent, perched on the profile photo. Click goes to her project. */
+.home-head {
+  align-items: flex-end;
+}
+
 .home-avatar-wrap {
   position: relative;
   flex-shrink: 0;
-  margin-top: clamp(46px, 13vw, 66px);
+  margin-top: clamp(60px, 19vw, 100px);
+}
+
+@media (max-width: 600px) {
+  .capri-perch {
+    left: -42%;
+    width: 125%;
+  }
 }
 
 .home-avatar-wrap .home-avatar {
@@ -557,9 +568,9 @@ figure.home-tile:hover {
 
 .capri-perch {
   position: absolute;
-  left: -36%;
-  bottom: 72%;
-  width: 150%;
+  left: -20%;
+  bottom: 63%;
+  width: 175%;
   z-index: 0;
   transform-origin: 45% 100%;
   animation: capri-sway 5s ease-in-out infinite, capri-glitch 8s steps(1) infinite;
