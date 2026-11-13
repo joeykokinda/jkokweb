@@ -35,10 +35,11 @@ import detectImage from "../images/TurtosaDetect/detect1.png";
 import cellImage from "../images/CELL/cell1.png";
 import taprigImage from "../images/TapRig/taprig2.png";
 import helpaImage from "../images/Helpa/step-airflow.webp";
+import capriImage from "../images/Capri/capri.jpg";
 import doomImage from "../images/Doomscroll/doom-worn.jpg";
 
 // Featured projects, in display order. Everything else lands in "Other".
-const FEATURED_IDS = ["taprig", "helpa", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
+const FEATURED_IDS = ["taprig", "capri", "helpa", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
 
 function Projects() {
   const navigate = useNavigate();
@@ -84,11 +85,12 @@ function Projects() {
       },
       {
         id: "capri",
+        image: capriImage,
         title: "Capri - My Personal Agent, Built From Scratch",
         year: "2026",
         status: "live",
         description:
-          "The agent I run my machines, projects, and day through, from Telegram. Not a wrapper around an agent framework: the tool loop, memory, approval system, scheduler, watchers, and dashboard are all my own code, about 2,600 lines of Node with zero npm dependencies. She runs shell commands on my home server behind Approve/Deny taps, launches coding agents in isolated worktrees, drives my phone farm, and messages me first when something breaks.",
+          "My full personal agent: connected to all my systems, with long-term memory and secure access to my devices, reachable from Telegram. Not a wrapper around an agent framework: the tool loop, memory, approval system, scheduler, watchers, and dashboard are all my own code, about 2,600 lines of Node with zero npm dependencies. She runs shell commands on my home server behind Approve/Deny taps, launches coding agents in isolated worktrees, drives my phone farm, and messages me first when something breaks.",
         tags: ["AI Agents", "Node.js", "Telegram", "SQLite", "Self-Hosted"],
         link: "/projects/capri",
       },

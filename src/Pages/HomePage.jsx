@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Email from "../components/Email";
 import { Helmet } from "react-helmet-async";
 import profilePic from "../images/jkokpfp.png";
+import capriImage from "../images/Capri/capri.jpg";
 import AsciiLoop from "./AsciiLoop";
 import mbcWin from "../images/BoilerBlockchain/mbc-polymarket-win.webp";
 import hackathonWinners from "../images/BoilerBlockchain/mbc-hackathon-winners.webp";
@@ -135,6 +136,15 @@ function HomePage() {
 
   return (
     <div className="home-page">
+      <Link to="/projects/capri" className="capri-roamer" aria-label="Capri, my personal agent. Open the project.">
+        <span className="capri-roamer-face">
+          <img src={capriImage} alt="" />
+        </span>
+        <span className="capri-roamer-tag">
+          <strong>capri // online</strong>
+          my agent. wired into everything i run.
+        </span>
+      </Link>
       <Helmet>
         <title>Joey Kokinda - AI Developer & Student at Purdue University</title>
         <meta

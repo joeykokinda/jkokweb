@@ -46,6 +46,7 @@ import helpaStep from "../images/Helpa/step-airflow.webp";
 import helpaStuck from "../images/Helpa/stuck.webp";
 import helpaDrawn from "../images/Helpa/drawn.webp";
 import helpaPros from "../images/Helpa/pros.webp";
+import capri1 from "../images/Capri/capri.jpg";
 import doomWorn from "../images/Doomscroll/doom-worn.jpg";
 import doomMounts from "../images/Doomscroll/doom-mounts.jpg";
 import doomVideo1 from "../images/Doomscroll/doom-vid1.mp4";
@@ -198,13 +199,13 @@ export const MORE_PROJECTS = {
     metaTitle: "Capri - Personal Agent",
     metaDescription:
       "Capri is a personal agent I wrote from scratch: a zero-dependency Node tool loop on my home server that I talk to over Telegram to run my machines, projects, and day.",
-    images: [],
+    images: [capri1],
     links: [],
     sections: [
       {
         heading: "Overview",
         body: [
-          "Capri is my right hand: one agent that lives on my always-on home server and that I talk to over Telegram. She can see and run my machines, my repositories, and my day, and she can rebuild herself.",
+          "Capri is my full personal agent, with everything connected: my servers, my repositories, my phones, my calendar and mail, and my second brain. She has long-term memory of what I've told her and secure access to my devices, lives on my always-on home server, and I talk to her over Telegram. She can also rebuild herself.",
           "She is not an install of someone else's agent framework with a prompt on top. I ran an off-the-shelf agent gateway before this and replaced it, because I wanted to understand and own every layer. The model loop, the memory, the approval system, the scheduler, the watchers, the Telegram rendering, and the dashboard are all code I wrote: about 2,600 lines of Node across 15 files, with zero npm dependencies. When something is wrong with her, there is no framework to blame and nothing I can't open and fix.",
         ],
       },
