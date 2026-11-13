@@ -542,67 +542,56 @@ figure.home-tile:hover {
   color: #e8650a;
 }
 
-/* Capri, the agent, perched on the profile photo. Click goes to her project. */
-.home-head {
-  align-items: flex-end;
-}
-
+/* Capri, the agent: a mini avatar slowly orbiting the profile photo. Click goes to her project. */
 .home-avatar-wrap {
   position: relative;
   flex-shrink: 0;
-  margin-top: clamp(60px, 19vw, 100px);
 }
 
 .home-avatar-wrap .home-avatar {
-  position: relative;
-  z-index: 1;
   display: block;
 }
 
-.capri-perch {
+.capri-orbit {
   position: absolute;
-  left: -20%;
-  bottom: 63%;
-  width: 175%;
-  z-index: 0;
-  transform-origin: 45% 100%;
-  animation: capri-sway 5s ease-in-out infinite, capri-glitch 8s steps(1) infinite;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  aspect-ratio: 1;
+  margin: -18% 0 0 -18%;
+  animation: capri-orbit 28s linear infinite;
 }
 
-.capri-perch img {
+.capri-orbit img {
   display: block;
   width: 100%;
-  border-radius: 0 !important;
-  filter: drop-shadow(0 4px 6px rgba(20, 10, 30, 0.3));
-  transition: transform 0.25s;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1.5px #2bff88, var(--shadow-sm);
+  transition: transform 0.2s;
 }
 
-.capri-perch:hover img,
-.capri-perch:focus-visible img {
-  transform: translateY(-6px) scale(1.04);
+.capri-orbit:hover,
+.capri-orbit:focus-visible {
+  animation-play-state: paused;
 }
 
-@keyframes capri-sway {
-  0%, 100% { rotate: -2.5deg; }
-  50% { rotate: 2.5deg; }
+.capri-orbit:hover img,
+.capri-orbit:focus-visible img {
+  transform: scale(1.25);
 }
 
-@keyframes capri-glitch {
-  0%, 100% { translate: 0 0; filter: none; }
-  61% { translate: 4px 0; filter: hue-rotate(80deg); }
-  62% { translate: -3px 1px; filter: none; }
-  63% { translate: 0 0; }
+/* Rides the photo's rim; the counter-rotation keeps her upright. Starts bottom right. */
+@keyframes capri-orbit {
+  from { transform: rotate(45deg) translateX(139%) rotate(-45deg); }
+  to { transform: rotate(405deg) translateX(139%) rotate(-405deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .capri-perch {
+  .capri-orbit {
     animation: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .capri-perch {
-    left: -15%;
-    width: 125%;
+    transform: rotate(45deg) translateX(139%) rotate(-45deg);
   }
 }

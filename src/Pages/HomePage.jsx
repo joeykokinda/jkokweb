@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Email from "../components/Email";
 import { Helmet } from "react-helmet-async";
 import profilePic from "../images/jkokpfp.png";
-import capriPerch from "../images/Capri/capri-perch.png";
+import capriPfp from "../images/Capri/capri-pfp.jpg";
 import AsciiLoop from "./AsciiLoop";
 import mbcWin from "../images/BoilerBlockchain/mbc-polymarket-win.webp";
 import hackathonWinners from "../images/BoilerBlockchain/mbc-hackathon-winners.webp";
@@ -201,10 +201,10 @@ function HomePage() {
       <main className="home-card glass">
         <div className="home-head">
           <div className="home-avatar-wrap">
-            <Link to="/projects/capri" className="capri-perch" title="Capri, my agent" aria-label="Capri, my personal agent. Open the project.">
-              <img src={capriPerch} alt="" />
-            </Link>
             <img src={profilePic} alt="Joey Kokinda" className="home-avatar" />
+            <Link to="/projects/capri" className="capri-orbit" title="Capri, my agent" aria-label="Capri, my personal agent. Open the project.">
+              <img src={capriPfp} alt="" />
+            </Link>
           </div>
           <div className="home-head-text">
             <h1>Joey Kokinda</h1>
