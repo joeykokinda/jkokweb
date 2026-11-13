@@ -553,13 +553,6 @@ figure.home-tile:hover {
   margin-top: clamp(60px, 19vw, 100px);
 }
 
-@media (max-width: 600px) {
-  .capri-perch {
-    left: -42%;
-    width: 125%;
-  }
-}
-
 .home-avatar-wrap .home-avatar {
   position: relative;
   z-index: 1;
@@ -604,5 +597,12 @@ figure.home-tile:hover {
 @media (prefers-reduced-motion: reduce) {
   .capri-perch {
     animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .capri-perch {
+    left: -15%;
+    width: 125%;
   }
 }
