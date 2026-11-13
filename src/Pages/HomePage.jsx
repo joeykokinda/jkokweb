@@ -219,7 +219,7 @@ function HomePage() {
                 purdue university
               </a>
             </p>
-            <p className="home-sub home-open">graduating May 2027 · seeking full-time roles</p>
+            <p className="home-sub home-open">graduating May 2027</p>
             <div className="home-head-links">
               <LinkRow items={socialLinks} />
             </div>
