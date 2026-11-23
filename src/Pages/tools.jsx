@@ -72,8 +72,7 @@ function ToolsWebsite() {
             <h2>Available Tools</h2>
             <ul>
               <li>QR Code Maker - Links, text, wifi and email, with a logo in the middle, custom colors and dot styles, PNG / SVG export</li>
-              <li>Wallet Maker - New ETH, SOL and BTC wallets, or type a seed phrase to get its addresses and private keys</li>
-              <li>Key Decoder - Private key to address, Solana base58 to keypair JSON and back</li>
+              <li>Wallets - New ETH, SOL and BTC wallets, or paste a seed phrase or any private key to get its addresses and keys</li>
               <li>Password Generator - Random passwords and word passphrases</li>
               <li>Crypto Units - wei / gwei / ether, lamports / SOL, sats / BTC</li>
               <li>Hash - keccak256, function selectors and sha256</li>
