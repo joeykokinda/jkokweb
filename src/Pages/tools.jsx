@@ -29,7 +29,7 @@ function ToolsWebsite() {
         <h1>Tools - Website With Useful Tools</h1>
         <div className="header-links">
           <a
-            href="https://kokinda.dev"
+            href="https://tools.jkokinda.com"
             target="_blank"
             rel="noopener noreferrer"
             className="live-link"
@@ -60,30 +60,26 @@ function ToolsWebsite() {
           <section className="project-section">
             <h2>Overview</h2>
             <p>
-              A consolidated collection of essential developer tools in one
-              place, eliminating the need to search for individual tools across
-              different websites. Built to solve the common frustration of
-              accessing frequently needed utilities.
+              The tools I use all the time in one place, so I stop searching
+              for a different sketchy site every time I need a QR code or a
+              burner wallet. Rebuilt in 2026: everything runs in the browser,
+              and the site's content security policy blocks every outbound
+              request, so nothing you type can leave the tab.
             </p>
           </section>
 
           <section className="project-section">
             <h2>Available Tools</h2>
             <ul>
-              <li>
-                QR Code Generator - Create custom QR codes for URLs and text
-              </li>
-              <li>
-                Password Generator - Generate secure, customizable passwords
-              </li>
-              <li>
-                Unit Converter - Convert between various units of measurement
-              </li>
-              <li>Word Counter - Count words, characters, and sentences</li>
-              <li>Lorem Ipsum Generator - Create placeholder text</li>
-              <li>JSON Formatter - Format and validate JSON data</li>
-              <li>Font Pairing Generator - Get font combination suggestions</li>
-              <li>Bill Splitter - Calculate individual shares with tip</li>
+              <li>QR Code Maker - Links, text, wifi and email, with a logo in the middle, custom colors and dot styles, PNG / SVG export</li>
+              <li>Wallet Maker - New ETH, SOL and BTC wallets, or type a seed phrase to get its addresses and private keys</li>
+              <li>Key Decoder - Private key to address, Solana base58 to keypair JSON and back</li>
+              <li>Password Generator - Random passwords and word passphrases</li>
+              <li>Crypto Units - wei / gwei / ether, lamports / SOL, sats / BTC</li>
+              <li>Hash - keccak256, function selectors and sha256</li>
+              <li>Encode / Decode - JSON, base64, hex, URL and JWT</li>
+              <li>Timestamp - Unix time to dates and back</li>
+              <li>Word Counter and Lorem Ipsum</li>
             </ul>
           </section>
         </div>
