@@ -41,7 +41,7 @@ import capriImage from "../images/Capri/capri.jpg";
 import doomImage from "../images/Doomscroll/doom-worn.jpg";
 
 // Featured projects, in display order. Everything else lands in "Other".
-const FEATURED_IDS = ["taprig", "capri", "helpa", "pickleball", "thumbprint", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
+const FEATURED_IDS = ["capri", "helpa", "pickleball", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "meta"];
 
 function Projects() {
   const navigate = useNavigate();
