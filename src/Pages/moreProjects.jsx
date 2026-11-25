@@ -28,8 +28,6 @@ import pickleballPhoneCourts from "../images/Pickleball/phone-courts.webp";
 import pickleballAdmin from "../images/Pickleball/admin-courts.webp";
 import pickleballBracketLive from "../images/Pickleball/bracket-live.webp";
 import pickleballFullBracket from "../images/Pickleball/full-bracket.webp";
-import pickleballChampions from "../images/Pickleball/champions.webp";
-import pickleballStats from "../images/Pickleball/stats.webp";
 import corec1 from "../images/CoRec/corec1.png";
 import corec2 from "../images/CoRec/corec2.png";
 import corec3 from "../images/CoRec/corec3.png";
@@ -428,8 +426,6 @@ export const MORE_PROJECTS = {
       pickleballAdmin,
       pickleballBracketLive,
       pickleballFullBracket,
-      pickleballChampions,
-      pickleballStats,
     ],
     links: [
       { label: "Event Page ↗", href: "https://www.boilerblockchain.org/pickleball" },
@@ -449,7 +445,7 @@ export const MORE_PROJECTS = {
           ["Player phone", "The moment a court opens, the two teams see Go to Court 3, who they are playing, and a countdown to be there before a forfeit."],
           ["Courts and bracket", "Anyone can open the live board: what is on each of the 8 courts, who is up next, and the bracket filling in as results land."],
           ["Organizer board", "One card per court with a running clock. Tap the winner when a game ends and the next match is called automatically."],
-          ["The real night", "The full bracket and results graphics are the actual tournament. The app screens are a replay of a mid-tournament moment with placeholder team names."],
+          ["The real night", "The crew photo and the full bracket graphic are from the actual tournament. The app screens are a replay of a mid-tournament moment with placeholder team names."],
         ],
       },
       {
