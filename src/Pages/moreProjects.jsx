@@ -17,6 +17,13 @@ import acceptRequest from "../images/Accept/accept-request.png";
 import acceptIdle from "../images/Accept/accept-idle.png";
 import acceptApproved from "../images/Accept/accept-approved.png";
 import acceptRejected from "../images/Accept/accept-rejected.png";
+import thumbprint1 from "../images/Thumbprint/thumbprint1.png";
+import thumbprint2 from "../images/Thumbprint/thumbprint2.png";
+import thumbprintWrite from "../images/Thumbprint/app-write.png";
+import thumbprintApprove from "../images/Thumbprint/app-approve.png";
+import thumbprintKill from "../images/Thumbprint/app-kill.png";
+import pickleball1 from "../images/Pickleball/pickleball1.png";
+import pickleball2 from "../images/Pickleball/pickleball2.png";
 import corec1 from "../images/CoRec/corec1.png";
 import corec2 from "../images/CoRec/corec2.png";
 import corec3 from "../images/CoRec/corec3.png";
@@ -400,6 +407,89 @@ export const MORE_PROJECTS = {
       {
         heading: "Stack",
         body: ["One Go binary plus SQLite, self-hosted on my home server behind a Cloudflare Tunnel."],
+      },
+    ],
+  },
+  pickleball: {
+    title: "UBC Pickleball Cup - Live Tournament App",
+    metaTitle: "UBC Pickleball Cup",
+    metaDescription:
+      "The live tournament app behind Boiler Blockchain and Meteora's pickleball cup at UBC 2026: 90 players, 8 courts, every phone a live dashboard.",
+    images: [pickleball1, pickleball2],
+    links: [
+      { label: "Event Page ↗", href: "https://www.boilerblockchain.org/pickleball" },
+      { label: "GitHub ↗", href: "https://github.com/boilerblockchain/BoilerBlockchainWebsite/tree/main/pickleball", github: true },
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "Boiler Blockchain and Meteora took over 8 pickleball courts in Austin during UBC 2026 for a single-elimination doubles cup. I built the app that ran it. 45 pairs registered, 90 players, and each of them had the tournament on their phone: who they play, which court, and when to walk over.",
+          "This is one of my favorite things I've built and easily the most stressful. There was no safety net and no chance to fix it tomorrow: the event was running because of what I made, in front of everyone, and it all had to work on the spot.",
+        ],
+      },
+      {
+        heading: "How It Works",
+        list: [
+          ["Register", "One player registers the pair from their phone. Registration closes when the bracket is drawn."],
+          ["Bracket", "The organizer draws the bracket at random, with byes going to the top seeds."],
+          ["Courts", "Each match is sent to the next free court in round order, so all 8 courts stay full without anyone directing traffic."],
+          ["Player phones", "Every phone polls for state every 3 seconds and shows that player's next match, court, and the live bracket."],
+          ["Organizers", "An admin page records winners by tapping the bracket and forfeits no-shows from a timer on each court card."],
+        ],
+      },
+      {
+        heading: "Building It Not to Fail",
+        list: [
+          ["One small server", "A single Go binary using only the standard library. State lives in memory with a JSON snapshot on disk, so there is no database to go down mid-event."],
+          ["Self-hosted", "It runs on my home server behind a Cloudflare Tunnel. A couple hundred phones polling every 3 seconds would have blown through serverless free-tier limits, so I didn't put the event on one."],
+          ["Load test", "Before the event I ran 300 simulated players, 150 pairs, against the real deployment: p95 around 100 ms, zero failed polls, and every court full the whole time."],
+          ["Restart drill", "I restarted the service in the middle of that test. Every team, result, and login survived, so a restart during the real event would not have cost anything."],
+        ],
+      },
+      {
+        heading: "Stack",
+        body: ["Go standard library server with in-memory state and JSON snapshots, a React front end inside the Boiler Blockchain site, self-hosted behind a Cloudflare Tunnel."],
+      },
+    ],
+  },
+  thumbprint: {
+    title: "Thumbprint - Fingerprint Approvals for Crypto Projects",
+    metaTitle: "Thumbprint",
+    metaDescription:
+      "Hardware-backed approvals on a Solana Seeker, so a stolen X account cannot redirect a crypto project's payments.",
+    images: [thumbprint1, thumbprint2, thumbprintWrite, thumbprintApprove, thumbprintKill],
+    links: [
+      { label: "Live Demo ↗", href: "https://thumbprint.pyras.org/demo" },
+      { label: "GitHub ↗", href: "https://github.com/joeykokinda/thumbprint", github: true },
+    ],
+    sections: [
+      {
+        heading: "Overview",
+        body: [
+          "When a crypto project's X account gets hijacked, the attacker posts their own wallet address and followers send money to it. The login was the only thing standing between the project and its audience.",
+          "Thumbprint separates the social login from the approval key. The project's approvals live on a hardware-protected key inside a Solana Seeker phone, and every signature needs a fingerprint. A Solana program checks those signatures, so a payment to an address the project never approved fails onchain, no matter who controls the X session. It is a hackathon build running on Solana devnet with test funds only.",
+        ],
+      },
+      {
+        heading: "How It Works",
+        list: [
+          ["Enroll", "Connect the Seeker wallet, prove control of the X handle, and generate a P-256 key in the phone's secure hardware. A verifier checks the Android key attestation chain off-device: Google's trust roots, locked verified boot, and a biometric required for every signature."],
+          ["Approve a treasury", "The project approves the exact address it wants to be paid at, for up to seven days, on a native review screen that shows the full signed message."],
+          ["Pay", "The payment page reads the approval straight from Solana. The program checks the real transfer recipient, expiry, revocation, and suspension before it moves any SOL."],
+          ["Approve posts", "Each post is signed with a fingerprint and its text goes onchain with a one-time counter. A browser extension marks approved posts on X and warns on the rest."],
+          ["Kill switch", "Suspend payments, revoke a destination, or recover onto a new attested key from the phone."],
+        ],
+      },
+      {
+        heading: "Proof, Not a Mockup",
+        body: [
+          "The demo page shows three real devnet transactions: a payment that reaches the approved treasury, the same payment with a swapped recipient failing with WrongRecipient and moving nothing, and a payment refused after the project hits suspend. The enrolled key was generated on a physical Seeker and its attestation receipt is stored by digest onchain.",
+        ],
+      },
+      {
+        heading: "Stack",
+        body: ["Anchor program in Rust using Solana's Ed25519 and secp256r1 precompiles, an Android app for the attested key and biometric prompt, a Kotlin attestation verifier built on Google's, a TypeScript relay, a Chrome extension, and a web payment page that talks to Solana directly."],
       },
     ],
   },

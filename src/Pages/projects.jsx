@@ -30,6 +30,8 @@ import aimemImage from "../images/Aimem/aimem2.png";
 import airlockImage from "../images/Airlock/airlock1.png";
 import acceptImage from "../images/Accept/accept-request.png";
 import corecImage from "../images/CoRec/corec1.png";
+import thumbprintImage from "../images/Thumbprint/thumbprint1.png";
+import pickleballImage from "../images/Pickleball/pickleball1.png";
 import nightdialImage from "../images/Nightdial/nightdial1.jpg";
 import detectImage from "../images/TurtosaDetect/detect1.png";
 import cellImage from "../images/CELL/cell1.png";
@@ -39,7 +41,7 @@ import capriImage from "../images/Capri/capri.jpg";
 import doomImage from "../images/Doomscroll/doom-worn.jpg";
 
 // Featured projects, in display order. Everything else lands in "Other".
-const FEATURED_IDS = ["taprig", "capri", "helpa", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
+const FEATURED_IDS = ["taprig", "capri", "helpa", "pickleball", "thumbprint", "creou", "phonefarm", "veridex", "pyras", "jaeger", "aimem", "exoform", "meta"];
 
 function Projects() {
   const navigate = useNavigate();
@@ -58,14 +60,14 @@ function Projects() {
   const filterCategories = useMemo(
     () => ({
       all: [],
-      website: ["helpa", "creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "corec", "nightdial", "cell"],
+      website: ["helpa", "pickleball", "thumbprint", "creou", "ward", "promptr", "tools", "cosmos", "unbolted", "block", "trip", "trunorth", "exoform", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "corec", "nightdial", "cell"],
       hardware: ["doomscroll", "taprig", "phonefarm", "raspi", "bike", "pyras", "accept"],
-      software: ["capri", "doomscroll", "taprig", "helpa", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
-      web3: ["ward", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex", "airlock", "cell"],
-      hackathon: ["helpa", "ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust", "airlock"],
-      active: ["capri", "taprig", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "aimem", "tools", "corec"],
+      software: ["capri", "doomscroll", "taprig", "helpa", "pickleball", "thumbprint", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "tools", "cosmos", "locallens", "unbolted", "block", "trip", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "jaeger", "agenttrust", "pyras", "veridex", "aimem", "skillscope", "airlock", "accept", "corec", "nightdial", "turtosadetect", "cell"],
+      web3: ["ward", "thumbprint", "youvest", "cosmos", "polyterm", "jaeger", "agenttrust", "pyras", "veridex", "airlock", "cell"],
+      hackathon: ["helpa", "thumbprint", "ward", "unbolted", "locallens", "cosmos", "trip", "youvest", "jaeger", "agenttrust", "airlock"],
+      active: ["capri", "taprig", "thumbprint", "phonefarm", "creou", "ward", "promptr", "docu", "scout", "cosmos", "block", "trunorth", "exoform", "polyterm", "youvest", "staklabs", "agenttrust", "pyras", "veridex", "aimem", "tools", "corec"],
       inactive: ["unbolted", "raspi", "bike", "locallens", "airlock", "accept", "turtosadetect", "cell"],
-      oneTime: ["doomscroll", "helpa", "ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
+      oneTime: ["doomscroll", "helpa", "pickleball", "ward", "meta", "raspi", "bike", "locallens", "unbolted", "trip", "youvest", "jaeger", "agenttrust", "skillscope", "nightdial"],
     }),
     [],
   );
@@ -93,6 +95,32 @@ function Projects() {
           "My full personal agent: connected to all my systems, with long-term memory and secure access to my devices, reachable from Telegram. Not a wrapper around an agent framework: the tool loop, memory, approval system, scheduler, watchers, and dashboard are all custom. She runs shell commands on my home server behind Approve/Deny taps, launches coding agents in isolated worktrees, drives my phone farm, and messages me first when something breaks.",
         tags: ["AI Agents", "Node.js", "Telegram", "SQLite", "Self-Hosted"],
         link: "/projects/capri",
+      },
+      {
+        id: "pickleball",
+        image: pickleballImage,
+        title: "UBC Pickleball Cup - Live Tournament App",
+        year: "2026",
+        status: "completed",
+        completionDate: "Nov 2026",
+        liveUrl: "https://www.boilerblockchain.org/pickleball",
+        description:
+          "The app that ran Boiler Blockchain and Meteora's pickleball cup at UBC 2026: 45 pairs, 90 players, 8 courts, single elimination, with every player's phone as a live dashboard telling them when and where to play. One dependency-free Go server on my home server, load-tested at 300 players beforehand because on the night there was no fallback. One of my favorite builds, and the most stressful.",
+        tags: ["Go", "React", "Real-Time", "Self-Hosted", "Cloudflare"],
+        link: "/projects/pickleball",
+      },
+      {
+        id: "thumbprint",
+        image: thumbprintImage,
+        title: "Thumbprint - Fingerprint Approvals for Crypto Projects",
+        year: "2026",
+        status: "live",
+        hackathon: true,
+        liveUrl: "https://thumbprint.pyras.org",
+        description:
+          "A stolen X login should not be enough to redirect a project's payments. Thumbprint moves approval onto a hardware key in a Solana Seeker: every post and treasury address is signed with a fingerprint, a Solana program enforces it, and a payment to a swapped address fails onchain. Android key attestation, a browser extension that marks approved posts on X, and a live devnet demo.",
+        tags: ["Solana", "Rust", "Anchor", "Android", "TypeScript", "Security"],
+        link: "/projects/thumbprint",
       },
       {
         id: "helpa",
