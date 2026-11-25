@@ -31,7 +31,7 @@ import airlockImage from "../images/Airlock/airlock1.png";
 import acceptImage from "../images/Accept/accept-request.png";
 import corecImage from "../images/CoRec/corec1.png";
 import thumbprintImage from "../images/Thumbprint/thumbprint1.png";
-import pickleballImage from "../images/Pickleball/pickleball1.png";
+import pickleballImage from "../images/BoilerBlockchain/ubc-pickleball-crew.webp";
 import nightdialImage from "../images/Nightdial/nightdial1.jpg";
 import detectImage from "../images/TurtosaDetect/detect1.png";
 import cellImage from "../images/CELL/cell1.png";
@@ -105,7 +105,7 @@ function Projects() {
         completionDate: "Nov 2026",
         liveUrl: "https://www.boilerblockchain.org/pickleball",
         description:
-          "The app that ran Boiler Blockchain and Meteora's pickleball cup at UBC 2026: 45 pairs, 90 players, 8 courts, single elimination, with every player's phone as a live dashboard telling them when and where to play. One dependency-free Go server on my home server, load-tested at 300 players beforehand because on the night there was no fallback. One of my favorite builds, and the most stressful.",
+          "The app that ran Boiler Blockchain and Meteora's pickleball cup at UBC 2026: 45 pairs, 90 players, 44 matches on 8 courts in one night, single elimination, with every player's phone as a live dashboard telling them when and where to play. One dependency-free Go server on my home server, load-tested at 300 players beforehand because on the night there was no fallback. One of my favorite builds, and the most stressful.",
         tags: ["Go", "React", "Real-Time", "Self-Hosted", "Cloudflare"],
         link: "/projects/pickleball",
       },

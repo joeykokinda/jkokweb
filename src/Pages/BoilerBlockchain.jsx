@@ -19,10 +19,16 @@ import mbcCrew from "../images/BoilerBlockchain/mbc-crew.webp";
 import mbcChecks from "../images/BoilerBlockchain/mbc-bounty-checks.webp";
 import acrossCampusesGroup from "../images/BoilerBlockchain/solana-across-campuses-group.webp";
 import acrossCampusesRound2 from "../images/BoilerBlockchain/solana-across-campuses-round-2.webp";
+import ubcAustinCrew from "../images/BoilerBlockchain/ubc-austin-crew.webp";
+import ubcPickleballCrew from "../images/BoilerBlockchain/ubc-pickleball-crew.webp";
+import ubcAustinNight from "../images/BoilerBlockchain/ubc-austin-night.webp";
 import "./gallery.css";
 
 const photos = [
   { src: teachingClass, caption: "teaching a Boiler Blockchain class" },
+  { src: ubcAustinCrew, caption: "the crew in Austin for UBC '26" },
+  { src: ubcPickleballCrew, caption: "running the UBC Pickleball Cup, Austin '26" },
+  { src: ubcAustinNight, caption: "Austin, UBC '26" },
   { src: mbcCrew, caption: "the whole crew at MBC '25" },
   { src: mbcChecks, caption: "bounty checks at MBC '25" },
   { src: acrossCampusesGroup, caption: "Solana Across Campuses @ Purdue" },

@@ -22,8 +22,14 @@ import thumbprint2 from "../images/Thumbprint/thumbprint2.png";
 import thumbprintWrite from "../images/Thumbprint/app-write.png";
 import thumbprintApprove from "../images/Thumbprint/app-approve.png";
 import thumbprintKill from "../images/Thumbprint/app-kill.png";
-import pickleball1 from "../images/Pickleball/pickleball1.png";
-import pickleball2 from "../images/Pickleball/pickleball2.png";
+import pickleballCrew from "../images/BoilerBlockchain/ubc-pickleball-crew.webp";
+import pickleballPhonePlayer from "../images/Pickleball/phone-player.webp";
+import pickleballPhoneCourts from "../images/Pickleball/phone-courts.webp";
+import pickleballAdmin from "../images/Pickleball/admin-courts.webp";
+import pickleballBracketLive from "../images/Pickleball/bracket-live.webp";
+import pickleballFullBracket from "../images/Pickleball/full-bracket.webp";
+import pickleballChampions from "../images/Pickleball/champions.webp";
+import pickleballStats from "../images/Pickleball/stats.webp";
 import corec1 from "../images/CoRec/corec1.png";
 import corec2 from "../images/CoRec/corec2.png";
 import corec3 from "../images/CoRec/corec3.png";
@@ -415,7 +421,16 @@ export const MORE_PROJECTS = {
     metaTitle: "UBC Pickleball Cup",
     metaDescription:
       "The live tournament app behind Boiler Blockchain and Meteora's pickleball cup at UBC 2026: 90 players, 8 courts, every phone a live dashboard.",
-    images: [pickleball1, pickleball2],
+    images: [
+      pickleballCrew,
+      pickleballPhonePlayer,
+      pickleballPhoneCourts,
+      pickleballAdmin,
+      pickleballBracketLive,
+      pickleballFullBracket,
+      pickleballChampions,
+      pickleballStats,
+    ],
     links: [
       { label: "Event Page ↗", href: "https://www.boilerblockchain.org/pickleball" },
       { label: "GitHub ↗", href: "https://github.com/boilerblockchain/BoilerBlockchainWebsite/tree/main/pickleball", github: true },
@@ -424,8 +439,17 @@ export const MORE_PROJECTS = {
       {
         heading: "Overview",
         body: [
-          "Boiler Blockchain and Meteora took over 8 pickleball courts in Austin during UBC 2026 for a single-elimination doubles cup. I built the app that ran it. 45 pairs registered, 90 players, and each of them had the tournament on their phone: who they play, which court, and when to walk over.",
+          "Boiler Blockchain and Meteora took over 8 pickleball courts in Austin during UBC 2026 for a single-elimination doubles cup. I built the app that ran it. 45 pairs registered, 90 players, and each of them had the tournament on their phone: who they play, which court, and when to walk over. 44 matches across 6 rounds, all in one night.",
           "This is one of my favorite things I've built and easily the most stressful. There was no safety net and no chance to fix it tomorrow: the event was running because of what I made, in front of everyone, and it all had to work on the spot.",
+        ],
+      },
+      {
+        heading: "What It Looked Like",
+        list: [
+          ["Player phone", "The moment a court opens, the two teams see Go to Court 3, who they are playing, and a countdown to be there before a forfeit."],
+          ["Courts and bracket", "Anyone can open the live board: what is on each of the 8 courts, who is up next, and the bracket filling in as results land."],
+          ["Organizer board", "One card per court with a running clock. Tap the winner when a game ends and the next match is called automatically."],
+          ["The real night", "The full bracket and results graphics are the actual tournament. The app screens are a replay of a mid-tournament moment with placeholder team names."],
         ],
       },
       {
