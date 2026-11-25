@@ -384,8 +384,26 @@ figure.home-tile:hover {
     aspect-ratio: 1 / 1;
   }
 
-  .home-panel-left {
+  /* Single column: card, experience, standouts, projects, etc, hobbies */
+  .home-panel-left,
+  .home-center-column {
+    display: contents;
+  }
+
+  .home-panel-left > :nth-child(2) {
+    order: 1;
+  }
+
+  .home-panel-left > :nth-child(1) {
     order: 3;
+  }
+
+  .home-panel-etc {
+    order: 4;
+  }
+
+  .home-panel-left > :nth-child(3) {
+    order: 5;
   }
 
   .home-tile-grid {
